@@ -1,0 +1,19 @@
+{
+	"overview": null,
+	"name": "Header",
+	"category": null,
+	"visual": true,
+	"events": {
+	
+	},
+	"properties": {
+		"headingLevel": {
+			"type": "number",
+			"defaultValue": 1
+		},
+		"innerHtml": {
+			"type": "string",
+			"defaultValue": ""
+		}
+	}
+}

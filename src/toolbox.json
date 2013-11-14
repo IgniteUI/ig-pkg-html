@@ -1,41 +1,33 @@
 {		
-	"name": "bootstrap",
-	"toolboxTitle": "Bootstrap",
+	"name": "html",
+	"toolboxTitle": "HTML",
 	"iconsPath": "icons",
   "scripts": [
   ],
   "stylesheets": [
-  	"bootstrap.min.css"
   ],
   "requiresInitialization": false,
   "configPath": "config",
 	"pluginsPath": "plugins",
   "defaultComponentPlugin": "_default-component",
 	"components": {
-		"row": {
-			"id": "row",
-			"toolboxTitle": "Row",
-			"componentPlugin": "row-component",
-			"icon": "row.png",
-			"dragDropIcon": "row-dragdrop.png",
-			"category": "layouts",
+		"header": {
+			"id": "header",
+			"toolboxTitle": "Header",
+			"icon": "header.png",
+			"dragDropIcon": "header-dragdrop.png",
+			"category": "Common",
 			"visual": true,
-			"framework": false,
-			"width": "100%",
-			"height": "150px"
+			"framework": false
 		},
-		"column": {
-			"id": "column",
-			"toolboxTitle": "Column",
-			"componentPlugin": "column-component",
-			"icon": "column.png",
-			"dragDropIcon": "column-dragdrop.png",
-			"category": "layouts",
+		"paragraph": {
+			"id": "paragraph",
+			"toolboxTitle": "Paragraph",
+			"icon": "paragraph.png",
+			"dragDropIcon": "paragraph-dragdrop.png",
+			"category": "Common",
 			"visual": true,
-			"toolboxVisible": false,
-			"framework": false,
-			"width": "100%",
-			"height": "100%"
+			"framework": false
 		}
 	}
 }

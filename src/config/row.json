@@ -1,0 +1,15 @@
+{
+	"overview": null,
+	"name": "Row",
+	"category": null,
+	"visual": true,
+	"events": {
+	
+	},
+	"properties": {
+		"columnsCount": {
+			"type": "number",
+			"defaultValue": 3
+		}
+	}
+}

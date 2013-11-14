@@ -1,0 +1,15 @@
+{
+	"overview": null,
+	"name": "Column",
+	"category": null,
+	"visual": true,
+	"events": {
+	
+	},
+	"properties": {
+		"columnSpan": {
+			"type": "number",
+			"defaultValue": 4
+		}
+	}
+}

@@ -1,0 +1,41 @@
+{		
+	"name": "bootstrap",
+	"toolboxTitle": "Bootstrap",
+	"iconsPath": "icons",
+  "scripts": [
+  ],
+  "stylesheets": [
+  	"bootstrap.min.css"
+  ],
+  "requiresInitialization": false,
+  "configPath": "config",
+	"pluginsPath": "plugins",
+  "defaultComponentPlugin": "_default-component",
+	"components": {
+		"row": {
+			"id": "row",
+			"toolboxTitle": "Row",
+			"componentPlugin": "row-component",
+			"icon": "row.png",
+			"dragDropIcon": "row-dragdrop.png",
+			"category": "layouts",
+			"visual": true,
+			"framework": false,
+			"width": "100%",
+			"height": "150px"
+		},
+		"column": {
+			"id": "column",
+			"toolboxTitle": "Column",
+			"componentPlugin": "column-component",
+			"icon": "column.png",
+			"dragDropIcon": "column-dragdrop.png",
+			"category": "layouts",
+			"visual": true,
+			"toolboxVisible": false,
+			"framework": false,
+			"width": "100%",
+			"height": "100%"
+		}
+	}
+}

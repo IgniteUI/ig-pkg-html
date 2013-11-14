@@ -1,0 +1,26 @@
+{
+  "name": "ig-pkg-html",
+  "description": "Basic HTML package for the Ignite UI Web Designer.",
+  "homepage": "https://github.com/IgniteUI/ig-pkg-html",
+  "keywords": [
+    "Ignite UI",
+    "html",
+    "web designer"
+  ],
+  "author": {
+    "name": "Infragistics",
+    "email": "igniteui@infragistics.com"
+  },
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "*.md",
+    "AUTHORS.txt",
+    "Gruntfile.js",
+    "package.json",
+    "bower.json"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+  }
+}

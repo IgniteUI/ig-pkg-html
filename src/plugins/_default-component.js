@@ -5,14 +5,14 @@ define(function (require, exports, module) {
       this._super(options);
       return this;
     },
-    getMarkup: function (descriptor) {
+    getMarkup: function (descriptor, forCode) {
       var code = "", i;
       switch (descriptor.type) {
         case "header":
-          return "<h1>Lorem Ipsum Dolor Sit Amet</h1>"
+          return "<h1" + (forCode ? "" : " contenteditable=\"true\"") + ">Lorem Ipsum Dolor Sit Amet</h1>"
           break;
         case "paragraph":
-          return "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac blandit erat. Curabitur velit libero, lacinia sit amet dolor a, tincidunt varius nisi. Integer ac magna bibendum, dignissim quam sed, commodo mauris. Aenean consequat ullamcorper felis ut sagittis. Quisque at magna a purus egestas suscipit. In vulputate tincidunt arcu non pulvinar. Pellentesque vitae leo et justo fringilla adipiscing sit amet eget lacus.</p>";
+          return "<p" + (forCode ? "" : " contenteditable=\"true\"") + ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac blandit erat. Curabitur velit libero, lacinia sit amet dolor a, tincidunt varius nisi. Integer ac magna bibendum, dignissim quam sed, commodo mauris. Aenean consequat ullamcorper felis ut sagittis. Quisque at magna a purus egestas suscipit. In vulputate tincidunt arcu non pulvinar. Pellentesque vitae leo et justo fringilla adipiscing sit amet eget lacus.</p>";
           break;
         default:
           console.log("Unknown HTML element added.");
@@ -30,7 +30,7 @@ define(function (require, exports, module) {
       return extraIndentStr;
     },
     getCodeEditorMarkupSnippet: function (descriptor) {
-      var snippet = "\t\t" + this._getIndentTabs(descriptor) + this.getMarkup(descriptor) + "\n";
+      var snippet = "\t\t" + this._getIndentTabs(descriptor) + this.getMarkup(descriptor, true) + "\n";
       return {codeString: snippet, lineCount: 1};
     },
     isContainer: function (descriptor) {

@@ -14,7 +14,7 @@ define(function (require, exports, module) {
 			return "<p" + (forCode ? "" : " contenteditable=\"true\"") + ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac blandit erat. Curabitur velit libero, lacinia sit amet dolor a, tincidunt varius nisi. Integer ac magna bibendum, dignissim quam sed, commodo mauris. Aenean consequat ullamcorper felis ut sagittis. Quisque at magna a purus egestas suscipit. In vulputate tincidunt arcu non pulvinar. Pellentesque vitae leo et justo fringilla adipiscing sit amet eget lacus.</p>";
           break;
 		case "input":
-			return "<input" + (forCode ? "" : " contenteditable=\"true\"") + "/>";
+			return "<input " + (forCode ? "" : " contenteditable=\"true\"") + "/>";
         default:
 			console.log("Unknown HTML element added: " + descriptor.type);
 			return "";

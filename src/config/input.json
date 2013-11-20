@@ -1,0 +1,19 @@
+{
+	"overview": null,
+	"name": "Input",
+	"category": null,
+	"visual": true,
+	"events": {
+	
+	},
+	"properties": {
+		"innerHtml": {
+			"type": "string",
+			"defaultValue": ""
+		},
+		"value": {
+			"type": "string",
+			"defaultValue": ""
+		}
+	}
+}

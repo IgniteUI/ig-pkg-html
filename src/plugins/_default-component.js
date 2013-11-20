@@ -9,15 +9,15 @@ define(function (require, exports, module) {
       var code = "", i;
       switch (descriptor.type) {
         case "header":
-          return "<h1" + (forCode ? "" : " contenteditable=\"true\"") + ">Lorem Ipsum Dolor Sit Amet</h1>"
-          break;
+			return "<h1" + (forCode ? "" : " contenteditable=\"true\"") + ">Lorem Ipsum Dolor Sit Amet</h1>"
         case "paragraph":
-          return "<p" + (forCode ? "" : " contenteditable=\"true\"") + ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac blandit erat. Curabitur velit libero, lacinia sit amet dolor a, tincidunt varius nisi. Integer ac magna bibendum, dignissim quam sed, commodo mauris. Aenean consequat ullamcorper felis ut sagittis. Quisque at magna a purus egestas suscipit. In vulputate tincidunt arcu non pulvinar. Pellentesque vitae leo et justo fringilla adipiscing sit amet eget lacus.</p>";
+			return "<p" + (forCode ? "" : " contenteditable=\"true\"") + ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac blandit erat. Curabitur velit libero, lacinia sit amet dolor a, tincidunt varius nisi. Integer ac magna bibendum, dignissim quam sed, commodo mauris. Aenean consequat ullamcorper felis ut sagittis. Quisque at magna a purus egestas suscipit. In vulputate tincidunt arcu non pulvinar. Pellentesque vitae leo et justo fringilla adipiscing sit amet eget lacus.</p>";
           break;
+		case "input":
+			return "<input" + (forCode ? "" : " contenteditable=\"true\"") + "/>";
         default:
-          console.log("Unknown HTML element added.");
-          return "";
-          break;
+			console.log("Unknown HTML element added: " + descriptor.type);
+			return "";
       }
     },
     _getIndentTabs: function(descriptor) {
@@ -40,12 +40,12 @@ define(function (require, exports, module) {
       switch (descriptor.type) {
         case "header":
         case "paragraph":
-          return true;
-          break;
+			return true;
+		case "input":
+			return false;
         default:
-          console.log("Unknown HTML element added.");
-          return false;
-          break;
+			console.log("Unknown HTML element added.");
+			return false;
       }
     },
     isDroppableChild: function (descriptor) {

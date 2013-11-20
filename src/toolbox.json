@@ -28,6 +28,15 @@
 			"category": "Common",
 			"visual": true,
 			"framework": false
+		},
+		"input": {
+			"id": "input",
+			"toolboxTitle": "Input",
+			"icon": "input.png",
+			"dragDropIcon": "input-dragdrop.png",
+			"category": "Common",
+			"visual": true,
+			"framework": false
 		}
 	}
 }

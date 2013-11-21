@@ -29,6 +29,24 @@
 			"visual": true,
 			"framework": false
 		},
+		"div": {
+			"id": "div",
+			"toolboxTitle": "DIV",
+			"icon": "paragraph.png",
+			"dragDropIcon": "paragraph-dragdrop.png",
+			"category": "Common",
+			"visual": true,
+			"framework": false			
+		},
+		"span": {
+			"id": "span",
+			"toolboxTitle": "SPAN",
+			"icon": "paragraph.png",
+			"dragDropIcon": "span-dragdrop.png",
+			"category": "Common",
+			"visual": true,
+			"framework": false			
+		},
 		"input": {
 			"id": "input",
 			"toolboxTitle": "Input",

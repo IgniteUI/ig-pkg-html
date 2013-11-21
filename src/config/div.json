@@ -1,0 +1,11 @@
+{
+	"events": {
+	
+	},
+	"properties": {
+		"innerHtml": {
+			"type": "string",
+			"defaultValue": ""
+		}
+	}
+}

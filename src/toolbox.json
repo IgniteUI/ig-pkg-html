@@ -11,11 +11,21 @@
 	"pluginsPath": "plugins",
   "defaultComponentPlugin": "_default-component",
 	"components": {
-		"header": {
-			"id": "header",
-			"toolboxTitle": "Header",
-			"icon": "header.png",
-			"dragDropIcon": "header-dragdrop.png",
+		"container": {
+			"id": "container",
+			"toolboxTitle": "Container",
+			"keywords": "div,section,nav,article,aside,header,footer,address,main",
+			"icon": "paragraph.png",
+			"dragDropIcon": "paragraph-dragdrop.png",
+			"category": "Common",
+			"visual": true,
+			"framework": false			
+		},
+		"heading": {
+			"id": "heading",
+			"toolboxTitle": "Heading",
+			"icon": "heading.png",
+			"dragDropIcon": "heading-dragdrop.png",
 			"category": "Common",
 			"visual": true,
 			"framework": false
@@ -28,24 +38,6 @@
 			"category": "Common",
 			"visual": true,
 			"framework": false
-		},
-		"div": {
-			"id": "div",
-			"toolboxTitle": "DIV",
-			"icon": "paragraph.png",
-			"dragDropIcon": "paragraph-dragdrop.png",
-			"category": "Common",
-			"visual": true,
-			"framework": false			
-		},
-		"span": {
-			"id": "span",
-			"toolboxTitle": "SPAN",
-			"icon": "paragraph.png",
-			"dragDropIcon": "span-dragdrop.png",
-			"category": "Common",
-			"visual": true,
-			"framework": false			
 		},
 		"input": {
 			"id": "input",

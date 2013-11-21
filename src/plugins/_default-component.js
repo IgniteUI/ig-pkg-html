@@ -12,14 +12,12 @@ define(function (require, exports, module) {
     },
     getMarkup: function (descriptor, forCode) {
       switch (descriptor.type) {
-        case "header":
+        case "heading":
           return this._getTextElementMarkup("h1", forCode, true);
         case "paragraph":
           return this._getTextElementMarkup("p", forCode);
-        case "div":
+        case "container":
           return this._getTextElementMarkup("div", forCode);
-        case "span":
-          return this._getTextElementMarkup("span", forCode, true);
         case "input":
           return "<input " + (forCode ? "" : " contenteditable=\"true\"") + "/>";
         default:
@@ -45,10 +43,9 @@ define(function (require, exports, module) {
         return false;
       }
       switch (descriptor.type) {
-        case "header":
+        case "heading":
         case "paragraph":
-        case "div":
-        case "span":
+        case "container":
           return true;
         case "input":
           return false;

@@ -6,6 +6,10 @@
 		"innerHtml": {
 			"type": "string",
 			"defaultValue": ""
+		},
+		"tagName": {
+			"type": "string",
+			"defaultValue": "div"
 		}
 	}
 }

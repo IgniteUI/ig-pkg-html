@@ -8,7 +8,10 @@ define(function (require, exports, module) {
     _blockOfText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac blandit erat. Curabitur velit libero, lacinia sit amet dolor a, tincidunt varius nisi. Integer ac magna bibendum, dignissim quam sed, commodo mauris. Aenean consequat ullamcorper felis ut sagittis. Quisque at magna a purus egestas suscipit. In vulputate tincidunt arcu non pulvinar. Pellentesque vitae leo et justo fringilla adipiscing sit amet eget lacus.",
     _lineOfText: "Lorem Ipsum Dolor Sit Amet",
     _getTextElementMarkup: function(tagName, forCode, singleLine) {
-      return "<" + tagName + (forCode ? "" : " contenteditable=\"true\"") + ">" + (singleLine ? this._lineOfText : this._blockOfText) +  "</" + tagName + ">"; 
+      return "<" + tagName + this._getContentEditable(forCode) + ">" + (singleLine ? this._lineOfText : this._blockOfText) +  "</" + tagName + ">"; 
+    },
+    _getContentEditable: function(forCode) {
+      return (forCode ? "" : " contenteditable=\"true\" spellcheck=\"false\"");
     },
     getMarkup: function (descriptor, forCode) {
       switch (descriptor.type) {
@@ -17,9 +20,13 @@ define(function (require, exports, module) {
         case "paragraph":
           return this._getTextElementMarkup("p", forCode);
         case "container":
-          return this._getTextElementMarkup("div", forCode);
+          if (forCode) {
+            return "<div></div>";
+          } else {
+            return "<div class=\"containerElement\"" + this._getContentEditable(false) + "></div>";
+          }
         case "input":
-          return "<input " + (forCode ? "" : " contenteditable=\"true\"") + "/>";
+          return "<input " + this._getContentEditable(forCode) + "/>";
         default:
           console.log("Unknown HTML element added: " + descriptor.type);
           return "";
@@ -35,7 +42,7 @@ define(function (require, exports, module) {
       return extraIndentStr;
     },
     getCodeEditorMarkupSnippet: function (descriptor) {
-      var snippet = "\t\t" + this._getIndentTabs(descriptor) + this.getMarkup(descriptor, true) + "\n";
+      var snippet = "\t" + this._getIndentTabs(descriptor) + this.getMarkup(descriptor, true) + "\n";
       return {codeString: snippet, lineCount: 1};
     },
     isContainer: function (descriptor) {
@@ -80,6 +87,9 @@ define(function (require, exports, module) {
         return $(descriptor).find("div[data-droppablechild]");
       }
       return $();
+    },
+    updateComponent: function (descriptor) {
+
     }
   });
 return HtmlComponent;

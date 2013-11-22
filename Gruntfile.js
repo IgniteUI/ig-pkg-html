@@ -81,10 +81,7 @@ module.exports = function (grunt) {
                     cwd: '<%= pkg.src %>',
                     dest: '<%= pkg.dist %>/<%= pkg.name %>',
                     src: [
-                        'toolbox.json',
-                        'config/**',
-                        'icons/**',
-                        'plugins/**'
+                        '**'
                     ]
                 },
                 ]

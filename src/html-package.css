@@ -1,0 +1,10 @@
+.design-surface .containerElement:empty {
+	border: 3px dashed lightblue;
+	border-radius: 5px;
+	height: 6px;
+}
+
+.design-surface .containerElement:focus {
+	min-height: 1.2em;
+}
+

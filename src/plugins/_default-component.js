@@ -19,14 +19,20 @@ define(function (require, exports, module) {
           return this._getTextElementMarkup("h1", forCode, true);
         case "paragraph":
           return this._getTextElementMarkup("p", forCode);
+        case "link":
+          return this._getTextElementMarkup("a", forCode, true);
+        case "list":
+          return "<ul" + this._getContentEditable(forCode) + "><li>Item 1</li><li>Item 2</li></ul>";
         case "container":
           if (forCode) {
             return "<div></div>";
           } else {
             return "<div class=\"containerElement\"" + this._getContentEditable(false) + "></div>";
           }
+        case "button":
+          return "<button" + this._getContentEditable(forCode) + ">Button</button>";
         case "input":
-          return "<input " + this._getContentEditable(forCode) + "/>";
+          return "<input" + this._getContentEditable(forCode) + "/>";
         default:
           console.log("Unknown HTML element added: " + descriptor.type);
           return "";
@@ -53,6 +59,9 @@ define(function (require, exports, module) {
         case "heading":
         case "paragraph":
         case "container":
+        case "button":
+        case "link":
+        case "list":
           return true;
         case "input":
           return false;

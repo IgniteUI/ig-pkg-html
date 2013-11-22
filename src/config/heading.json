@@ -4,8 +4,8 @@
 	},
 	"properties": {
 		"headingLevel": {
-			"type": "select",
-			"options": "h1,h2,h3,h4,h5,h6",
+			"type": "string",
+			"valueOptions": "h1,h2,h3,h4,h5,h6",
 			"defaultValue": "h1"
 		},
 		"innerHtml": {

@@ -40,6 +40,33 @@
 			"visual": true,
 			"framework": false
 		},
+		"list": {
+			"id": "list",
+			"toolboxTitle": "List",
+			"icon": "paragraph.png",
+			"dragDropIcon": "paragraph-dragdrop.png",
+			"category": "Common",
+			"visual": true,
+			"framework": false
+		},
+		"link": {
+			"id": "link",
+			"toolboxTitle": "Link",
+			"icon": "paragraph.png",
+			"dragDropIcon": "paragraph-dragdrop.png",
+			"category": "Common",
+			"visual": true,
+			"framework": false
+		},
+		"button": {
+			"id": "button",
+			"toolboxTitle": "Button",
+			"icon": "input.png",
+			"dragDropIcon": "input-dragdrop.png",
+			"category": "Common",
+			"visual": true,
+			"framework": false
+		},
 		"input": {
 			"id": "input",
 			"toolboxTitle": "Input",

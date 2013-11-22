@@ -1,0 +1,14 @@
+{
+	"events": {
+	    "click": {
+      "cancellable": true,
+      "args": []
+    }
+	},
+	"properties": {
+		"innerHtml": {
+			"type": "string",
+			"defaultValue": ""
+		}
+	}
+}

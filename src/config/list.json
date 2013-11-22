@@ -1,0 +1,15 @@
+{
+	"events": {
+	
+	},
+	"properties": {
+		"listType": {
+			"type": "string",
+			"valueOptions": {
+				"ul": "Unordered",
+				"ol": "Ordered"
+			},
+			"defaultValue": "ul"
+		}
+	}
+}

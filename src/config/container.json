@@ -11,10 +11,6 @@
 			"type": "string",
 			"valueOptions": "div,section,nav,article,aside,header,footer,address,main",
 			"defaultValue": "div"
-		},
-		"showEmpty": {
-			"type": "bool",
-			"defaultValue": "true"
 		}
 	}
 }

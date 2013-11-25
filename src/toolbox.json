@@ -16,8 +16,8 @@
 			"id": "container",
 			"toolboxTitle": "Container",
 			"keywords": "div,section,nav,article,aside,header,footer,address,main",
-			"icon": "paragraph.png",
-			"dragDropIcon": "paragraph-dragdrop.png",
+			"icon": "container.png",
+			"dragDropIcon": "container-dragdrop.png",
 			"category": "Common",
 			"visual": true,
 			"framework": false			
@@ -43,8 +43,8 @@
 		"list": {
 			"id": "list",
 			"toolboxTitle": "List",
-			"icon": "paragraph.png",
-			"dragDropIcon": "paragraph-dragdrop.png",
+			"icon": "list.png",
+			"dragDropIcon": "list-dragdrop.png",
 			"category": "Common",
 			"visual": true,
 			"framework": false
@@ -52,8 +52,8 @@
 		"link": {
 			"id": "link",
 			"toolboxTitle": "Link",
-			"icon": "paragraph.png",
-			"dragDropIcon": "paragraph-dragdrop.png",
+			"icon": "link.png",
+			"dragDropIcon": "link-dragdrop.png",
 			"category": "Common",
 			"visual": true,
 			"framework": false
@@ -61,8 +61,8 @@
 		"button": {
 			"id": "button",
 			"toolboxTitle": "Button",
-			"icon": "input.png",
-			"dragDropIcon": "input-dragdrop.png",
+			"icon": "button.png",
+			"dragDropIcon": "button-dragdrop.png",
 			"category": "Common",
 			"visual": true,
 			"framework": false

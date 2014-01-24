@@ -2,6 +2,8 @@
 	"name": "html",
 	"toolboxTitle": "HTML",
 	"iconsPath": "icons",
+    "iconSpriteCssFile": "html-icons.css",
+    "iconSpriteCssPrefix": "html-icons", 
   "scripts": [
   ],
   "stylesheets": [

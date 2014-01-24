@@ -1,0 +1,8 @@
+.html-icons { background: url('html-icons.png') no-repeat top left;  } 
+.html-icons.button { background-position: 0px 0px; width: 72px; height: 75px;  } 
+.html-icons.container { background-position: 0px -80px; width: 72px; height: 71px;  } 
+.html-icons.heading { background-position: 0px -156px; width: 69px; height: 64px;  } 
+.html-icons.input { background-position: 0px -225px; width: 69px; height: 64px;  } 
+.html-icons.link { background-position: 0px -294px; width: 75px; height: 75px;  } 
+.html-icons.list { background-position: 0px -374px; width: 78px; height: 78px;  } 
+.html-icons.paragraph { background-position: 0px -457px; width: 64px; height: 64px;  } 

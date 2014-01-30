@@ -70,6 +70,9 @@ define(function (require, exports, module) {
           return false;
       }
     },
+    getPropValue: function (descriptor) {
+		return descriptor.placeholder[0][descriptor.propName];
+    },
     isDroppableChild: function (descriptor) {
       if (typeof (descriptor) === "undefined" || descriptor === null) {
         return false;

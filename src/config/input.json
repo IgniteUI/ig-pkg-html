@@ -7,7 +7,7 @@
 	
 	},
 	"properties": {
-		"innerHtml": {
+		"innerHTML": {
 			"type": "string",
 			"defaultValue": ""
 		},

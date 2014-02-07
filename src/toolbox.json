@@ -20,7 +20,7 @@
 			"keywords": "div,section,nav,article,aside,header,footer,address,main",
 			"icon": "container.png",
 			"dragDropIcon": "container-dragdrop.png",
-			"category": "Common",
+			"category": "common",
 			"visual": true,
 			"framework": false			
 		},
@@ -29,7 +29,7 @@
 			"toolboxTitle": "Heading",
 			"icon": "heading.png",
 			"dragDropIcon": "heading-dragdrop.png",
-			"category": "Common",
+			"category": "common",
 			"visual": true,
 			"framework": false
 		},
@@ -38,7 +38,7 @@
 			"toolboxTitle": "Paragraph",
 			"icon": "paragraph.png",
 			"dragDropIcon": "paragraph-dragdrop.png",
-			"category": "Common",
+			"category": "common",
 			"visual": true,
 			"framework": false
 		},
@@ -47,7 +47,7 @@
 			"toolboxTitle": "List",
 			"icon": "list.png",
 			"dragDropIcon": "list-dragdrop.png",
-			"category": "Common",
+			"category": "common",
 			"visual": true,
 			"framework": false
 		},
@@ -56,7 +56,7 @@
 			"toolboxTitle": "Link",
 			"icon": "link.png",
 			"dragDropIcon": "link-dragdrop.png",
-			"category": "Common",
+			"category": "common",
 			"visual": true,
 			"framework": false
 		},
@@ -65,7 +65,7 @@
 			"toolboxTitle": "Button",
 			"icon": "button.png",
 			"dragDropIcon": "button-dragdrop.png",
-			"category": "Common",
+			"category": "common",
 			"visual": true,
 			"framework": false
 		},
@@ -74,7 +74,7 @@
 			"toolboxTitle": "Input",
 			"icon": "input.png",
 			"dragDropIcon": "input-dragdrop.png",
-			"category": "Common",
+			"category": "common",
 			"visual": true,
 			"framework": false
 		}

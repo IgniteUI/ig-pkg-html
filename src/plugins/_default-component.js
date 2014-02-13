@@ -100,8 +100,9 @@ define(function (require, exports, module) {
       }
       return $();
     },
-    updateComponent: function (descriptor) {
-
+	update: function (descriptor) {
+		var ide = this.settings.ide;
+		descriptor.placeholder[0][descriptor.propName] = descriptor.propValue;
     }
   });
 return HtmlComponent;

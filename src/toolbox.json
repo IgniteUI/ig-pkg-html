@@ -81,7 +81,7 @@
 			"icon": "input.png",
 			"tags": ["input"],
 			"dragDropIcon": "input-dragdrop.png",
-			"category": "common",
+			"category": "editors",
 			"visual": true,
 			"framework": false
 		}

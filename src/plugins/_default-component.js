@@ -104,15 +104,10 @@ define(function (require, exports, module) {
 			// Update the element in the designer
 			descriptor.placeholder[0][descriptor.propName] = descriptor.propValue;
 
-			var ide = this.settings.ide;
-			var htmlMarker = descriptor.comp.htmlMarker;
-			var propStr = "";
-			var pos = { row: 0, column: 0 };
-
-			if (descriptor.propName.toLowerCase() === "innerhtml") {
+			/*if (descriptor.propName.toLowerCase() === "innerhtml") {
 				this.updateInnerHTML();
 			} else {
-				/*if (true) {
+				if (true) {
 					// propStr += ide._tabStr(1);
 					propStr += descriptor.propName + "=\"" + descriptor.propValue + "\"";
 					pos.row = htmlMarker.range.start.row;
@@ -124,48 +119,84 @@ define(function (require, exports, module) {
 					this.addAttrCode();
 				} else {
 					this.updateAttrCode();
-				}*/
-			}
-		},
-		addAttrCode: function () {
-
-		},
-		updateAttrCode: function () {
-
+				}
+			}*/
 		},
 		getPropPosition: function (descriptor) {
-			var pos = { row: 0, column: 0 };
+			var pos, attrs, attrPos, propValue;
+			propValue = this.getPropValue(descriptor);
+			if (propValue === undefined || propValue === null || propValue === "") {
+				return;
+			}
+			attrs = descriptor.component.htmlMarker.extraMarkers;
+			attrPos = attrs[descriptor.propName];
+			if (attrPos) { // attribute already exist
+				pos = this.updateAttrCode(descriptor);
+			} else { // attribute needs to be added
+				pos = this.addAttrCode(descriptor);
+			}
+			return pos;
+		},
+		addAttrCode: function (descriptor) {
+			var ide = this.settings.ide;
+			var htmlMarker = descriptor.component.htmlMarker;
+			var pos = htmlMarker;
+			var attrs = htmlMarker.extraMarkers;
+			var propValue = this.getPropValue(descriptor);
+
+			if (descriptor.propType === "bool" && propValue === false) {
+				return pos;
+			}
+			var attrStr = (descriptor.propType === "bool" && propValue === true) ? " " + descriptor.propName : " " + descriptor.propName + "=\"" + propValue + "\"";
+
+			var attrPos = ide.editor.find({
+				needle: ">",
+				start: htmlMarker.range.start
+			});
+			if (!attrPos) { // unary, such as <input />
+				attrPos = ide.editor.find({
+					needle: "/>",
+					start: htmlMarker.range.start
+				});
+			}
+			if (attrPos) {
+				var newRow = attrPos.start.row;
+				var newCol = attrPos.start.column;
+				ide.session.insert({ row: newRow, column: newCol }, attrStr);
+				attrs[descriptor.propName] = pos = ide.createAndAddMarker(
+					newRow,
+					newCol + 1,
+					newRow,
+					newCol + attrStr.length
+				);
+			}
+			return pos;
+		},
+		updateAttrCode: function (descriptor) {
 			var ide = this.settings.ide;
 			var htmlMarker = descriptor.component.htmlMarker;
 			var attrs = htmlMarker.extraMarkers;
-			var attrName = " " + descriptor.propName + "=";
-			var attrStr = attrName + "\"" + descriptor.propValue + "\"";
+			var currMarker = attrs[descriptor.propName];
+			var pos = currMarker;
+			var attrName = descriptor.propName;
+			var newValue = descriptor.propValue;
+			var currValue = "";
+			var propValue = this.getPropValue(descriptor);
+			var toRemoveBoolAttr = (descriptor.propType === "bool" && propValue === false);
+			var attrStr = toRemoveBoolAttr ? "" : "" + attrName + "=\"" + newValue + "\"";
 
-			var attrPos = attrs[descriptor.propName];
-			if (attrPos) { // attribute already exist
-
-			} else { // attribute needs to be added
-				var attrPos = ide.editor.find({
-					needle: ">",
-					start: htmlMarker.range.start
-				});
-				if (!attrPos) { // unary, such as <input />
-					attrPos = ide.editor.find({
-						needle: "/>",
-						start: htmlMarker.range.start
-					});
-				}
-				if (attrPos) {
-					var newRow = attrPos.start.row;
-					var newCol = attrPos.start.column;
-					ide.session.insert({ row: newRow, column: newCol }, attrStr);
-					attrs[descriptor.propName] = pos = ide.createAndAddMarker(
-						newRow,
-						newCol + 1,
-						newRow,
-						newCol + attrStr.length - 1
-					);
-				}
+			if (currValue === newValue) {
+				return;
+			}
+			var startRow = currMarker.start.row;
+			var startCol = currMarker.start.column;
+			var endRow = currMarker.end.row;
+			var endColumn = currMarker.start.column + attrName.length + newValue.length + 3;
+			ide.session.replace(currMarker, attrStr);
+			//reattach the marker
+			ide.session.removeMarker(currMarker.id);
+			if (!toRemoveBoolAttr) {
+				attrs[attrName] = pos = ide.createAndAddMarker(startRow, startCol, endRow, endColumn);
 			}
 			return pos;
 		}

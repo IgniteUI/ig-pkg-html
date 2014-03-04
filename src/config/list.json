@@ -1,8 +1,9 @@
 {
 	"events": {
-	
+		"schemaRef": "eventattributes"
 	},
 	"properties": {
+		"schemaRef": "globalAttributes",
 		"listType": {
 			"type": "string",
 			"valueOptions": {
@@ -10,6 +11,49 @@
 				"ol": "Ordered"
 			},
 			"defaultValue": "ul"
+		},
+		"reversed": {
+			"type": "bool",
+			"defaultValue": false,
+			"description" : "Specifies that the list order should be descending (9,8,7...).",
+			"html5": true
+		},
+		"start": {
+			"type": "number",
+			"defaultValue": 1,
+			"description" : "Specifies the start value of the first list item in the ordered list."
+		},
+		"type": {
+			"type": "string",
+			"defaultValue": "1",
+			"description" : "Specifies the start value of the first list item in the ordered list.",
+			"valueOptions": [
+				{
+					"name": "1",
+					"type": "string",
+					"description": "Decimal numbers (1, 2, 3, 4)."
+				},
+				{
+					"name": "a",
+					"type": "string",
+					"description": "Alphabetically ordered list, lowercase (a, b, c, d)."
+				},
+				{
+					"name": "A",
+					"type": "string",
+					"description": "Alphabetically ordered list, uppercase (A, B, C, D)."
+				},
+				{
+					"name": "i",
+					"type": "string",
+					"description": "Roman numbers, lowercase (i, ii, iii, iv)."
+				},
+				{
+					"name": "I",
+					"type": "string",
+					"description": "Roman numbers, uppercase (I, II, III, IV)."
+				}
+			]
 		}
 	}
 }

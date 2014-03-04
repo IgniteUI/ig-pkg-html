@@ -1,0 +1,50 @@
+{
+	"overview": "The <select> element is used to create a drop-down list. The <option> tags inside the <select> element define the available options in the list.",
+	"name": "Select",
+	"category": null,
+	"visual": true,
+	"events": {
+		"schemaRef": "eventattributes"
+	},
+	"properties": {
+		"schemaRef": "globalAttributes",
+		"autofocus": {
+			"type": "bool",
+			"defaultValue": false,
+			"description" : "Specifies that the drop-down list should automatically get focus when the page loads.",
+			"html5": true
+		},
+		"disabled": {
+			"type": "bool",
+			"defaultValue": false,
+			"description" : "Specifies that a drop-down list should be disabled."
+		},
+		"form": {
+			"type": "string",
+			"defaultValue": null,
+			"description" : "Defines one or more forms the select field belongs to.",
+			"html5": true
+		},
+		"multiple": {
+			"type": "bool",
+			"defaultValue": false,
+			"description" : "Specifies that multiple options can be selected at once."
+		},
+		"name": {
+			"type": "string",
+			"defaultValue": null,
+			"description" : "Defines a name for the drop-down list."
+		},
+		"required": {
+			"type": "bool",
+			"defaultValue": false,
+			"description" : "Specifies that the user is required to select a value before submitting the form.",
+			"html5": true
+		},
+		"size": {
+			"type": "number",
+			"defaultValue": 1,
+			"description" : "Defines the number of visible options in a drop-down list."
+		}
+	}
+}

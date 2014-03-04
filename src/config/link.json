@@ -1,14 +1,97 @@
 {
 	"events": {
-	    "click": {
-      "cancellable": true,
-      "args": []
-    }
+		"schemaRef": "eventattributes"
 	},
 	"properties": {
 		"innerHTML": {
 			"type": "string",
-			"defaultValue": ""
+			"defaultValue": "",
+			"description" : "The display text of the link."
+		},
+		"schemaRef": "globalAttributes",
+		"href": {
+			"type": "string",
+			"defaultValue": null,
+			"description" : "Specifies the location of the linked document."
+		},
+		"hreflang": {
+			"type": "string",
+			"defaultValue": null,
+			"description" : "Specifies the language of the text in the linked document. Specifies the language of the text in the linked document"
+		},
+		"media": {
+			"type": "string",
+			"defaultValue": null,
+			"description" : "Specifies on what device the linked document will be displayed."
+		},
+		"rel": {
+			"type": "string",
+			"defaultValue": null,
+			"description" : "Specifies the relationship between the current document and the linked document.",
+			"required": true,
+			"valueOptions": [
+				{
+					"name": "alternate",
+					"type": "string",
+					"description": "Links to an alternate version of the document (i.e. print page, translated or mirror). Example: <link rel=\"alternate\" type=\"application/atom+xml\" title=\"W3Schools News\" href=\"/blog/news/atom\">."
+				},
+				{
+					"name": "author",
+					"type": "string",
+					"description": "Links to the author of the document."
+				},
+				{
+					"name": "help",
+					"type": "string",
+					"description": "Links to a help document. Example: <link rel=\"help\" href=\"/help/\">."
+				},
+				{
+					"name": "icon",
+					"type": "string",
+					"description": "Imports an icon to represent the document. Example: <link rel=\"icon\" href=\"/favicon.ico\" type=\"image/x-icon\">."
+				},
+				{
+					"name": "license",
+					"type": "string",
+					"description": "Links to copyright information for the document."
+				},
+				{
+					"name": "next",
+					"type": "string",
+					"description": "Indicates that the document is a part of a series, and that the next document in the series is the referenced document."
+				},
+				{
+					"name": "prefetch",
+					"type": "string",
+					"description": "Specifies that the target resource should be cached."
+				},
+				{
+					"name": "prev",
+					"type": "string",
+					"description": "Indicates that the document is a part of a series, and that the previous document in the series is the referenced document."
+				},
+				{
+					"name": "search",
+					"type": "string",
+					"description": "Links to a search tool for the document."
+				},
+				{
+					"name": "stylesheet",
+					"type": "string",
+					"description": "URL to a style sheet to import."
+				}
+			]
+		},
+		"sizes": {
+			"type": "string",
+			"defaultValue": null,
+			"description" : "Specifies the size of the linked resource. Only for rel=\"icon\".",
+			"html5": true
+		},
+		"type": {
+			"type": "string",
+			"defaultValue": null,
+			"description" : "Specifies the MIME type of the linked document."
 		}
 	}
 }

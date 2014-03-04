@@ -1,14 +1,125 @@
 {
 	"events": {
-	    "click": {
-      "cancellable": true,
-      "args": []
-    }
+		"schemaRef": "eventattributes"
 	},
 	"properties": {
-		"innerHTML": {
+		"schemaRef": "globalAttributes",
+		"name": {
 			"type": "string",
-			"defaultValue": ""
+			"defaultValue": null,
+			"description": "Specifies a name for the button"
+		},
+		"value": {
+			"type": "string",
+			"defaultValue": null,
+			"description": "Specifies an initial value for the button"
+		},
+		"type": {
+			"type": "string",
+			"defaultValue": "button",
+			"description": "Specifies the type of button",
+			"valueOptions": [
+				{
+					"name": "button",
+					"type": "string",
+					"description": "The type is button."
+				},
+				{
+					"name": "reset",
+					"type": "string",
+					"description": "The type is button."
+				},
+				{
+					"name": "submit",
+					"type": "string",
+					"description": "The type is button."
+				}
+			]
+		},
+		"disabled": {
+			"type": "bool",
+			"defaultValue": false,
+			"description": "Specifies that a button should be disabled"
+		},
+		"autofocus": {
+			"type": "bool",
+			"defaultValue": false,
+			"description": "Specifies that a button should automatically get focus when the page loads",
+			"html5": true
+		},
+		"form": {
+			"type": "string",
+			"defaultValue": null,
+			"description": "Specifies one or more forms the button belongs to",
+			"html5": true
+		},
+		"formaction": {
+			"type": "string",
+			"defaultValue": null,
+			"description": "Specifies where to send the form-data when a form is submitted. Only for type=\"submit\"",
+			"html5": true
+		},
+		"formenctype": {
+			"type": "string",
+			"defaultValue": "application/x-www-form-urlencoded",
+			"description": "Specifies where to send the form-data when a form is submitted. Only for type=\"submit\"",
+			"html5": true,
+			"valueOptions": [
+				{
+					"name": "application/x-www-form-urlencoded",
+					"type": "string",
+					"description": "All characters will be encoded before sent."
+				},
+				{
+					"name": "multipart/form-data",
+					"type": "string",
+					"description": "No characters are encoded (use this when you are using forms that have a file upload control)."
+				},
+				{
+					"name": "text/plain",
+					"type": "string",
+					"description": "Spaces are converted to \"+\" symbols, but no characters are encoded."
+				}
+			]
+		},
+		"formnovalidate": {
+			"type": "bool",
+			"defaultValue": false,
+			"description": "Specifies that the form-data should not be validated on submission. Only for type=\"submit\"",
+			"html5": true
+		},
+		"formtarget": {
+			"type": "string",
+			"defaultValue": "_self",
+			"description": "Specifies where to display the response after submitting the form. Only for type=\"submit\"",
+			"html5": true,
+			"valueOptions": [
+				{
+					"name": "_blank",
+					"type": "string",
+					"description": "Loads the response in a new window/tab."
+				},
+				{
+					"name": "_self",
+					"type": "string",
+					"description": "Loads the response in the same frame."
+				},
+				{
+					"name": "_parent",
+					"type": "string",
+					"description": "Loads the response in the parent frame."
+				},
+				{
+					"name": "_top",
+					"type": "string",
+					"description": "Loads the response in the full body of the window."
+				},
+				{
+					"name": "framename",
+					"type": "string",
+					"description": "Loads the response in a named iframe."
+				}
+			]
 		}
 	}
 }

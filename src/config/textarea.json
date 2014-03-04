@@ -4,12 +4,14 @@
 	"category": null,
 	"visual": true,
 	"events": {
-	
+		"schemaRef": "eventattributes"
 	},
 	"properties": {
+		"schemaRef": "globalAttributes",
 		"innerHTML": {
 			"type": "string",
-			"defaultValue": ""
+			"defaultValue": "",
+			"description" : "The display text of the area."
 		}
 	}
 }

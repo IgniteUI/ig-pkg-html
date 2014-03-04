@@ -1,16 +1,17 @@
 {
 	"events": {
-	
+		"schemaRef": "eventattributes"
 	},
 	"properties": {
-		"innerHTML": {
-			"type": "string",
-			"defaultValue": ""
-		},
 		"tagName": {
 			"type": "string",
 			"valueOptions": "div,section,nav,article,aside,header,footer,address,main",
 			"defaultValue": "div"
-		}
+		},
+		"innerHTML": {
+			"type": "string",
+			"defaultValue": ""
+		},
+		"schemaRef": "globalAttributes"
 	}
 }

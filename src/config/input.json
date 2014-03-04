@@ -4,16 +4,366 @@
 	"category": null,
 	"visual": true,
 	"events": {
-	
+		"schemaRef": "eventattributes"
 	},
 	"properties": {
-		"innerHTML": {
+		"schemaRef": "globalAttributes",
+		"type": {
 			"type": "string",
-			"defaultValue": ""
+			"defaultValue": null,
+			"description": "Specifies the value of an <input> element",
+			"valueOptions": [
+				{
+					"name": "button",
+					"type": "string",
+					"description": "Defines a clickable button (mostly used with a JavaScript to activate a script)."
+				},
+				{
+					"name": "checkbox",
+					"type": "string",
+					"description": "Defines a checkbox."
+				},
+				{
+					"name": "color",
+					"type": "string",
+					"description": "Defines a color picker.",
+					"html5": true
+				},
+				{
+					"name": "date",
+					"type": "string",
+					"description": "Defines a date control (year, month and day (no time)).",
+					"html5": true
+				},
+				{
+					"name": "datetime",
+					"type": "string",
+					"description": "Defines a date and time control (year, month, day, hour, minute, second, and fraction of a second, based on UTC time zone).",
+					"html5": true
+				},
+				{
+					"name": "datetime-local",
+					"type": "string",
+					"description": "Defines a date and time control (year, month, day, hour, minute, second, and fraction of a second (no time zone).",
+					"html5": true
+				},
+				{
+					"name": "email",
+					"type": "string",
+					"description": "Defines a field for an e-mail address.",
+					"html5": true
+				},
+				{
+					"name": "file",
+					"type": "string",
+					"description": "Defines a file-select field and a \"Browse...\" button (for file uploads)."
+				},
+				{
+					"name": "hidden",
+					"type": "string",
+					"description": "Defines a hidden input field."
+				},
+				{
+					"name": "image",
+					"type": "string",
+					"description": "Defines an image as the submit button."
+				},
+				{
+					"name": "month",
+					"type": "string",
+					"description": "Defines a month and year control (no time zone).",
+					"html5": true
+				},
+				{
+					"name": "number",
+					"type": "string",
+					"description": "Defines a field for entering a number.",
+					"html5": true
+				},
+				{
+					"name": "password",
+					"type": "string",
+					"description": "Defines a password field (characters are masked)."
+				},
+				{
+					"name": "radio",
+					"type": "string",
+					"description": "Defines a radio button."
+				},
+				{
+					"name": "range",
+					"type": "string",
+					"description": "Defines a control for entering a number whose exact value is not important (like a slider control).",
+					"html5": true
+				},
+				{
+					"name": "reset",
+					"type": "string",
+					"description": "Defines a reset button (resets all form values to default values)."
+				},
+				{
+					"name": "search",
+					"type": "string",
+					"description": "Defines a text field for entering a search string.",
+					"html5": true
+				},
+				{
+					"name": "submit",
+					"type": "string",
+					"description": "Defines a submit button."
+				},
+				{
+					"name": "tel",
+					"type": "string",
+					"description": "Defines a field for entering a telephone number.",
+					"html5": true
+				},
+				{
+					"name": "text",
+					"type": "string",
+					"description": "Default. Defines a single-line text field (default width is 20 characters)."
+				},
+				{
+					"name": "time",
+					"type": "string",
+					"description": "Defines a control for entering a time (no time zone).",
+					"html5": true
+				},
+				{
+					"name": "url",
+					"type": "string",
+					"description": "Defines a field for entering a URL.",
+					"html5": true
+				},
+				{
+					"name": "week",
+					"type": "string",
+					"description": "Defines a week and year control (no time zone).",
+					"html5": true
+				}
+			]
 		},
 		"value": {
 			"type": "string",
-			"defaultValue": ""
+			"defaultValue": null,
+			"description": "Specifies the value of an <input> element"
+		},
+		"name": {
+			"type": "string",
+			"defaultValue": null,
+			"description": "Specifies the name of an <input> element."
+		},
+		"readonly": {
+			"type": "bool",
+			"defaultValue": false,
+			"description": "Specifies that an input field is read-only."
+		},
+		"size": {
+			"type": "number",
+			"defaultValue": 20,
+			"description": "Specifies the width, in characters, of an <input> element."
+		},
+		"src": {
+			"type": "string",
+			"defaultValue": null,
+			"description": "Specifies the URL of the image to use as a submit button (only for type=\"image\")."
+		},
+		"accept": {
+			"type": "string",
+			"defaultValue": null,
+			"description": "Specifies the types of files that the server accepts (only for type=\"file\")."
+		},
+		"alt": {
+			"type": "string",
+			"defaultValue": null,
+			"description": "Specifies an alternate text for images (only for type=\"image\")."
+		},
+		"autocomplete": {
+			"type": "string",
+			"defaultValue": "on",
+			"description": "Specifies whether an <input> element should have autocomplete enabled.",
+			"valueOptions": [
+				{
+					"name": "on",
+					"type": "string",
+					"description": "Specifies that autocomplete is on (enabled)."
+				},
+				{
+					"name": "off",
+					"type": "string",
+					"description": "Specifies that autocomplete is off (disabled)."
+				}
+			],
+			"html5": true
+		},
+		"autofocus": {
+			"type": "bool",
+			"defaultValue": false,
+			"description": "Specifies that an <input> element should automatically get focus when the page loads.",
+			"html5": true
+		},
+		"checked": {
+			"type": "bool",
+			"defaultValue": false,
+			"description": "Specifies that an <input> element should be pre-selected when the page loads (for type=\"checkbox\" or type=\"radio\")."
+		},
+		"disabled": {
+			"type": "bool",
+			"defaultValue": false,
+			"description": "Specifies that an <input> element should be disabled."
+		},
+		"form": {
+			"type": "string",
+			"defaultValue": null,
+			"description": "Specifies one or more forms the <input> element belongs to.",
+			"html5": true
+		},
+		"formaction": {
+			"type": "string",
+			"defaultValue": null,
+			"description": "Specifies the URL of the file that will process the input control when the form is submitted (for type=\"submit\" and type=\"image\").",
+			"html5": true
+		},
+		"formenctype": {
+			"type": "string",
+			"defaultValue": null,
+			"description": "Specifies how the form-data should be encoded when submitting it to the server (for type=\"submit\" and type=\"image\").",
+			"html5": true,
+			"valueOptions": [
+				{
+					"name": "application/x-www-form-urlencoded",
+					"type": "string",
+					"description": "All characters will be encoded before sent."
+				},
+				{
+					"name": "multipart/form-data",
+					"type": "string",
+					"description": "No characters are encoded (use this when you are using forms that have a file upload control)."
+				},
+				{
+					"name": "text/plain",
+					"type": "string",
+					"description": "Spaces are converted to \"+\" symbols, but no characters are encoded."
+				}
+			]
+		},
+		"formmethod": {
+			"type": "string",
+			"defaultValue": "get",
+			"description": "Defines the HTTP method for sending data to the action URL (for type=\"submit\" and type=\"image\").",
+			"html5": true,
+			"valueOptions": [
+				{
+					"name": "get",
+					"type": "string",
+					"description": "Appends the form-data to the URL in name/value pairs: URL?name=value&name=value."
+				},
+				{
+					"name": "post",
+					"type": "string",
+					"description": "Sends the form-data as an HTTP post transaction."
+				}
+			]
+		},
+		"formnovalidate": {
+			"type": "bool",
+			"defaultValue": false,
+			"description": "Specifies that the form-data should not be validated on submission. Only for type=\"submit\"",
+			"html5": true
+		},
+		"formtarget": {
+			"type": "string",
+			"defaultValue": "_self",
+			"description": "Specifies where to display the response after submitting the form. Only for type=\"submit\"",
+			"html5": true,
+			"valueOptions": [
+				{
+					"name": "_blank",
+					"type": "string",
+					"description": "Loads the response in a new window/tab."
+				},
+				{
+					"name": "_self",
+					"type": "string",
+					"description": "Loads the response in the same frame."
+				},
+				{
+					"name": "_parent",
+					"type": "string",
+					"description": "Loads the response in the parent frame."
+				},
+				{
+					"name": "_top",
+					"type": "string",
+					"description": "Loads the response in the full body of the window."
+				},
+				{
+					"name": "framename",
+					"type": "string",
+					"description": "Loads the response in a named iframe."
+				}
+			]
+		},
+		"height": {
+			"type": "number",
+			"defaultValue": null,
+			"description": "Specifies the height of an <input> element (only for type=\"image\")",
+			"html5": true
+		},
+		"width": {
+			"type": "number",
+			"defaultValue": null,
+			"description": "Specifies the width of an <input> element (only for type=\"image\")",
+			"html5": true
+		},
+		"list": {
+			"type": "string",
+			"defaultValue": null,
+			"description": "Refers to a <datalist> element that contains pre-defined options for an <input> element",
+			"html5": true
+		},
+		"max": {
+			"type": "number",
+			"defaultValue": null,
+			"description": "Specifies the maximum value for an <input> element.",
+			"html5": true
+		},
+		"min": {
+			"type": "number",
+			"defaultValue": null,
+			"description": "Specifies a minimum value for an <input> element.",
+			"html5": true
+		},
+		"maxlength": {
+			"type": "number",
+			"defaultValue": null,
+			"description": "Specifies the maximum number of characters allowed in an <input> element."
+		},
+		"multiple": {
+			"type": "bool",
+			"defaultValue": false,
+			"description": "Specifies a minimum value for an <input> element.",
+			"html5": true
+		},
+		"pattern": {
+			"type": "string",
+			"defaultValue": null,
+			"description": "Specifies a regular expression that an <input> element's value is checked against."
+		},
+		"placeholder": {
+			"type": "string",
+			"defaultValue": null,
+			"description": "Specifies a short hint that describes the expected value of an <input> element."
+		},
+		"required": {
+			"type": "bool",
+			"defaultValue": false,
+			"description": "Specifies that an input field must be filled out before submitting the form."
+		},
+		"step": {
+			"type": "number",
+			"defaultValue": null,
+			"description": "Specifies the legal number intervals for an input field."
 		}
 	}
 }

@@ -1,6 +1,6 @@
 {
 	"events": {
-	
+		"schemaRef": "eventattributes"
 	},
 	"properties": {
 		"headingLevel": {
@@ -11,6 +11,7 @@
 		"innerHTML": {
 			"type": "string",
 			"defaultValue": ""
-		}
+		},
+		"schemaRef": "globalAttributes"
 	}
 }

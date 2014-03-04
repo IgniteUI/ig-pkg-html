@@ -13,6 +13,13 @@ define(function (require, exports, module) {
 		_getContentEditable: function (forCode) {
 			return (forCode ? "" : " contenteditable=\"true\" spellcheck=\"false\"");
 		},
+		isContentEditable: function (type) {
+			if (type === "heading" || type === "paragraph" || type === "link" || type === "list" || type === "container" || type === "button" || type === "input") {
+				return true;
+			} else {
+				return false;
+			}
+		},
 		getMarkup: function (descriptor, forCode) {
 			switch (descriptor.type) {
 				case "heading":

@@ -12,6 +12,73 @@
 			"type": "string",
 			"defaultValue": "",
 			"description" : "The display text of the area."
+		},
+		"cols": {
+			"type": "number",
+			"defaultValue": 20,
+			"description" : "Specifies the visible width of a text area."
+		},
+		"rows": {
+			"type": "number",
+			"defaultValue": 2,
+			"description" : "Specifies the visible number of lines in a text area."
+		},
+		"disabled": {
+			"type": "bool",
+			"defaultValue": false,
+			"description" : "Specifies that a text area should be disabled."
+		},
+		"readonly": {
+			"type": "bool",
+			"defaultValue": false,
+			"description" : "Specifies that a text area should be read-only."
+		},
+		"name": {
+			"type": "string",
+			"defaultValue": null,
+			"description" : "Specifies a name for a text area."
+		},
+		"required": {
+			"type": "bool",
+			"defaultValue": false,
+			"description" : "Specifies that a text area is required/must be filled out.",
+			"html5": true
+		},
+		"autofocus": {
+			"type": "bool",
+			"defaultValue": false,
+			"description" : "Specifies that a text area should automatically get focus when the page loads.",
+			"html5": true
+		},
+		"form": {
+			"type": "string",
+			"defaultValue": null,
+			"description" : "Specifies one or more forms the text area belongs to.",
+			"html5": true
+		},
+		"placeholder": {
+			"type": "string",
+			"defaultValue": null,
+			"description" : "Specifies a short hint that describes the expected value of a text area.",
+			"html5": true
+		},
+		"wrap": {
+			"type": "string",
+			"defaultValue": "soft",
+			"description" : "Specifies how the text in a text area is to be wrapped when submitted in a form.",
+			"html5": true,
+			"valueOptions": [
+				{
+					"name": "soft",
+					"type": "string",
+					"description": "The text in the textarea is not wrapped when submitted in a form."
+				},
+				{
+					"name": "hard",
+					"type": "string",
+					"description": "The text in the textarea is wrapped (contains newlines) when submitted in a form. When "hard" is used, the cols attribute must be specified."
+				}
+			]
 		}
 	}
 }

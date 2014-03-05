@@ -2,16 +2,16 @@
 	"name": "html",
 	"toolboxTitle": "HTML",
 	"iconsPath": "icons",
-    "iconSpriteCssFile": "html-icons.css",
-    "iconSpriteCssPrefix": "html-icons", 
+	"iconSpriteCssFile": "html-icons.css",
+	"iconSpriteCssPrefix": "html-icons", 
   "scripts": [
   ],
   "stylesheets": [
-  	"html-package.css"
+	"html-package.css"
   ],
   "requiresInitialization": false,
   "configPath": "config",
-	"pluginsPath": "plugins",
+  "pluginsPath": "plugins",
   "defaultComponentPlugin": "_default-component",
 	"components": {
 		"container": {
@@ -23,7 +23,7 @@
 			"dragDropIcon": "container-dragdrop.png",
 			"category": "common",
 			"visual": true,
-			"framework": false			
+			"framework": false
 		},
 		"heading": {
 			"id": "heading",
@@ -35,11 +35,21 @@
 			"visual": true,
 			"framework": false
 		},
-		"paragraph": {
-			"id": "paragraph",
-			"toolboxTitle": "Paragraph",
+		"text": {
+			"id": "text",
+			"toolboxTitle": "Text",
 			"icon": "paragraph.png",
-			"tags": ["p"],
+			"tags": ["p", "span", "label", "blockquote", "pre", "legend"],
+			"dragDropIcon": "paragraph-dragdrop.png",
+			"category": "common",
+			"visual": true,
+			"framework": false
+		},
+		"textarea": {
+			"id": "textarea",
+			"toolboxTitle": "Text Area",
+			"icon": "paragraph.png",
+			"tags": ["textarea"],
 			"dragDropIcon": "paragraph-dragdrop.png",
 			"category": "common",
 			"visual": true,

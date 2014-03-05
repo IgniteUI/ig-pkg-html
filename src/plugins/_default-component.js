@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
-	var ComponentPlugin = require("ide-component-plugin");
-	var HtmlComponent = HtmlComponent || ComponentPlugin.extend({
+	var ComponentPlugin = require("ide-component-plugin"),
+		HtmlComponent = HtmlComponent || ComponentPlugin.extend({
 		init: function (options) {
 			this._super(options);
 			return this;
@@ -22,27 +22,27 @@ define(function (require, exports, module) {
 		},
 		getMarkup: function (descriptor, forCode) {
 			switch (descriptor.type) {
-				case "heading":
-					return this._getTextElementMarkup("h1", forCode, true, descriptor.id);
-				case "paragraph":
-					return this._getTextElementMarkup("p", forCode, false, descriptor.id);
-				case "link":
-					return this._getTextElementMarkup("a", forCode, true, descriptor.id);
-				case "list":
-					return "<ul" + this._getContentEditable(forCode) + " id=\"" + descriptor.id + "\"><li>Item 1</li><li>Item 2</li></ul>";
-				case "container":
-					if (forCode) {
-						return "<div id=\"" + descriptor.id + "\"></div>";
-					} else {
-						return "<div class=\"containerElement\"" + this._getContentEditable(false) + " id=\"" + descriptor.id + "\"></div>";
-					}
-				case "button":
-					return "<button" + this._getContentEditable(forCode) + " id=\"" + descriptor.id + "\">Button</button>";
-				case "input":
-					return "<input" + this._getContentEditable(forCode) + " id=\"" + descriptor.id + "\"/>";
-				default:
-					console.log("Unknown HTML element added: " + descriptor.type);
-					return "";
+			case "heading":
+				return this._getTextElementMarkup("h1", forCode, true, descriptor.id);
+			case "paragraph":
+				return this._getTextElementMarkup("p", forCode, false, descriptor.id);
+			case "link":
+				return this._getTextElementMarkup("a", forCode, true, descriptor.id);
+			case "list":
+				return "<ul" + this._getContentEditable(forCode) + " id=\"" + descriptor.id + "\"><li>Item 1</li><li>Item 2</li></ul>";
+			case "container":
+				if (forCode) {
+					return "<div id=\"" + descriptor.id + "\"></div>";
+				} else {
+					return "<div class=\"containerElement\"" + this._getContentEditable(false) + " id=\"" + descriptor.id + "\"></div>";
+				}
+			case "button":
+				return "<button" + this._getContentEditable(forCode) + " id=\"" + descriptor.id + "\">Button</button>";
+			case "input":
+				return "<input" + this._getContentEditable(forCode) + " id=\"" + descriptor.id + "\"/>";
+			default:
+				console.log("Unknown HTML element added: " + descriptor.type);
+				return "";
 			}
 		},
 		_getIndentTabs: function (descriptor) {
@@ -63,18 +63,18 @@ define(function (require, exports, module) {
 				return false;
 			}
 			switch (descriptor.type) {
-				case "heading":
-				case "paragraph":
-				case "container":
-				case "button":
-				case "link":
-				case "list":
-					return true;
-				case "input":
-					return false;
-				default:
-					console.log("Unknown HTML element added.");
-					return false;
+			case "heading":
+			case "paragraph":
+			case "container":
+			case "button":
+			case "link":
+			case "list":
+				return true;
+			case "input":
+				return false;
+			default:
+				console.log("Unknown HTML element added.");
+				return false;
 			}
 		},
 		getPropValue: function (descriptor) {
@@ -108,69 +108,74 @@ define(function (require, exports, module) {
 			return $();
 		},
 		update: function (descriptor) {
+			var markers, markerPos, propValue;
+
 			// Update the element in the designer
 			descriptor.placeholder[0][descriptor.propName] = descriptor.propValue;
 
-			/*if (descriptor.propName.toLowerCase() === "innerhtml") {
-				this.updateInnerHTML();
-			} else {
-				if (true) {
-					// propStr += ide._tabStr(1);
-					propStr += descriptor.propName + "=\"" + descriptor.propValue + "\"";
-					pos.row = htmlMarker.range.start.row;
-					pos.column = propStr.length - 1;
-					ide.session.insert({ row: pos.row, column: 20 }, propStr);
-					ide.createAndAddMarker(pos.row, 0, pos.row + propStr.length - 1, propStr.length - 1);
-					// options[descriptor.propName].marker = omarker;
-
-					this.addAttrCode();
-				} else {
-					this.updateAttrCode();
-				}
-			}*/
-		},
-		getPropPosition: function (descriptor) {
-			var pos, attrs, attrPos, propValue;
+			// Update the element in the code view
 			propValue = this.getPropValue(descriptor);
-			if (propValue === undefined || propValue === null || propValue === "") {
+			if (propValue === undefined || propValue === null) {
 				return;
 			}
-			attrs = descriptor.component.htmlMarker.extraMarkers;
-			attrPos = attrs[descriptor.propName];
-			if (attrPos) { // attribute already exist
-				pos = this.updateAttrCode(descriptor);
+			if (descriptor.propName === "innerHTML") {
+				this.updateInnerHTML(descriptor);
+			}
+			markers = descriptor.comp.htmlMarker.extraMarkers;
+			markerPos = markers[descriptor.propName];
+			if (markerPos) { // attribute already exist
+				this.updateAttrCode(descriptor);
 			} else { // attribute needs to be added
-				pos = this.addAttrCode(descriptor);
+				this.addAttrCode(descriptor);
+			}
+		},
+		getPropPosition: function (descriptor) {
+			var pos, markers, markerPos;
+
+			markers = descriptor.component.htmlMarker.extraMarkers;
+			markerPos = markers[descriptor.propName];
+			if (markerPos) { // marker already exist
+				pos = markerPos;
+			} else { // attribute needs to be added
+				pos = this.getAttrPosition(descriptor);
 			}
 			return pos;
 		},
+		getAttrPosition: function (descriptor) {
+			var marker = this.addAttrValue(descriptor, "");
+			descriptor.comp = descriptor.component;
+			return { position: marker, selectionRange: marker };
+		},
 		addAttrCode: function (descriptor) {
-			var ide = this.settings.ide;
-			var htmlMarker = descriptor.component.htmlMarker;
-			var pos = htmlMarker;
-			var attrs = htmlMarker.extraMarkers;
-			var propValue = this.getPropValue(descriptor);
+			this.addAttrValue(descriptor, this.getPropValue(descriptor));
+		},
+		addAttrValue: function (descriptor, propValue) {
+			var ide = this.settings.ide,
+				htmlMarker = descriptor.comp.htmlMarker,
+				pos = htmlMarker,
+				markers = htmlMarker.extraMarkers,
+				attrStr, newRow, newCol, markerPos;
 
 			if (descriptor.propType === "bool" && propValue === false) {
-				return pos;
+				return;
 			}
-			var attrStr = (descriptor.propType === "bool" && propValue === true) ? " " + descriptor.propName : " " + descriptor.propName + "=\"" + propValue + "\"";
+			attrStr = (descriptor.propType === "bool" && propValue === true) ? " " + descriptor.propName : " " + descriptor.propName + "=\"" + propValue + "\"";
 
-			var attrPos = ide.editor.find({
+			markerPos = ide.editor.find({
 				needle: ">",
 				start: htmlMarker.range.start
 			});
-			if (!attrPos) { // unary, such as <input />
-				attrPos = ide.editor.find({
+			if (!markerPos) { // unary, such as <input />
+				markerPos = ide.editor.find({
 					needle: "/>",
 					start: htmlMarker.range.start
 				});
 			}
-			if (attrPos) {
-				var newRow = attrPos.start.row;
-				var newCol = attrPos.start.column;
+			if (markerPos) {
+				newRow = markerPos.start.row;
+				newCol = markerPos.start.column;
 				ide.session.insert({ row: newRow, column: newCol }, attrStr);
-				attrs[descriptor.propName] = pos = ide.createAndAddMarker(
+				pos = markers[descriptor.propName] = ide.createAndAddMarker(
 					newRow,
 					newCol + 1,
 					newRow,
@@ -180,32 +185,63 @@ define(function (require, exports, module) {
 			return pos;
 		},
 		updateAttrCode: function (descriptor) {
-			var ide = this.settings.ide;
-			var htmlMarker = descriptor.component.htmlMarker;
-			var attrs = htmlMarker.extraMarkers;
-			var currMarker = attrs[descriptor.propName];
-			var pos = currMarker;
-			var attrName = descriptor.propName;
-			var newValue = descriptor.propValue;
-			var currValue = "";
-			var propValue = this.getPropValue(descriptor);
-			var toRemoveBoolAttr = (descriptor.propType === "bool" && propValue === false);
-			var attrStr = toRemoveBoolAttr ? "" : "" + attrName + "=\"" + newValue + "\"";
+			var ide = this.settings.ide,
+				htmlMarker = descriptor.comp.htmlMarker,
+				markers = htmlMarker.extraMarkers,
+				currMarker = markers[descriptor.propName],
+				pos = currMarker,
+				attrName = descriptor.propName,
+				newValue = descriptor.propValue,
+				currValue = "",
+				propValue = this.getPropValue(descriptor),
+				toRemoveBoolAttr = (descriptor.propType === "bool" && propValue === false),
+				attrStr = toRemoveBoolAttr ? "" : "" + attrName + "=\"" + newValue + "\"",
+				startRow, startCol, endRow, endColumn;
 
 			if (currValue === newValue) {
 				return;
 			}
-			var startRow = currMarker.start.row;
-			var startCol = currMarker.start.column;
-			var endRow = currMarker.end.row;
-			var endColumn = currMarker.start.column + attrName.length + newValue.length + 3;
+			startRow = currMarker.start.row;
+			startCol = currMarker.start.column;
+			endRow = currMarker.end.row;
+			endColumn = currMarker.start.column + attrName.length + newValue.length + 3;
 			ide.session.replace(currMarker, attrStr);
-			//reattach the marker
+
+			//Reattach the marker
 			ide.session.removeMarker(currMarker.id);
 			if (!toRemoveBoolAttr) {
-				attrs[attrName] = pos = ide.createAndAddMarker(startRow, startCol, endRow, endColumn);
+				markers[attrName] = pos = ide.createAndAddMarker(startRow, startCol, endRow, endColumn);
 			}
-			return pos;
+		},
+		updateInnerHTML: function (descriptor) {
+			var ide = this.settings.ide,
+				htmlMarker = descriptor.comp.htmlMarker,
+				markers = htmlMarker.extraMarkers,
+				propValue = this.getPropValue(descriptor),
+				innerMarker = markers[descriptor.propName],
+				startRow, startCol, endRow, endCol, startPos;
+
+			if (!innerMarker) {
+				// If the innerHTML marker doesn't exist, we create it
+				startPos = ide.editor.find({
+					needle: ">",
+					start: htmlMarker.range.start
+				});
+				startRow = endRow = startPos.start.row;
+				startCol = startPos.start.column + 1;
+				endCol = ide.editor.find({
+					needle: "</",
+					start: htmlMarker.range.start
+				}).start.column;
+				innerMarker = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
+			} else {
+				startRow = endRow = innerMarker.start.row;
+				startCol = innerMarker.start.column;
+				endCol = startCol + propValue.length;
+			}
+			ide.session.replace(innerMarker, propValue);
+			ide.session.removeMarker(innerMarker.id);
+			markers[descriptor.propName] = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
 		}
 	});
 	return HtmlComponent;

@@ -14,7 +14,7 @@ define(function (require, exports, module) {
 			return (forCode ? "" : " contenteditable=\"true\" spellcheck=\"false\"");
 		},
 		isContentEditable: function (type) {
-			if (type === "heading" || type === "paragraph" || type === "link" || type === "list" || type === "container" || type === "button" || type === "input") {
+			if (type === "heading" || type === "text" || type === "textarea" || type === "link" || type === "list" || type === "container" || type === "button" || type === "input") {
 				return true;
 			} else {
 				return false;
@@ -24,8 +24,10 @@ define(function (require, exports, module) {
 			switch (descriptor.type) {
 			case "heading":
 				return this._getTextElementMarkup("h1", forCode, true, descriptor.id);
-			case "paragraph":
+			case "text":
 				return this._getTextElementMarkup("p", forCode, false, descriptor.id);
+			case "textarea":
+				return this._getTextElementMarkup("textarea", forCode, false, descriptor.id);
 			case "link":
 				return this._getTextElementMarkup("a", forCode, true, descriptor.id);
 			case "list":
@@ -64,13 +66,14 @@ define(function (require, exports, module) {
 			}
 			switch (descriptor.type) {
 			case "heading":
-			case "paragraph":
+			case "text":
 			case "container":
 			case "button":
 			case "link":
 			case "list":
 				return true;
 			case "input":
+			case "textarea":
 				return false;
 			default:
 				console.log("Unknown HTML element added.");

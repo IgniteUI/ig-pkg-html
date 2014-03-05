@@ -1,16 +1,53 @@
 {
+	"overview": null,
+	"name": "Heading",
+	"category": null,
+	"visual": true,
 	"events": {
 		"schemaRef": "eventattributes"
-	},
+	}
 	"properties": {
 		"headingLevel": {
 			"type": "string",
-			"valueOptions": "h1,h2,h3,h4,h5,h6",
-			"defaultValue": "h1"
+			"defaultValue": "h1",
+			"changeTag": true,
+			"valueOptions": [
+				{
+					"name": "h1",
+					"type": "string",
+					"description": "Initialize HTML H1."
+				},
+				{
+					"name": "h2",
+					"type": "string",
+					"description": "Initialize HTML H2."
+				},
+				{
+					"name": "h3",
+					"type": "string",
+					"description": "Initialize HTML H3."
+				},
+				{
+					"name": "h4",
+					"type": "string",
+					"description": "Initialize HTML H4."
+				},
+				{
+					"name": "h5",
+					"type": "string",
+					"description": "Initialize HTML H5."
+				},
+				{
+					"name": "h6",
+					"type": "string",
+					"description": "Initialize HTML H6."
+				}
+			]
 		},
 		"innerHTML": {
 			"type": "string",
-			"defaultValue": ""
+			"defaultValue": "",
+			"description" : "The display text."
 		},
 		"schemaRef": "globalAttributes"
 	}

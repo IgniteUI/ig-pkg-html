@@ -1,4 +1,8 @@
 {
+	"overview": null,
+	"name": "Button",
+	"category": null,
+	"visual": true,
 	"events": {
 		"schemaRef": "eventattributes"
 	},

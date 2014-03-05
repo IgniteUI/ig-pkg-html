@@ -1,6 +1,6 @@
 {
 	"overview": null,
-	"name": "Paragraph",
+	"name": "Text Container",
 	"category": null,
 	"visual": true,
 	"events": {
@@ -12,6 +12,43 @@
 			"type": "string",
 			"defaultValue": "",
 			"description" : "The display text."
+		},
+		"tagName": {
+			"type": "string",
+			"defaultValue": "p",
+			"changeTag": true,
+			"valueOptions": [
+				{
+					"name": "p",
+					"type": "string",
+					"description": "Initialize HTML Paragraph."
+				},
+				{
+					"name": "span",
+					"type": "string",
+					"description": "Initialize HTML SPAN."
+				},
+				{
+					"name": "label",
+					"type": "string",
+					"description": "Initialize HTML Label."
+				},
+				{
+					"name": "blockquote",
+					"type": "string",
+					"description": "Initialize HTML Blockquote."
+				},
+				{
+					"name": "pre",
+					"type": "string",
+					"description": "Initialize HTML Pre."
+				},
+				{
+					"name": "legend",
+					"type": "string",
+					"description": "Initialize HTML Legend."
+				}
+			]
 		}
 	}
 }

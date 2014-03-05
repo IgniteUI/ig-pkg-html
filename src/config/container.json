@@ -1,16 +1,68 @@
 {
+	"overview": null,
+	"name": "Container",
+	"category": null,
+	"visual": true,
 	"events": {
 		"schemaRef": "eventattributes"
 	},
 	"properties": {
 		"tagName": {
 			"type": "string",
-			"valueOptions": "div,section,nav,article,aside,header,footer,address,main",
-			"defaultValue": "div"
+			"defaultValue": "div",
+			"changeTag": true,
+			"valueOptions": [
+				{
+					"name": "div",
+					"type": "string",
+					"description": "Initialize HTML DIV."
+				},
+				{
+					"name": "section",
+					"type": "string",
+					"description": "Initialize HTML Section."
+				},
+				{
+					"name": "nav",
+					"type": "string",
+					"description": "Initialize HTML NAV."
+				},
+				{
+					"name": "article",
+					"type": "string",
+					"description": "Initialize HTML Article."
+				},
+				{
+					"name": "aside",
+					"type": "string",
+					"description": "Initialize HTML Aside."
+				},
+				{
+					"name": "header",
+					"type": "string",
+					"description": "Initialize HTML Header."
+				},
+				{
+					"name": "footer",
+					"type": "string",
+					"description": "Initialize HTML Footer."
+				},
+				{
+					"name": "address",
+					"type": "string",
+					"description": "Initialize HTML Address."
+				},
+				{
+					"name": "main",
+					"type": "string",
+					"description": "Initialize HTML H6."
+				}
+			]
 		},
 		"innerHTML": {
 			"type": "string",
-			"defaultValue": ""
+			"defaultValue": "",
+			"description" : "The display text."
 		},
 		"schemaRef": "globalAttributes"
 	}

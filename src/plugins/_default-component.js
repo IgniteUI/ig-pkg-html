@@ -81,7 +81,12 @@ define(function (require, exports, module) {
 			}
 		},
 		getPropValue: function (descriptor) {
-			return descriptor.placeholder[0][descriptor.propName];
+			var value = descriptor.placeholder[0].getAttribute(descriptor.propName),
+				isBool = (descriptor.propType === "bool" || descriptor.propType === "boolean");
+			if (isBool) {
+				value = (value === "true") ? true : false;
+			}
+			return value;
 		},
 		isDroppableChild: function (descriptor) {
 			if (typeof (descriptor) === "undefined" || descriptor === null) {
@@ -114,7 +119,7 @@ define(function (require, exports, module) {
 			var markers, markerPos, propValue;
 
 			// Update the element in the designer
-			descriptor.placeholder[0][descriptor.propName] = descriptor.propValue;
+			descriptor.placeholder[0].setAttribute(descriptor.propName, descriptor.propValue);
 
 			// Update the element in the code view
 			propValue = this.getPropValue(descriptor);
@@ -123,6 +128,7 @@ define(function (require, exports, module) {
 			}
 			if (descriptor.propName === "innerHTML") {
 				this.updateInnerHTML(descriptor);
+				return;
 			}
 			markers = descriptor.comp.htmlMarker.extraMarkers;
 			markerPos = markers[descriptor.propName];
@@ -157,12 +163,13 @@ define(function (require, exports, module) {
 				htmlMarker = descriptor.comp.htmlMarker,
 				pos = htmlMarker,
 				markers = htmlMarker.extraMarkers,
+				isBool = (descriptor.propType === "bool" || descriptor.propType === "boolean"),
 				attrStr, newRow, newCol, markerPos;
 
-			if (descriptor.propType === "bool" && propValue === false) {
+			if (isBool && propValue === false) {
 				return;
 			}
-			attrStr = (descriptor.propType === "bool" && propValue === true) ? " " + descriptor.propName : " " + descriptor.propName + "=\"" + propValue + "\"";
+			attrStr = (isBool && propValue === true) ? " " + descriptor.propName : " " + descriptor.propName + "=\"" + propValue + "\"";
 
 			markerPos = ide.editor.find({
 				needle: ">",
@@ -197,7 +204,8 @@ define(function (require, exports, module) {
 				newValue = descriptor.propValue,
 				currValue = "",
 				propValue = this.getPropValue(descriptor),
-				toRemoveBoolAttr = (descriptor.propType === "bool" && propValue === false),
+				isBool = (descriptor.propType === "bool" || descriptor.propType === "boolean"),
+				toRemoveBoolAttr = (isBool && propValue === false),
 				attrStr = toRemoveBoolAttr ? "" : "" + attrName + "=\"" + newValue + "\"",
 				startRow, startCol, endRow, endColumn;
 

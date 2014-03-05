@@ -202,16 +202,12 @@ define(function (require, exports, module) {
 				pos = currMarker,
 				attrName = descriptor.propName,
 				newValue = descriptor.propValue,
-				currValue = "",
 				propValue = this.getPropValue(descriptor),
 				isBool = (descriptor.propType === "bool" || descriptor.propType === "boolean"),
 				toRemoveBoolAttr = (isBool && propValue === false),
 				attrStr = toRemoveBoolAttr ? "" : "" + attrName + "=\"" + newValue + "\"",
 				startRow, startCol, endRow, endColumn;
 
-			if (currValue === newValue) {
-				return;
-			}
 			startRow = currMarker.start.row;
 			startCol = currMarker.start.column;
 			endRow = currMarker.end.row;
@@ -248,10 +244,10 @@ define(function (require, exports, module) {
 			} else {
 				startRow = endRow = innerMarker.start.row;
 				startCol = innerMarker.start.column;
-				endCol = startCol + propValue.length;
 			}
 			ide.session.replace(innerMarker, propValue);
 			ide.session.removeMarker(innerMarker.id);
+			endCol = startCol + propValue.length;
 			markers[descriptor.propName] = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
 		}
 	});

@@ -527,11 +527,6 @@
 					"name": "_top",
 					"type": "string",
 					"description": "Loads the response in the full body of the window."
-				},
-				{
-					"name": "framename",
-					"type": "string",
-					"description": "Loads the response in a named iframe."
 				}
 			]
 		},

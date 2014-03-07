@@ -1,17 +1,5 @@
 {
 	"events": {
-		"onchange": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires the moment when the value of the element is changed."
-		},
 		"oncontextmenu": {
 			"cancellable": true,
 			"args": [
@@ -36,42 +24,6 @@
 				}
 			],
 			"description": "Fires after some text has been selected in an element."
-		},
-		"onkeydown": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when a user is pressing a key."
-		},
-		"onkeypress": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Fires when a user presses a key."
-				}
-			],
-			"description": "Fires when a user is pressing a key."
-		},
-		"onkeyup": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when a user releases a key."
 		},
 		"onclick": {
 			"cancellable": true,
@@ -168,19 +120,6 @@
 				}
 			],
 			"description": "Script to be run when the mouse wheel is being rotated.",
-			"html5": true
-		},
-		"onscroll": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when an element's scrollbar is being scrolled.",
 			"html5": true
 		}
 	},

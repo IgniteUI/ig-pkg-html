@@ -16,19 +16,6 @@
 			],
 			"description": "Fires the moment that the element loses focus."
 		},
-		"oncontextmenu": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object"
-				}
-			],
-			"description": "Script to be run when a context menu is triggered.",
-			"html5": true
-		},
 		"onfocus": {
 			"cancellable": true,
 			"args": [
@@ -41,45 +28,6 @@
 			],
 			"description": "Fires the moment when the element gets focus."
 		},
-		"onformchange": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when a form changes.",
-			"html5": true
-		},
-		"onforminput": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when a form gets user input.",
-			"html5": true
-		},
-		"oninvalid": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when an element is invalid.",
-			"html5": true
-		},
 		"onselect": {
 			"cancellable": true,
 			"args": [
@@ -91,18 +39,6 @@
 				}
 			],
 			"description": "Fires after some text has been selected in an element."
-		},
-		"onsubmit": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when a form is submitted."
 		},
 		"onkeydown": {
 			"cancellable": true,
@@ -223,19 +159,6 @@
 				}
 			],
 			"description": "Fires when a mouse button is released over an element."
-		},
-		"onmousewheel": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when the mouse wheel is being rotated.",
-			"html5": true
 		}
 	},
 	"properties": {

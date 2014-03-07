@@ -262,15 +262,20 @@ define(function (require, exports, module) {
 				markers = htmlMarker.extraMarkers,
 				propValue = this.getPropValue(descriptor),
 				nodeName = descriptor.placeholder[0].nodeName.toLowerCase(),
-				startRow = htmlMarker.startRow,
-				startCol = htmlMarker.startCol,
-				endRow = htmlMarker.endRow,
-				endCol = htmlMarker.endCol + (propValue.length - nodeName.length)*2,
+				startRow = htmlMarker.range.start.row,
+				startCol = htmlMarker.range.start.col,
+				endRow = htmlMarker.range.end.row,
+				endCol = htmlMarker.range.end.col + (propValue.length - nodeName.length) * 2,
+				domElem = window.frames[0].$(descriptor.placeholder),
+				attrs = {},
 				newNodeHTML;
 			
 			// Update Node in DOM
-			window.frames[0].$(descriptor.placeholder).replaceWith(function () {
-				return $("<" + propValue + " />").append($(this).contents());
+			$.each(domElem[0].attributes, function (index, currAttr) {
+				attrs[currAttr.nodeName] = currAttr.nodeValue;
+			});
+			domElem.replaceWith(function () {
+				return $("<" + propValue + " />", attrs).append($(this).contents());
 			});
 			// Update Node HTML in Code Editor
 			newNodeHTML = ide.session.getTextRange(htmlMarker.range);
@@ -278,7 +283,7 @@ define(function (require, exports, module) {
 			newNodeHTML = newNodeHTML.replace("</" + nodeName, "</" + propValue);
 			ide.session.replace(htmlMarker.range, newNodeHTML);
 			ide.session.removeMarker(htmlMarker.id);
-			descriptor.comp.htmlMarker = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
+			descriptor.comp.htmlMarker.range = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
 			descriptor.comp.htmlMarker.extraMarkers = markers;
 		}
 	});

@@ -4,30 +4,6 @@
 	"category": null,
 	"visual": true,
 	"events": {
-		"onblur": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires the moment that the element loses focus."
-		},
-		"onchange": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires the moment when the value of the element is changed."
-		},
 		"oncontextmenu": {
 			"cancellable": true,
 			"args": [
@@ -40,130 +16,6 @@
 			],
 			"description": "Script to be run when a context menu is triggered.",
 			"html5": true
-		},
-		"onfocus": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires the moment when the element gets focus."
-		},
-		"onformchange": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when a form changes.",
-			"html5": true
-		},
-		"onforminput": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when a form gets user input.",
-			"html5": true
-		},
-		"oninput": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when an element gets user input.",
-			"html5": true
-		},
-		"oninvalid": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when an element is invalid.",
-			"html5": true
-		},
-		"onselect": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires after some text has been selected in an element."
-		},
-		"onsubmit": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when a form is submitted."
-		},
-		"onkeydown": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when a user is pressing a key."
-		},
-		"onkeypress": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Fires when a user presses a key."
-				}
-			],
-			"description": "Fires when a user is pressing a key."
-		},
-		"onkeyup": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when a user releases a key."
 		},
 		"onclick": {
 			"cancellable": true,
@@ -188,97 +40,6 @@
 				}
 			],
 			"description": "Fires on a mouse double-click on the element."
-		},
-		"ondrag": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when an element is dragged.",
-			"html5": true
-		},
-		"ondragend": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run at the end of a drag operation.",
-			"html5": true
-		},
-		"ondragenter": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when an element has been dragged to a valid drop target.",
-			"html5": true
-		},
-		"ondragleave": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when an element leaves a valid drop target.",
-			"html5": true
-		},
-		"ondragover": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when an element is being dragged over a valid drop target.",
-			"html5": true
-		},
-		"ondragstart": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run at the start of a drag operation.",
-			"html5": true
-		},
-		"ondrop": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when dragged element is being dropped.",
-			"html5": true
 		},
 		"onmousedown": {
 			"cancellable": true,
@@ -339,32 +100,6 @@
 				}
 			],
 			"description": "Fires when a mouse button is released over an element."
-		},
-		"onmousewheel": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when the mouse wheel is being rotated.",
-			"html5": true
-		},
-		"onscroll": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when an element's scrollbar is being scrolled.",
-			"html5": true
 		}
 	},
 	"properties": {
@@ -416,8 +151,8 @@
 			"description": "Specifies a shortcut key to activate/focus an element"
 		},
 		"contenteditable": {
-			"type": "string",
-			"defaultValue": null,
+			"type": "bool",
+			"defaultValue": false,
 			"description": "Specifies whether the content of an element is editable or not.",
 			"html5": true
 		},
@@ -427,28 +162,10 @@
 			"description": "Specifies a context menu for an element. The context menu appears when a user right-clicks on the element.",
 			"html5": true
 		},
-		"data-*": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Used to store custom data private to the page or application.",
-			"html5": true
-		},
 		"dir": {
 			"type": "string",
 			"defaultValue": null,
 			"description": "Specifies the text direction for the content in an element."
-		},
-		"draggable": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies whether an element is draggable or not.",
-			"html5": true
-		},
-		"dropzone": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies whether the dragged data is copied, moved, or linked, when dropped.",
-			"html5": true
 		},
 		"lang": {
 			"type": "string",
@@ -467,7 +184,7 @@
 			"description": "Specifies an inline CSS style for an element."
 		},
 		"tabindex": {
-			"type": "string",
+			"type": "number",
 			"defaultValue": null,
 			"description": "Specifies the tabbing order of an element."
 		},

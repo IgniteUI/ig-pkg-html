@@ -103,7 +103,7 @@
 		}
 	},
 	"properties": {
-		"headingLevel": {
+		"tagName": {
 			"type": "string",
 			"defaultValue": "h1",
 			"changeTag": true,

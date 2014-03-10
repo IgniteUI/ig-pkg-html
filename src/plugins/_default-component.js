@@ -81,16 +81,21 @@ define(function (require, exports, module) {
 			}
 		},
 		getPropValue: function (descriptor) {
-			var value = descriptor.placeholder[0].getAttribute(descriptor.propName),
-				isBool = (descriptor.propType === "bool" || descriptor.propType === "boolean"),
-				isEnum = descriptor.valueOptions !== undefined && descriptor.valueOptions.length > 1;
-			if (isBool) {
-				return (value === "true") ? true : false;
+			var isBool = (descriptor.propType === "bool" || descriptor.propType === "boolean"),
+				value;
+			switch (descriptor.propName) {
+			case "innerHTML":
+				return descriptor.placeholder.html();
+			case "tagName":
+				return descriptor.placeholder[0].tagName.toLowerCase();
+			default:
+				value = descriptor.placeholder.attr(descriptor.propName);
+				if (isBool) {
+					return (value === "true") ? true : false;
+				} else {
+					return value !== null && value !== undefined ? value : "";
+				}
 			}
-			if (isEnum && value === null) {
-				return descriptor.defaultValue;
-			}
-			return value;
 		},
 		isDroppableChild: function (descriptor) {
 			if (typeof (descriptor) === "undefined" || descriptor === null) {
@@ -120,51 +125,115 @@ define(function (require, exports, module) {
 			return $();
 		},
 		update: function (descriptor) {
-			var markers, markerPos, propValue;
-
-			// Update the element in the designer
-			descriptor.placeholder[0].setAttribute(descriptor.propName, descriptor.propValue);
-			// Update the element in the code view
-			propValue = this.getPropValue(descriptor);
-			if (propValue === undefined || propValue === null) {
+			if (descriptor.propValue === descriptor.defaultValue) {
 				return;
 			}
-			if (descriptor.propName === "innerHTML") {
+			switch (descriptor.propName) {
+			case "innerHTML":
 				this.updateInnerHTML(descriptor);
 				return;
-			}
-			if (descriptor.propName === "tagName" || descriptor.propName === "headingLevel") {
+			case "tagName":
 				this.updateTag(descriptor);
 				return;
+			default:
+				this.updateAttr(descriptor);
+				return;
 			}
+		},
+		updateAttr: function (descriptor) {
+			var markers, markerPos;
+
+			// Update DOM
+			descriptor.placeholder.attr(descriptor.propName, descriptor.propValue);
+			// Update Code Editor
 			markers = descriptor.comp.htmlMarker.extraMarkers;
 			markerPos = markers[descriptor.propName];
 			if (markerPos) { // attribute already exist
 				this.updateAttrCode(descriptor);
 			} else { // attribute needs to be added
-				this.addAttrCode(descriptor);
+				this.addAttrValue(descriptor, descriptor.propValue);
 			}
 		},
+		updateInnerHTML: function (descriptor) {
+			var ide = this.settings.ide,
+				htmlMarker = descriptor.comp.htmlMarker,
+				markers = htmlMarker.extraMarkers,
+				propValue = descriptor.propValue,
+				innerMarker = markers[descriptor.propName],
+				startRow, startCol, endRow, endCol, startPos;
+
+			// Update DOM
+			descriptor.placeholder.html(propValue);
+
+			// Update Code Editor
+			if (!innerMarker) {
+				// If the innerHTML marker doesn't exist, we create it
+				startPos = ide.editor.find({
+					needle: ">",
+					start: htmlMarker.range.start
+				});
+				startRow = endRow = startPos.start.row;
+				startCol = startPos.start.column + 1;
+				endCol = ide.editor.find({
+					needle: "</",
+					start: htmlMarker.range.start
+				}).start.column;
+				innerMarker = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
+			} else {
+				startRow = endRow = innerMarker.start.row;
+				startCol = innerMarker.start.column;
+			}
+			ide.session.replace(innerMarker, propValue);
+			ide.session.removeMarker(innerMarker.id);
+			endCol = startCol + propValue.length;
+			markers[descriptor.propName] = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
+		},
+		updateTag: function (descriptor) {
+			var ide = this.settings.ide,
+				htmlMarker = descriptor.comp.htmlMarker,
+				markers = htmlMarker.extraMarkers,
+				propValue = descriptor.propValue,
+				nodeName = descriptor.placeholder[0].nodeName.toLowerCase(),
+				startRow = htmlMarker.range.start.row,
+				startCol = htmlMarker.range.start.col,
+				endRow = htmlMarker.range.end.row,
+				endCol = htmlMarker.range.end.col + (propValue.length - nodeName.length) * 2,
+				domElem = window.frames[0].$(descriptor.placeholder),
+				attrs = {},
+				newNodeHTML,
+				newElem;
+			
+			// Update DOM
+			$.each(domElem[0].attributes, function (index, currAttr) {
+				attrs[currAttr.nodeName] = currAttr.nodeValue;
+			});
+			domElem.replaceWith(function () {
+				newElem = $("<" + propValue + " />", attrs).append($(this).contents());
+				return newElem;
+			});
+			this.settings.ide.selectedComponent = newElem;
+			// Update Code Editor
+			newNodeHTML = ide.session.getTextRange(htmlMarker.range);
+			newNodeHTML = newNodeHTML.replace("<" + nodeName, "<" + propValue);
+			newNodeHTML = newNodeHTML.replace("</" + nodeName, "</" + propValue);
+			ide.session.replace(htmlMarker.range, newNodeHTML);
+			ide.session.removeMarker(htmlMarker.id);
+			descriptor.comp.htmlMarker.range = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
+			descriptor.comp.htmlMarker.extraMarkers = markers;
+		},
 		getPropPosition: function (descriptor) {
-			var pos, markers, markerPos;
+			var pos, marker, markers, markerPos;
 
 			markers = descriptor.component.htmlMarker.extraMarkers;
 			markerPos = markers[descriptor.propName];
 			if (markerPos) { // marker already exist
 				pos = markerPos;
 			} else { // attribute needs to be added
-				pos = this.getAttrPosition(descriptor);
+				marker = this.addAttrValue(descriptor, "");
+				descriptor.comp = descriptor.component;
+				pos = { position: marker, selectionRange: marker };
 			}
 			return pos;
-		},
-		getAttrPosition: function (descriptor) {
-			var marker = this.addAttrValue(descriptor, "");
-
-			descriptor.comp = descriptor.component;
-			return { position: marker, selectionRange: marker };
-		},
-		addAttrCode: function (descriptor) {
-			this.addAttrValue(descriptor, this.getPropValue(descriptor));
 		},
 		addAttrValue: function (descriptor, propValue) {
 			var ide = this.settings.ide,
@@ -225,66 +294,6 @@ define(function (require, exports, module) {
 			if (!toRemoveBoolAttr) {
 				markers[attrName] = pos = ide.createAndAddMarker(startRow, startCol, endRow, endColumn);
 			}
-		},
-		updateInnerHTML: function (descriptor) {
-			var ide = this.settings.ide,
-				htmlMarker = descriptor.comp.htmlMarker,
-				markers = htmlMarker.extraMarkers,
-				propValue = this.getPropValue(descriptor),
-				innerMarker = markers[descriptor.propName],
-				startRow, startCol, endRow, endCol, startPos;
-
-			if (!innerMarker) {
-				// If the innerHTML marker doesn't exist, we create it
-				startPos = ide.editor.find({
-					needle: ">",
-					start: htmlMarker.range.start
-				});
-				startRow = endRow = startPos.start.row;
-				startCol = startPos.start.column + 1;
-				endCol = ide.editor.find({
-					needle: "</",
-					start: htmlMarker.range.start
-				}).start.column;
-				innerMarker = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
-			} else {
-				startRow = endRow = innerMarker.start.row;
-				startCol = innerMarker.start.column;
-			}
-			ide.session.replace(innerMarker, propValue);
-			ide.session.removeMarker(innerMarker.id);
-			endCol = startCol + propValue.length;
-			markers[descriptor.propName] = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
-		},
-		updateTag: function (descriptor) {
-			var ide = this.settings.ide,
-				htmlMarker = descriptor.comp.htmlMarker,
-				markers = htmlMarker.extraMarkers,
-				propValue = this.getPropValue(descriptor),
-				nodeName = descriptor.placeholder[0].nodeName.toLowerCase(),
-				startRow = htmlMarker.range.start.row,
-				startCol = htmlMarker.range.start.col,
-				endRow = htmlMarker.range.end.row,
-				endCol = htmlMarker.range.end.col + (propValue.length - nodeName.length) * 2,
-				domElem = window.frames[0].$(descriptor.placeholder),
-				attrs = {},
-				newNodeHTML;
-			
-			// Update Node in DOM
-			$.each(domElem[0].attributes, function (index, currAttr) {
-				attrs[currAttr.nodeName] = currAttr.nodeValue;
-			});
-			domElem.replaceWith(function () {
-				return $("<" + propValue + " />", attrs).append($(this).contents());
-			});
-			// Update Node HTML in Code Editor
-			newNodeHTML = ide.session.getTextRange(htmlMarker.range);
-			newNodeHTML = newNodeHTML.replace("<" + nodeName, "<" + propValue);
-			newNodeHTML = newNodeHTML.replace("</" + nodeName, "</" + propValue);
-			ide.session.replace(htmlMarker.range, newNodeHTML);
-			ide.session.removeMarker(htmlMarker.id);
-			descriptor.comp.htmlMarker.range = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
-			descriptor.comp.htmlMarker.extraMarkers = markers;
 		}
 	});
 	return HtmlComponent;

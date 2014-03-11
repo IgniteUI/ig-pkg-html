@@ -233,7 +233,7 @@ define(function (require, exports, module) {
 				if (ide._findEventMarkerComponent()) {
 					codeRange = this.getLastEventMarker(ide._findEventMarkerComponent().eventMarkers);
 				} else if (ide._findCodeMarkerComponent()) {
-					codeRange = ide._findCodeMarkerComponent().codeMarker;
+					codeRange = ide._findCodeMarkerComponent().codeMarker.range;
 				} else {
 					codeRange = ide.editor.find("$(document).ready(function () {\n");
 				}

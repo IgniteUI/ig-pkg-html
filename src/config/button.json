@@ -4,7 +4,7 @@
 	"category": null,
 	"visual": true,
 	"events": {
-		"onblur": {
+		"blur": {
 			"cancellable": true,
 			"args": [
 				{
@@ -16,7 +16,7 @@
 			],
 			"description": "Fires the moment that the element loses focus."
 		},
-		"onfocus": {
+		"focus": {
 			"cancellable": true,
 			"args": [
 				{
@@ -28,7 +28,7 @@
 			],
 			"description": "Fires the moment when the element gets focus."
 		},
-		"onselect": {
+		"select": {
 			"cancellable": true,
 			"args": [
 				{
@@ -40,7 +40,7 @@
 			],
 			"description": "Fires after some text has been selected in an element."
 		},
-		"onkeydown": {
+		"keydown": {
 			"cancellable": true,
 			"args": [
 				{
@@ -52,7 +52,7 @@
 			],
 			"description": "Fires when a user is pressing a key."
 		},
-		"onkeypress": {
+		"keypress": {
 			"cancellable": true,
 			"args": [
 				{
@@ -64,7 +64,7 @@
 			],
 			"description": "Fires when a user is pressing a key."
 		},
-		"onkeyup": {
+		"keyup": {
 			"cancellable": true,
 			"args": [
 				{
@@ -76,7 +76,7 @@
 			],
 			"description": "Fires when a user releases a key."
 		},
-		"onclick": {
+		"click": {
 			"cancellable": true,
 			"args": [
 				{
@@ -88,7 +88,7 @@
 			],
 			"description": "Fires on a mouse click on the element."
 		},
-		"ondblclick": {
+		"dblclick": {
 			"cancellable": true,
 			"args": [
 				{
@@ -100,7 +100,7 @@
 			],
 			"description": "Fires on a mouse double-click on the element."
 		},
-		"onmousedown": {
+		"mousedown": {
 			"cancellable": true,
 			"args": [
 				{
@@ -112,7 +112,7 @@
 			],
 			"description": "Fires when a mouse button is pressed down on an element."
 		},
-		"onmousemove": {
+		"mousemove": {
 			"cancellable": true,
 			"args": [
 				{
@@ -124,7 +124,7 @@
 			],
 			"description": "Fires when the mouse pointer moves over an element."
 		},
-		"onmouseout": {
+		"mouseout": {
 			"cancellable": true,
 			"args": [
 				{
@@ -136,7 +136,7 @@
 			],
 			"description": "Fires when the mouse pointer moves out of an element."
 		},
-		"onmouseover": {
+		"mouseover": {
 			"cancellable": true,
 			"args": [
 				{
@@ -148,7 +148,7 @@
 			],
 			"description": "Fires when the mouse pointer moves over an element."
 		},
-		"onmouseup": {
+		"mouseup": {
 			"cancellable": true,
 			"args": [
 				{

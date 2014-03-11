@@ -4,7 +4,7 @@
 	"category": null,
 	"visual": true,
 	"events": {
-		"oncontextmenu": {
+		"contextmenu": {
 			"cancellable": true,
 			"args": [
 				{
@@ -17,7 +17,7 @@
 			"description": "Script to be run when a context menu is triggered.",
 			"html5": true
 		},
-		"onclick": {
+		"click": {
 			"cancellable": true,
 			"args": [
 				{
@@ -29,7 +29,7 @@
 			],
 			"description": "Fires on a mouse click on the element."
 		},
-		"ondblclick": {
+		"dblclick": {
 			"cancellable": true,
 			"args": [
 				{
@@ -41,7 +41,7 @@
 			],
 			"description": "Fires on a mouse double-click on the element."
 		},
-		"onmousedown": {
+		"mousedown": {
 			"cancellable": true,
 			"args": [
 				{
@@ -53,7 +53,7 @@
 			],
 			"description": "Fires when a mouse button is pressed down on an element."
 		},
-		"onmousemove": {
+		"mousemove": {
 			"cancellable": true,
 			"args": [
 				{
@@ -65,7 +65,7 @@
 			],
 			"description": "Fires when the mouse pointer moves over an element."
 		},
-		"onmouseout": {
+		"mouseout": {
 			"cancellable": true,
 			"args": [
 				{
@@ -77,7 +77,7 @@
 			],
 			"description": "Fires when the mouse pointer moves out of an element."
 		},
-		"onmouseover": {
+		"mouseover": {
 			"cancellable": true,
 			"args": [
 				{
@@ -89,7 +89,7 @@
 			],
 			"description": "Fires when the mouse pointer moves over an element."
 		},
-		"onmouseup": {
+		"mouseup": {
 			"cancellable": true,
 			"args": [
 				{

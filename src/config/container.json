@@ -4,7 +4,7 @@
 	"category": null,
 	"visual": true,
 	"events": {
-		"oncontextmenu": {
+		"contextmenu": {
 			"cancellable": true,
 			"args": [
 				{
@@ -17,7 +17,7 @@
 			"description": "Script to be run when a context menu is triggered.",
 			"html5": true
 		},
-		"onselect": {
+		"select": {
 			"cancellable": true,
 			"args": [
 				{
@@ -29,7 +29,7 @@
 			],
 			"description": "Fires after some text has been selected in an element."
 		},
-		"onclick": {
+		"click": {
 			"cancellable": true,
 			"args": [
 				{
@@ -41,7 +41,7 @@
 			],
 			"description": "Fires on a mouse click on the element."
 		},
-		"ondblclick": {
+		"dblclick": {
 			"cancellable": true,
 			"args": [
 				{
@@ -53,7 +53,7 @@
 			],
 			"description": "Fires on a mouse double-click on the element."
 		},
-		"ondrag": {
+		"drag": {
 			"cancellable": true,
 			"args": [
 				{
@@ -66,7 +66,7 @@
 			"description": "Script to be run when an element is dragged.",
 			"html5": true
 		},
-		"ondragend": {
+		"dragend": {
 			"cancellable": true,
 			"args": [
 				{
@@ -79,7 +79,7 @@
 			"description": "Script to be run at the end of a drag operation.",
 			"html5": true
 		},
-		"ondragenter": {
+		"dragenter": {
 			"cancellable": true,
 			"args": [
 				{
@@ -92,7 +92,7 @@
 			"description": "Script to be run when an element has been dragged to a valid drop target.",
 			"html5": true
 		},
-		"ondragleave": {
+		"dragleave": {
 			"cancellable": true,
 			"args": [
 				{
@@ -105,7 +105,7 @@
 			"description": "Script to be run when an element leaves a valid drop target.",
 			"html5": true
 		},
-		"ondragover": {
+		"dragover": {
 			"cancellable": true,
 			"args": [
 				{
@@ -118,7 +118,7 @@
 			"description": "Script to be run when an element is being dragged over a valid drop target.",
 			"html5": true
 		},
-		"ondragstart": {
+		"dragstart": {
 			"cancellable": true,
 			"args": [
 				{
@@ -131,7 +131,7 @@
 			"description": "Script to be run at the start of a drag operation.",
 			"html5": true
 		},
-		"ondrop": {
+		"drop": {
 			"cancellable": true,
 			"args": [
 				{
@@ -144,7 +144,7 @@
 			"description": "Script to be run when dragged element is being dropped.",
 			"html5": true
 		},
-		"onmousedown": {
+		"mousedown": {
 			"cancellable": true,
 			"args": [
 				{
@@ -156,7 +156,7 @@
 			],
 			"description": "Fires when a mouse button is pressed down on an element."
 		},
-		"onmousemove": {
+		"mousemove": {
 			"cancellable": true,
 			"args": [
 				{
@@ -168,7 +168,7 @@
 			],
 			"description": "Fires when the mouse pointer moves over an element."
 		},
-		"onmouseout": {
+		"mouseout": {
 			"cancellable": true,
 			"args": [
 				{
@@ -180,7 +180,7 @@
 			],
 			"description": "Fires when the mouse pointer moves out of an element."
 		},
-		"onmouseover": {
+		"mouseover": {
 			"cancellable": true,
 			"args": [
 				{
@@ -192,7 +192,7 @@
 			],
 			"description": "Fires when the mouse pointer moves over an element."
 		},
-		"onmouseup": {
+		"mouseup": {
 			"cancellable": true,
 			"args": [
 				{
@@ -204,7 +204,7 @@
 			],
 			"description": "Fires when a mouse button is released over an element."
 		},
-		"onmousewheel": {
+		"mousewheel": {
 			"cancellable": true,
 			"args": [
 				{
@@ -217,7 +217,7 @@
 			"description": "Script to be run when the mouse wheel is being rotated.",
 			"html5": true
 		},
-		"onscroll": {
+		"scroll": {
 			"cancellable": true,
 			"args": [
 				{

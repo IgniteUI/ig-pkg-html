@@ -228,7 +228,7 @@ define(function (require, exports, module) {
 				evtName = descriptor.propName,
 				eventString, handlerMarker, funcMarker, codeRange, offset;
 
-			evtName = evtName.toLowerCase().substring(2); // Remove "on" from event name
+			evtName = evtName.toLowerCase();
 			if (!component.eventMarkers || !component.eventMarkers[descriptor.propName]) {
 				if (ide._findEventMarkerComponent()) {
 					codeRange = this.getLastEventMarker(ide._findEventMarkerComponent().eventMarkers);

@@ -4,7 +4,7 @@
 	"category": null,
 	"visual": true,
 	"events": {
-		"onblur": {
+		"blur": {
 			"cancellable": true,
 			"args": [
 				{
@@ -16,7 +16,7 @@
 			],
 			"description": "Fires the moment that the element loses focus."
 		},
-		"onchange": {
+		"change": {
 			"cancellable": true,
 			"args": [
 				{
@@ -28,7 +28,7 @@
 			],
 			"description": "Fires the moment when the value of the element is changed."
 		},
-		"oncontextmenu": {
+		"contextmenu": {
 			"cancellable": true,
 			"args": [
 				{
@@ -41,7 +41,7 @@
 			"description": "Script to be run when a context menu is triggered.",
 			"html5": true
 		},
-		"onfocus": {
+		"focus": {
 			"cancellable": true,
 			"args": [
 				{
@@ -53,7 +53,7 @@
 			],
 			"description": "Fires the moment when the element gets focus."
 		},
-		"onformchange": {
+		"formchange": {
 			"cancellable": true,
 			"args": [
 				{
@@ -66,7 +66,7 @@
 			"description": "Script to be run when a form changes.",
 			"html5": true
 		},
-		"onforminput": {
+		"forminput": {
 			"cancellable": true,
 			"args": [
 				{
@@ -79,7 +79,7 @@
 			"description": "Script to be run when a form gets user input.",
 			"html5": true
 		},
-		"oninput": {
+		"input": {
 			"cancellable": true,
 			"args": [
 				{
@@ -92,7 +92,7 @@
 			"description": "Script to be run when an element gets user input.",
 			"html5": true
 		},
-		"oninvalid": {
+		"invalid": {
 			"cancellable": true,
 			"args": [
 				{
@@ -105,7 +105,7 @@
 			"description": "Script to be run when an element is invalid.",
 			"html5": true
 		},
-		"onselect": {
+		"select": {
 			"cancellable": true,
 			"args": [
 				{
@@ -117,7 +117,7 @@
 			],
 			"description": "Fires after some text has been selected in an element."
 		},
-		"onsubmit": {
+		"submit": {
 			"cancellable": true,
 			"args": [
 				{
@@ -129,7 +129,7 @@
 			],
 			"description": "Fires when a form is submitted."
 		},
-		"onkeydown": {
+		"keydown": {
 			"cancellable": true,
 			"args": [
 				{
@@ -141,7 +141,7 @@
 			],
 			"description": "Fires when a user is pressing a key."
 		},
-		"onkeypress": {
+		"keypress": {
 			"cancellable": true,
 			"args": [
 				{
@@ -153,7 +153,7 @@
 			],
 			"description": "Fires when a user is pressing a key."
 		},
-		"onkeyup": {
+		"keyup": {
 			"cancellable": true,
 			"args": [
 				{
@@ -165,7 +165,7 @@
 			],
 			"description": "Fires when a user releases a key."
 		},
-		"onclick": {
+		"click": {
 			"cancellable": true,
 			"args": [
 				{
@@ -177,7 +177,7 @@
 			],
 			"description": "Fires on a mouse click on the element."
 		},
-		"ondblclick": {
+		"dblclick": {
 			"cancellable": true,
 			"args": [
 				{
@@ -189,7 +189,7 @@
 			],
 			"description": "Fires on a mouse double-click on the element."
 		},
-		"onmousedown": {
+		"mousedown": {
 			"cancellable": true,
 			"args": [
 				{
@@ -201,7 +201,7 @@
 			],
 			"description": "Fires when a mouse button is pressed down on an element."
 		},
-		"onmousemove": {
+		"mousemove": {
 			"cancellable": true,
 			"args": [
 				{
@@ -213,7 +213,7 @@
 			],
 			"description": "Fires when the mouse pointer moves over an element."
 		},
-		"onmouseout": {
+		"mouseout": {
 			"cancellable": true,
 			"args": [
 				{
@@ -225,7 +225,7 @@
 			],
 			"description": "Fires when the mouse pointer moves out of an element."
 		},
-		"onmouseover": {
+		"mouseover": {
 			"cancellable": true,
 			"args": [
 				{
@@ -237,7 +237,7 @@
 			],
 			"description": "Fires when the mouse pointer moves over an element."
 		},
-		"onmouseup": {
+		"mouseup": {
 			"cancellable": true,
 			"args": [
 				{
@@ -249,7 +249,7 @@
 			],
 			"description": "Fires when a mouse button is released over an element."
 		},
-		"onmousewheel": {
+		"mousewheel": {
 			"cancellable": true,
 			"args": [
 				{
@@ -262,7 +262,7 @@
 			"description": "Script to be run when the mouse wheel is being rotated.",
 			"html5": true
 		},
-		"onscroll": {
+		"scroll": {
 			"cancellable": true,
 			"args": [
 				{

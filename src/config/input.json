@@ -238,7 +238,6 @@
 		}
 	},
 	"properties": {
-		"schemaRef": "globalAttributes",
 		"type": {
 			"type": "string",
 			"defaultValue": "text",

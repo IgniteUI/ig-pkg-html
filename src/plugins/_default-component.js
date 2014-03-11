@@ -36,7 +36,7 @@ define(function (require, exports, module) {
 				if (forCode) {
 					return "<div id=\"" + descriptor.id + "\"></div>";
 				} else {
-					return "<div class=\"containerElement\"" + this._getContentEditable(false) + " id=\"" + descriptor.id + "\"></div>";
+					return "<div class=\"containerElement\"" + this._getContentEditable(false) + " id=\"" + descriptor.id + "\" style=\"width: 400px; height: 100px;\"></div>";
 				}
 			case "button":
 				return "<button" + this._getContentEditable(forCode) + " id=\"" + descriptor.id + "\">Button</button>";
@@ -89,7 +89,7 @@ define(function (require, exports, module) {
 			case "tagName":
 				return descriptor.placeholder[0].tagName.toLowerCase();
 			default:
-				value = descriptor.placeholder.attr(descriptor.propName);
+				value = window.frames[0].$(descriptor.placeholder).attr(descriptor.propName);
 				if (isBool) {
 					return (value === "true") ? true : false;
 				} else {
@@ -125,7 +125,8 @@ define(function (require, exports, module) {
 			return $();
 		},
 		update: function (descriptor) {
-			if (descriptor.propValue === descriptor.defaultValue) {
+			if (descriptor.propType === "event") {
+				this.udpateEvent(descriptor);
 				return;
 			}
 			switch (descriptor.propName) {
@@ -144,7 +145,7 @@ define(function (require, exports, module) {
 			var markers, markerPos;
 
 			// Update DOM
-			descriptor.placeholder.attr(descriptor.propName, descriptor.propValue);
+			window.frames[0].$(descriptor.placeholder).attr(descriptor.propName, descriptor.propValue);
 			// Update Code Editor
 			markers = descriptor.comp.htmlMarker.extraMarkers;
 			markerPos = markers[descriptor.propName];
@@ -221,6 +222,39 @@ define(function (require, exports, module) {
 			descriptor.comp.htmlMarker.range = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
 			descriptor.comp.htmlMarker.extraMarkers = markers;
 		},
+		udpateEvent: function (descriptor) {
+			var ide = this.settings.ide,
+				component = ide.componentById(descriptor.id),
+				evtName = descriptor.propName,
+				eventString, handlerMarker, funcMarker, codeRange, offset;
+
+			evtName = evtName.toLowerCase().substring(2); // Remove "on" from event name
+			if (!component.eventMarkers || !component.eventMarkers[descriptor.propName]) {
+				if (ide._findEventMarkerComponent()) {
+					codeRange = this.getLastEventMarker(ide._findEventMarkerComponent().eventMarkers);
+				} else if (ide._findCodeMarkerComponent()) {
+					codeRange = ide._findCodeMarkerComponent().codeMarker;
+				} else {
+					codeRange = ide.editor.find("$(document).ready(function () {\n");
+				}
+				offset = codeRange.end.row;
+				
+				eventString = "\t\t\t\t$(\"#" + descriptor.id + "\").on(\"" + evtName + "\", function (event, args) {\n\t\t\t\t\t\n\t\t\t\t});\n";
+				ide.session.insert({ row: offset, column: 0 }, eventString);
+				handlerMarker = new ide.RangeClass(offset + 1, 4, offset + 4, 4);
+				funcMarker = new ide.RangeClass(offset + 1, 4, offset + 3, 4);
+				ide.addMarker(handlerMarker);
+				ide.addMarker(funcMarker);
+				if (!component.eventMarkers) {
+					component.eventMarkers = {};
+				}
+				component.eventMarkers[descriptor.propName] = {
+					"handlerMarker": handlerMarker,
+					"functionBodyMarker": funcMarker
+				};
+				ide.element.find(".code-button").click();
+			}
+		},
 		getPropPosition: function (descriptor) {
 			var pos, marker, markers, markerPos;
 
@@ -294,6 +328,19 @@ define(function (require, exports, module) {
 			if (!toRemoveBoolAttr) {
 				markers[attrName] = pos = ide.createAndAddMarker(startRow, startCol, endRow, endColumn);
 			}
+		},
+		getLastEventMarker: function (eventMarkers) {
+			var lastEventMarker = null;
+			for (event in eventMarkers) {
+				if (lastEventMarker === null) {
+					lastEventMarker = eventMarkers[event].handlerMarker;
+				} else {
+					if (eventMarkers[event].handlerMarker.end.row > lastEventMarker.end.row) {
+						lastEventMarker = eventMarkers[event].handlerMarker;
+					}
+				}
+			}
+			return lastEventMarker;
 		}
 	});
 	return HtmlComponent;

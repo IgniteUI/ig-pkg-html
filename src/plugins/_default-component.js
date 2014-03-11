@@ -212,7 +212,7 @@ define(function (require, exports, module) {
 				newElem = $("<" + propValue + " />", attrs).append($(this).contents());
 				return newElem;
 			});
-			this.settings.ide.selectedComponent = newElem;
+			this.settings.ide._selectComponent(newElem[0]);
 			// Update Code Editor
 			newNodeHTML = ide.session.getTextRange(htmlMarker.range);
 			newNodeHTML = newNodeHTML.replace("<" + nodeName, "<" + propValue);

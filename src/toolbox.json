@@ -20,7 +20,7 @@
 			"keywords": "div,section,nav,article,aside,header,footer,address,main",
 			"tags": ["div", "section", "nav", "article", "aside", "header", "footer", "address", "main", "span"],
 			"icon": "container.png",
-			"dragDropIcon": "container-dragdrop.png",
+			"dragDropIcon": "container.png",
 			"category": "common",
 			"visual": true,
 			"framework": false

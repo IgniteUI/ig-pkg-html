@@ -448,13 +448,13 @@
 			"description": "Specifies one or more forms the <input> element belongs to.",
 			"html5": true
 		},
-		"formaction": {
+		"action": {
 			"type": "string",
 			"defaultValue": null,
 			"description": "Specifies the URL of the file that will process the input control when the form is submitted (for type=\"submit\" and type=\"image\").",
 			"html5": true
 		},
-		"formenctype": {
+		"enctype": {
 			"type": "string",
 			"defaultValue": null,
 			"description": "Specifies how the form-data should be encoded when submitting it to the server (for type=\"submit\" and type=\"image\").",
@@ -477,7 +477,7 @@
 				}
 			]
 		},
-		"formmethod": {
+		"method": {
 			"type": "string",
 			"defaultValue": "get",
 			"description": "Defines the HTTP method for sending data to the action URL (for type=\"submit\" and type=\"image\").",
@@ -495,13 +495,13 @@
 				}
 			]
 		},
-		"formnovalidate": {
+		"novalidate": {
 			"type": "bool",
 			"defaultValue": false,
 			"description": "Specifies that the form-data should not be validated on submission. Only for type=\"submit\"",
 			"html5": true
 		},
-		"formtarget": {
+		"target": {
 			"type": "string",
 			"defaultValue": "_self",
 			"description": "Specifies where to display the response after submitting the form. Only for type=\"submit\"",

@@ -252,8 +252,8 @@ define(function (require, exports, module) {
 					"handlerMarker": handlerMarker,
 					"functionBodyMarker": funcMarker
 				};
-				ide.element.find(".code-button").click();
 			}
+			ide.element.find(".code-button").click();
 		},
 		getPropPosition: function (descriptor) {
 			var ide = this.settings.ide,

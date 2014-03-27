@@ -256,22 +256,33 @@ define(function (require, exports, module) {
 			}
 		},
 		getPropPosition: function (descriptor) {
-			var pos, marker, markers, markerPos;
+			var ide = this.settings.ide,
+				pos = { row: 0, column: 0 },
+				marker, markers, markerPos, selRange;
 
 			markers = descriptor.component.htmlMarker.extraMarkers;
 			markerPos = markers[descriptor.propName];
 			if (markerPos) { // marker already exist
-				pos = markerPos;
+				pos.row = markerPos.end.row;
+				pos.column = markerPos.end.column;
 			} else { // attribute needs to be added
 				marker = this.addAttrValue(descriptor, "");
-				descriptor.comp = descriptor.component;
-				pos = { position: marker, selectionRange: marker };
+				pos.row = marker.end.row;
+				pos.column = marker.end.column;
 			}
-			return pos;
+			if (descriptor.defaultValue === "") {
+				pos.column -= 1;
+			} else {
+				selRange = ide.editor.find({
+					needle: descriptor.defaultValue + "",
+					start: markerPos.start
+				});
+			}
+			return { position: pos, selectionRange: selRange };
 		},
 		addAttrValue: function (descriptor, propValue) {
 			var ide = this.settings.ide,
-				htmlMarker = descriptor.comp.htmlMarker,
+				htmlMarker = descriptor.component.htmlMarker,
 				pos = htmlMarker,
 				markers = htmlMarker.extraMarkers,
 				isBool = (descriptor.propType === "bool" || descriptor.propType === "boolean"),

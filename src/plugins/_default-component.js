@@ -238,11 +238,11 @@ define(function (require, exports, module) {
 					codeRange = ide.editor.find("$(document).ready(function () {\n");
 				}
 				offset = codeRange.end.row;
-				
+
 				eventString = "\t\t\t\t$(\"#" + descriptor.id + "\").on(\"" + evtName + "\", function (event, args) {\n\t\t\t\t\t\n\t\t\t\t});\n";
 				ide.session.insert({ row: offset, column: 0 }, eventString);
-				handlerMarker = new ide.RangeClass(offset + 1, 4, offset + 4, 4);
-				funcMarker = new ide.RangeClass(offset + 1, 4, offset + 3, 4);
+				handlerMarker = new ide.RangeClass(offset, 0, offset + 3, 4);
+				funcMarker = new ide.RangeClass(offset, 0, offset + 3, 4);
 				ide.addMarker(handlerMarker);
 				ide.addMarker(funcMarker);
 				if (!component.eventMarkers) {
@@ -252,8 +252,11 @@ define(function (require, exports, module) {
 					"handlerMarker": handlerMarker,
 					"functionBodyMarker": funcMarker
 				};
+			} else {
+				funcMarker = component.eventMarkers[descriptor.propName].functionBodyMarker;
 			}
 			ide.element.find(".code-button").click();
+			ide.editor.gotoLine(funcMarker.end.row - 1, 8, true);
 		},
 		getPropPosition: function (descriptor) {
 			var ide = this.settings.ide,

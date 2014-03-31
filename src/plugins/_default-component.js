@@ -36,7 +36,7 @@ define(function (require, exports, module) {
 				if (forCode) {
 					return "<div id=\"" + descriptor.id + "\"></div>";
 				} else {
-					return "<div class=\"containerElement\"" + this._getContentEditable(false) + " id=\"" + descriptor.id + "\" style=\"width: 400px; height: 100px;\"></div>";
+					return "<div class=\"containerElement\"" + this._getContentEditable(false) + " id=\"" + descriptor.id + "\" style=\"width: 400px; height: 100px;\" data-droppablechild=\"true\"></div>";
 				}
 			case "button":
 				return "<button" + this._getContentEditable(forCode) + " id=\"" + descriptor.id + "\">Button</button>";
@@ -57,8 +57,20 @@ define(function (require, exports, module) {
 			return extraIndentStr;
 		},
 		getCodeEditorMarkupSnippet: function (descriptor) {
-			var snippet = "\t" + this._getIndentTabs(descriptor) + this.getMarkup(descriptor, true) + "\n";
-			return { codeString: snippet, lineCount: 1 };
+			var snippet, lineCount, extraMarkers;
+			if (descriptor.type === "container") {
+				snippet = "\t" + this._getIndentTabs(descriptor) + "<div id=\"" + descriptor.id + "\">" + 
+					"\n\t\t\t</div>\n";
+				lineCount = 2;
+				extraMarkers = [
+						{ rowOffset: 0, colOffset: 0, rowCount: 2, colCount: 0 }
+				];
+			} else {
+				snippet = "\t" + this._getIndentTabs(descriptor) + this.getMarkup(descriptor, true) + "\n";
+				lineCount = 1;
+			}
+			
+			return { codeString: snippet, lineCount: lineCount, extraMarkers: extraMarkers };
 		},
 		isContainer: function (descriptor) {
 			if (typeof (descriptor) === "undefined" || descriptor === null) {
@@ -85,7 +97,11 @@ define(function (require, exports, module) {
 				value;
 			switch (descriptor.propName) {
 			case "innerHTML":
-				return descriptor.placeholder.html();
+				value = descriptor.placeholder.html();
+				value = value.replace(/</g, "&lt;");
+				value = value.replace(/>/g, "&gt;");
+				value = value.replace(/"/g, "'");
+				return value;
 			case "tagName":
 				return descriptor.placeholder[0].tagName.toLowerCase();
 			default:
@@ -333,7 +349,7 @@ define(function (require, exports, module) {
 				propValue = this.getPropValue(descriptor),
 				isBool = (descriptor.propType === "bool" || descriptor.propType === "boolean"),
 				toRemoveBoolAttr = (isBool && propValue === false),
-				attrStr = toRemoveBoolAttr ? "" : "" + attrName + "=\"" + newValue + "\"",
+				attrStr = isBool ? toRemoveBoolAttr ? "" : attrName : "" + attrName + "=\"" + newValue + "\"",
 				startRow, startCol, endRow, endColumn;
 
 			startRow = currMarker.start.row;

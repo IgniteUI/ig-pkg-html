@@ -274,7 +274,7 @@ define(function (require, exports, module) {
 			} else {
 				funcMarker = component.eventMarkers[descriptor.propName].functionBodyMarker;
 			}
-			// ide._deselectComponent();
+			ide._deselectComponent();
 			ide.element.find(".code-button").click();
 			ide.editor.gotoLine(funcMarker.end.row, 8, true);
 		},

@@ -60,10 +60,10 @@ define(function (require, exports, module) {
 			var snippet, lineCount, extraMarkers;
 			if (descriptor.type === "container") {
 				snippet = "\t" + this._getIndentTabs(descriptor) + "<div id=\"" + descriptor.id + "\">" + 
-					"\n\t\t\t</div>\n";
+					"\n\t" + this._getIndentTabs(descriptor) + "</div>\n";
 				lineCount = 2;
 				extraMarkers = [
-						{ rowOffset: 0, colOffset: 0, rowCount: 2, colCount: 0 }
+					{ rowOffset: 0, colOffset: 0, rowCount: 2, colCount: 0 }
 				];
 			} else {
 				snippet = "\t" + this._getIndentTabs(descriptor) + this.getMarkup(descriptor, true) + "\n";
@@ -213,13 +213,12 @@ define(function (require, exports, module) {
 				propValue = descriptor.propValue,
 				nodeName = descriptor.placeholder[0].nodeName.toLowerCase(),
 				startRow = htmlMarker.range.start.row,
-				startCol = htmlMarker.range.start.col,
+				startCol,
 				endRow = htmlMarker.range.end.row,
-				endCol = htmlMarker.range.end.col + (propValue.length - nodeName.length) * 2,
+				endCol = htmlMarker.range.end.column + (propValue.length - nodeName.length) * 2,
 				domElem = window.frames[0].$(descriptor.placeholder),
 				attrs = {},
-				newNodeHTML,
-				newElem;
+				newNodeHTML, newElem, range;
 			
 			// Update DOM
 			$.each(domElem[0].attributes, function (index, currAttr) {
@@ -234,10 +233,15 @@ define(function (require, exports, module) {
 			newNodeHTML = ide.session.getTextRange(htmlMarker.range);
 			newNodeHTML = newNodeHTML.replace("<" + nodeName, "<" + propValue);
 			newNodeHTML = newNodeHTML.replace("</" + nodeName, "</" + propValue);
+			startCol = ide.editor.find({
+				needle: "<",
+				start: htmlMarker.range.start
+			}).start.column;
 			ide.session.replace(htmlMarker.range, newNodeHTML);
 			ide.session.removeMarker(htmlMarker.id);
-			descriptor.comp.htmlMarker.range = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
+			range = descriptor.comp.htmlMarker.range = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
 			descriptor.comp.htmlMarker.extraMarkers = markers;
+			ide.editor.selection.setSelectionRange(range, false);
 		},
 		udpateEvent: function (descriptor) {
 			var ide = this.settings.ide,

@@ -59,11 +59,10 @@ define(function (require, exports, module) {
 		getCodeEditorMarkupSnippet: function (descriptor) {
 			var snippet, lineCount, extraMarkers;
 			if (descriptor.type === "container") {
-				snippet = "\t" + this._getIndentTabs(descriptor) + "<div id=\"" + descriptor.id + "\">" + 
-					"\n\t" + this._getIndentTabs(descriptor) + "</div>\n";
-				lineCount = 2;
+				snippet = "\t" + this._getIndentTabs(descriptor) + "<div id=\"" + descriptor.id + "\"></div>\n";
+				lineCount = 1;
 				extraMarkers = [
-					{ rowOffset: 0, colOffset: 0, rowCount: 2, colCount: 0 }
+					{ rowOffset: 0, colOffset: 0, rowCount: 1, colCount: 0 }
 				];
 			} else {
 				snippet = "\t" + this._getIndentTabs(descriptor) + this.getMarkup(descriptor, true) + "\n";

@@ -212,12 +212,11 @@ define(function (require, exports, module) {
 				propValue = descriptor.propValue,
 				nodeName = descriptor.placeholder[0].nodeName.toLowerCase(),
 				startRow = htmlMarker.range.start.row,
-				startCol,
 				endRow = htmlMarker.range.end.row,
 				endCol = htmlMarker.range.end.column + (propValue.length - nodeName.length) * 2,
 				domElem = window.frames[0].$(descriptor.placeholder),
 				attrs = {},
-				newNodeHTML, newElem, range;
+				newNodeHTML, newElem, start, end;
 			
 			// Update DOM
 			$.each(domElem[0].attributes, function (index, currAttr) {
@@ -232,15 +231,23 @@ define(function (require, exports, module) {
 			newNodeHTML = ide.session.getTextRange(htmlMarker.range);
 			newNodeHTML = newNodeHTML.replace("<" + nodeName, "<" + propValue);
 			newNodeHTML = newNodeHTML.replace("</" + nodeName, "</" + propValue);
-			startCol = ide.editor.find({
+			start = ide.editor.find({
 				needle: "<",
 				start: htmlMarker.range.start
-			}).start.column;
+			}).start;
+			start.column = 2; // This is workaraoung for issue with ace find method.
+			end = ide.editor.find({
+				needle: ">",
+				backwards: true,
+				range: htmlMarker.range,
+				start: htmlMarker.range.start
+			}).start;
+			end.column += 1;
 			ide.session.replace(htmlMarker.range, newNodeHTML);
 			ide.session.removeMarker(htmlMarker.id);
-			range = descriptor.comp.htmlMarker.range = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
+			descriptor.comp.htmlMarker.range = ide.createAndAddMarker(startRow, 0, endRow, endCol);
 			descriptor.comp.htmlMarker.extraMarkers = markers;
-			ide.editor.selection.setSelectionRange(range, false);
+			ide.editor.selection.setSelectionRange({ start: start, end: end }, false);
 		},
 		udpateEvent: function (descriptor) {
 			var ide = this.settings.ide,
@@ -283,10 +290,13 @@ define(function (require, exports, module) {
 		},
 		getPropPosition: function (descriptor) {
 			var ide = this.settings.ide,
-				pos = { row: 0, column: 0 },
+				pos = descriptor.component.htmlMarker.range,
 				isBool = (descriptor.propType === "bool" || descriptor.propType === "boolean"),
 				marker, markers, markerPos, selRange;
 
+			if (descriptor.propName === "tagName") {
+				return { preserveSelection: true };
+			}
 			markers = descriptor.component.htmlMarker.extraMarkers;
 			markerPos = markers[descriptor.propName];
 			if (markerPos) { // marker already exist

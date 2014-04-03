@@ -124,7 +124,7 @@
 		}
 	},
 	"properties": {
-		"listType": {
+		"tagName": {
 			"type": "string",
 			"description": "Defines the type of the list",
 			"defaultValue": "ul",

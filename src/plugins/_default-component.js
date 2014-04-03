@@ -36,7 +36,7 @@ define(function (require, exports, module) {
 				if (forCode) {
 					return "<div id=\"" + descriptor.id + "\"></div>";
 				} else {
-					return "<div " + this._getContentEditable(false) + " id=\"" + descriptor.id + "\" style=\"min-width: 400px; min-height: 100px;\" data-droppablechild=\"true\"></div>";
+					return "<div " + this._getContentEditable(false) + " id=\"" + descriptor.id + "\"" + (forCode ? " style=\"min-width: 400px; min-height: 100px;\"" : "") + " data-droppablechild=\"true\"></div>";
 				}
 			case "button":
 				return "<button" + this._getContentEditable(forCode) + " id=\"" + descriptor.id + "\">Button</button>";

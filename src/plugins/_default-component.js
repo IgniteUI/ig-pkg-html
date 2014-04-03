@@ -168,7 +168,7 @@ define(function (require, exports, module) {
 				this.updateAttrCode(descriptor);
 			} else { // attribute needs to be added
 				descriptor.component = descriptor.comp;
-				this.addAttrValue(descriptor, descriptor.propValue);
+				this.addAttrValue(descriptor);
 			}
 		},
 		updateInnerHTML: function (descriptor) {
@@ -284,6 +284,7 @@ define(function (require, exports, module) {
 		getPropPosition: function (descriptor) {
 			var ide = this.settings.ide,
 				pos = { row: 0, column: 0 },
+				isBool = (descriptor.propType === "bool" || descriptor.propType === "boolean"),
 				marker, markers, markerPos, selRange;
 
 			markers = descriptor.component.htmlMarker.extraMarkers;
@@ -292,7 +293,7 @@ define(function (require, exports, module) {
 				pos.row = markerPos.end.row;
 				pos.column = markerPos.end.column;
 			} else { // attribute needs to be added
-				marker = this.addAttrValue(descriptor, "");
+				marker = this.addAttrValue(descriptor);
 				pos.row = marker.end.row;
 				pos.column = marker.end.column;
 			}
@@ -300,22 +301,23 @@ define(function (require, exports, module) {
 				pos.column -= 1;
 			} else {
 				selRange = ide.editor.find({
-					needle: descriptor.defaultValue + "",
+					needle: isBool ? descriptor.propName + "" : descriptor.defaultValue + "",
 					start: markerPos.start
 				});
 			}
 			return { position: pos, selectionRange: selRange };
 		},
-		addAttrValue: function (descriptor, propValue) {
+		addAttrValue: function (descriptor) {
 			var ide = this.settings.ide,
 				htmlMarker = descriptor.component.htmlMarker,
-				pos = htmlMarker,
+				pos = htmlMarker.range,
 				markers = htmlMarker.extraMarkers,
 				isBool = (descriptor.propType === "bool" || descriptor.propType === "boolean"),
+				propValue = descriptor.propValue,
 				attrStr, newRow, newCol, markerPos;
 
 			if (isBool && propValue === false) {
-				return;
+				return pos;
 			}
 			attrStr = (isBool && propValue === true) ? " " + descriptor.propName : " " + descriptor.propName + "=\"" + propValue + "\"";
 			markerPos = ide.editor.find({
@@ -334,10 +336,11 @@ define(function (require, exports, module) {
 				ide.session.insert({ row: newRow, column: newCol }, attrStr);
 				pos = markers[descriptor.propName] = ide.createAndAddMarker(
 					newRow,
-					newCol + 1,
+					newCol,
 					newRow,
-					newCol + attrStr.length
+					newCol + attrStr.length - 1
 				);
+				this.settings.ide._selectComponent(descriptor.placeholder[0]);
 			}
 			return pos;
 		},
@@ -352,18 +355,21 @@ define(function (require, exports, module) {
 				propValue = this.getPropValue(descriptor),
 				isBool = (descriptor.propType === "bool" || descriptor.propType === "boolean"),
 				toRemoveBoolAttr = (isBool && propValue === false),
-				attrStr = isBool ? toRemoveBoolAttr ? "" : attrName : "" + attrName + "=\"" + newValue + "\"",
+				attrStr = isBool ? toRemoveBoolAttr ? "" : " " + attrName : " " + attrName + "=\"" + newValue + "\"",
 				startRow, startCol, endRow, endColumn;
 
 			startRow = currMarker.start.row;
 			startCol = currMarker.start.column;
 			endRow = currMarker.end.row;
-			endColumn = currMarker.start.column + attrName.length + newValue.length + 3;
+			endColumn = currMarker.start.column + attrStr.length;
+			currMarker.end.column += 1; // hack
 			ide.session.replace(currMarker, attrStr);
 			//Reattach the marker
 			ide.session.removeMarker(currMarker.id);
 			if (!toRemoveBoolAttr) {
-				markers[attrName] = pos = ide.createAndAddMarker(startRow, startCol, endRow, endColumn);
+				markers[attrName] = pos = ide.createAndAddMarker(startRow, startCol, endRow, endColumn - 1);
+			} else {
+				delete markers[attrName];
 			}
 		},
 		getLastEventMarker: function (eventMarkers) {

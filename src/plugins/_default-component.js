@@ -187,12 +187,14 @@ define(function (require, exports, module) {
 				// If the innerHTML marker doesn't exist, we create it
 				startPos = ide.editor.find({
 					needle: ">",
+					backwards: false,
 					start: htmlMarker.range.start
 				});
 				startRow = endRow = startPos.start.row;
 				startCol = startPos.start.column + 1;
 				endCol = ide.editor.find({
 					needle: "</",
+					backwards: false,
 					start: htmlMarker.range.start
 				}).start.column;
 				innerMarker = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
@@ -231,22 +233,22 @@ define(function (require, exports, module) {
 			newNodeHTML = ide.session.getTextRange(htmlMarker.range);
 			newNodeHTML = newNodeHTML.replace("<" + nodeName, "<" + propValue);
 			newNodeHTML = newNodeHTML.replace("</" + nodeName, "</" + propValue);
+			ide.session.replace(htmlMarker.range, newNodeHTML);
+			ide.session.removeMarker(htmlMarker.id);
+			descriptor.comp.htmlMarker.range = ide.createAndAddMarker(startRow, 0, endRow, endCol);
+			descriptor.comp.htmlMarker.extraMarkers = markers;
 			start = ide.editor.find({
 				needle: "<",
+				backwards: false,
 				start: htmlMarker.range.start
 			}).start;
-			start.column = 2; // This is workaraoung for issue with ace find method.
 			end = ide.editor.find({
 				needle: ">",
 				backwards: true,
 				range: htmlMarker.range,
 				start: htmlMarker.range.start
-			}).start;
-			end.column += 1;
-			ide.session.replace(htmlMarker.range, newNodeHTML);
-			ide.session.removeMarker(htmlMarker.id);
-			descriptor.comp.htmlMarker.range = ide.createAndAddMarker(startRow, 0, endRow, endCol);
-			descriptor.comp.htmlMarker.extraMarkers = markers;
+			}).end;
+			ide.editor.find({ needle: ">", backwards: false, start: htmlMarker.range.start }); // fake find
 			ide.editor.selection.setSelectionRange({ start: start, end: end }, false);
 		},
 		udpateEvent: function (descriptor) {
@@ -312,6 +314,7 @@ define(function (require, exports, module) {
 			} else {
 				selRange = ide.editor.find({
 					needle: isBool ? descriptor.propName + "" : descriptor.defaultValue + "",
+					backwards: false,
 					start: markerPos.start
 				});
 			}
@@ -324,25 +327,27 @@ define(function (require, exports, module) {
 				markers = htmlMarker.extraMarkers,
 				isBool = (descriptor.propType === "bool" || descriptor.propType === "boolean"),
 				propValue = descriptor.propValue,
-				attrStr, newRow, newCol, markerPos;
+				attrStr, newRow, newCol, openTagStart, openTagEnd, closeTagStart, closeTagEnd;
 
 			if (isBool && propValue === false) {
 				return pos;
 			}
 			attrStr = (isBool && propValue === true) ? " " + descriptor.propName : " " + descriptor.propName + "=\"" + propValue + "\"";
-			markerPos = ide.editor.find({
+			openTagEnd = ide.editor.find({
 				needle: ">",
+				backwards: false,
 				start: htmlMarker.range.start
 			});
-			if (!markerPos) { // unary, such as <input />
-				markerPos = ide.editor.find({
+			if (!openTagEnd) { // unary, such as <input />
+				openTagEnd = closeTagEnd = ide.editor.find({
 					needle: "/>",
+					backwards: false,
 					start: htmlMarker.range.start
 				});
 			}
-			if (markerPos) {
-				newRow = markerPos.start.row;
-				newCol = markerPos.start.column;
+			if (openTagEnd) {
+				newRow = openTagEnd.start.row;
+				newCol = openTagEnd.start.column;
 				ide.session.insert({ row: newRow, column: newCol }, attrStr);
 				pos = markers[descriptor.propName] = ide.createAndAddMarker(
 					newRow,
@@ -350,7 +355,18 @@ define(function (require, exports, module) {
 					newRow,
 					newCol + attrStr.length - 1
 				);
-				this.settings.ide._selectComponent(descriptor.placeholder[0]);
+				openTagStart = ide.editor.find({
+					needle: "<",
+					backwards: false,
+					start: htmlMarker.range.start
+				});
+				closeTagEnd = ide.editor.find({
+					needle: ">",
+					backwards: true,
+					start: htmlMarker.range.end
+				});
+				ide.editor.find({ needle: ">", backwards: false, start: htmlMarker.range.start }); // fake find
+				ide.editor.selection.setSelectionRange({ start: openTagStart.start, end: closeTagEnd.end }, false);
 			}
 			return pos;
 		},

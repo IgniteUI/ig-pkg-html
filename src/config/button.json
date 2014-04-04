@@ -194,6 +194,11 @@
 				}
 			]
 		},
+		"innerHTML": {
+			"type": "string",
+			"defaultValue": "",
+			"description" : "The display text."
+		},
 		"disabled": {
 			"type": "bool",
 			"defaultValue": false,

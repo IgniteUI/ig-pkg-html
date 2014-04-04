@@ -320,6 +320,15 @@ define(function (require, exports, module) {
 			}
 			return { position: pos, selectionRange: selRange };
 		},
+		universalPropertyModified: function (descriptor) {
+			if (descriptor.propName === "id") {
+				var comp = descriptor.ide.componentById(descriptor.oldPropValue);
+				comp.id = descriptor.propValue;
+				descriptor.placeholder.attr("id", descriptor.propValue);
+			} else if (descriptor.propName === "class") {
+				window.frames[0].$(descriptor.placeholder).removeClass(descriptor.oldPropValue).addClass(descriptor.propValue);
+			}
+		},
 		addAttrValue: function (descriptor) {
 			var ide = this.settings.ide,
 				htmlMarker = descriptor.component.htmlMarker,

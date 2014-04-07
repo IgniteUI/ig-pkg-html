@@ -59,10 +59,10 @@ define(function (require, exports, module) {
 		getCodeEditorMarkupSnippet: function (descriptor) {
 			var snippet, lineCount, extraMarkers;
 			if (descriptor.type === "container") {
-				snippet = "\t" + this._getIndentTabs(descriptor) + "<div id=\"" + descriptor.id + "\"></div>\n";
-				lineCount = 1;
+				snippet = "\t" + this._getIndentTabs(descriptor) + "<div id=\"" + descriptor.id + "\">\n\t" + this._getIndentTabs(descriptor) + "</div>\n";
+				lineCount = 2;
 				extraMarkers = [
-					{ rowOffset: 0, colOffset: 0, rowCount: 1, colCount: 0 }
+					{ rowOffset: 0, colOffset: 1, rowCount: 2, colCount: 0 }
 				];
 			} else {
 				snippet = "\t" + this._getIndentTabs(descriptor) + this.getMarkup(descriptor, true) + "\n";
@@ -187,14 +187,12 @@ define(function (require, exports, module) {
 				// If the innerHTML marker doesn't exist, we create it
 				startPos = ide.editor.find({
 					needle: ">",
-					backwards: false,
 					start: htmlMarker.range.start
 				});
 				startRow = endRow = startPos.start.row;
 				startCol = startPos.start.column + 1;
 				endCol = ide.editor.find({
 					needle: "</",
-					backwards: false,
 					start: htmlMarker.range.start
 				}).start.column;
 				innerMarker = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
@@ -239,7 +237,6 @@ define(function (require, exports, module) {
 			descriptor.comp.htmlMarker.extraMarkers = markers;
 			start = ide.editor.find({
 				needle: "<",
-				backwards: false,
 				start: htmlMarker.range.start
 			}).start;
 			end = ide.editor.find({
@@ -248,7 +245,7 @@ define(function (require, exports, module) {
 				range: htmlMarker.range,
 				start: htmlMarker.range.start
 			}).end;
-			ide.editor.find({ needle: ">", backwards: false, start: htmlMarker.range.start }); // fake find
+			this._fixFind();
 			ide.editor.selection.setSelectionRange({ start: start, end: end }, false);
 		},
 		udpateEvent: function (descriptor) {
@@ -260,7 +257,7 @@ define(function (require, exports, module) {
 			evtName = evtName.toLowerCase();
 			if (!component.eventMarkers || !component.eventMarkers[descriptor.propName]) {
 				if (ide._findEventMarkerComponent()) {
-					codeRange = this.getLastEventMarker(ide._findEventMarkerComponent().eventMarkers);
+					codeRange = this._getLastEventMarker(ide._findEventMarkerComponent().eventMarkers);
 					offset = codeRange.end.row + 1;
 				} else if (ide._findCodeMarkerComponent()) {
 					codeRange = ide._findCodeMarkerComponent().codeMarker.range;
@@ -288,6 +285,7 @@ define(function (require, exports, module) {
 			}
 			ide._deselectComponent();
 			ide.element.find(".code-button").click();
+			ide.editor.clearSelection();
 			ide.editor.gotoLine(funcMarker.end.row, 8, true);
 		},
 		getPropPosition: function (descriptor) {
@@ -314,7 +312,6 @@ define(function (require, exports, module) {
 			} else {
 				selRange = ide.editor.find({
 					needle: isBool ? descriptor.propName + "" : descriptor.defaultValue + "",
-					backwards: false,
 					start: markerPos.start
 				});
 			}
@@ -344,13 +341,11 @@ define(function (require, exports, module) {
 			attrStr = (isBool && propValue === true) ? " " + descriptor.propName : " " + descriptor.propName + "=\"" + propValue + "\"";
 			openTagEnd = ide.editor.find({
 				needle: ">",
-				backwards: false,
 				start: htmlMarker.range.start
 			});
 			if (!openTagEnd) { // unary, such as <input />
 				openTagEnd = closeTagEnd = ide.editor.find({
 					needle: "/>",
-					backwards: false,
 					start: htmlMarker.range.start
 				});
 			}
@@ -366,7 +361,6 @@ define(function (require, exports, module) {
 				);
 				openTagStart = ide.editor.find({
 					needle: "<",
-					backwards: false,
 					start: htmlMarker.range.start
 				});
 				closeTagEnd = ide.editor.find({
@@ -374,7 +368,7 @@ define(function (require, exports, module) {
 					backwards: true,
 					start: htmlMarker.range.end
 				});
-				ide.editor.find({ needle: ">", backwards: false, start: htmlMarker.range.start }); // fake find
+				this._fixFind();
 				ide.editor.selection.setSelectionRange({ start: openTagStart.start, end: closeTagEnd.end }, false);
 			}
 			return pos;
@@ -407,7 +401,7 @@ define(function (require, exports, module) {
 				delete markers[attrName];
 			}
 		},
-		getLastEventMarker: function (eventMarkers) {
+		_getLastEventMarker: function (eventMarkers) {
 			var lastEventMarker = null;
 			for (event in eventMarkers) {
 				if (lastEventMarker === null) {
@@ -419,6 +413,9 @@ define(function (require, exports, module) {
 				}
 			}
 			return lastEventMarker;
+		},
+		_fixFind: function () {
+			this.settings.ide.editor.$search.set({ backwards: false, range: undefined });
 		}
 	});
 	return HtmlComponent;

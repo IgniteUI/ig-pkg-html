@@ -216,7 +216,7 @@ define(function (require, exports, module) {
 				endCol = htmlMarker.range.end.column + (propValue.length - nodeName.length) * 2,
 				domElem = window.frames[0].$(descriptor.placeholder),
 				attrs = {},
-				newNodeHTML, newElem, start, end;
+				newNodeHTML, newElem, start, end, idMarker;
 			
 			// Update DOM
 			$.each(domElem[0].attributes, function (index, currAttr) {
@@ -227,6 +227,7 @@ define(function (require, exports, module) {
 				return newElem;
 			});
 			this.settings.ide._selectComponent(newElem[0]);
+			idMarker = { rs: markers.idMarker.row.start, re: markers.idMarker.row.end, cs: markers.idMarker.column.start, ce: markers.idMarker.column.end };
 			// Update Code Editor
 			newNodeHTML = ide.session.getTextRange(htmlMarker.range);
 			newNodeHTML = newNodeHTML.replace("<" + nodeName, "<" + propValue);
@@ -235,6 +236,10 @@ define(function (require, exports, module) {
 			ide.session.removeMarker(htmlMarker.id);
 			descriptor.comp.htmlMarker.range = ide.createAndAddMarker(startRow, 0, endRow, endCol);
 			descriptor.comp.htmlMarker.extraMarkers = markers;
+			descriptor.comp.htmlMarker.extraMarkers.idMarker.row.start = idMarker.rs;
+			descriptor.comp.htmlMarker.extraMarkers.idMarker.row.end = idMarker.re;
+			descriptor.comp.htmlMarker.extraMarkers.idMarker.column.start = idMarker.cs;
+			descriptor.comp.htmlMarker.extraMarkers.idMarker.column.end = idMarker.ce;
 			start = ide.editor.find({
 				needle: "<",
 				start: htmlMarker.range.start

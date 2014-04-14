@@ -227,7 +227,7 @@ define(function (require, exports, module) {
 				return newElem;
 			});
 			this.settings.ide._selectComponent(newElem[0]);
-			idMarker = { rs: markers.idMarker.row.start, re: markers.idMarker.row.end, cs: markers.idMarker.column.start, ce: markers.idMarker.column.end };
+			idMarker = { sr: markers.idMarker.start.row, sc: markers.idMarker.start.column, er: markers.idMarker.end.row, ec: markers.idMarker.end.column };
 			// Update Code Editor
 			newNodeHTML = ide.session.getTextRange(htmlMarker.range);
 			newNodeHTML = newNodeHTML.replace("<" + nodeName, "<" + propValue);
@@ -236,10 +236,10 @@ define(function (require, exports, module) {
 			ide.session.removeMarker(htmlMarker.id);
 			descriptor.comp.htmlMarker.range = ide.createAndAddMarker(startRow, 0, endRow, endCol);
 			descriptor.comp.htmlMarker.extraMarkers = markers;
-			descriptor.comp.htmlMarker.extraMarkers.idMarker.row.start = idMarker.rs;
-			descriptor.comp.htmlMarker.extraMarkers.idMarker.row.end = idMarker.re;
-			descriptor.comp.htmlMarker.extraMarkers.idMarker.column.start = idMarker.cs;
-			descriptor.comp.htmlMarker.extraMarkers.idMarker.column.end = idMarker.ce;
+			descriptor.comp.htmlMarker.extraMarkers.idMarker.start.row = idMarker.sr;
+			descriptor.comp.htmlMarker.extraMarkers.idMarker.start.column = idMarker.sc;
+			descriptor.comp.htmlMarker.extraMarkers.idMarker.end.row = idMarker.er;
+			descriptor.comp.htmlMarker.extraMarkers.idMarker.end.column = idMarker.ec;
 			start = ide.editor.find({
 				needle: "<",
 				start: htmlMarker.range.start

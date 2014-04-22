@@ -106,7 +106,7 @@ define(function (require, exports, module) {
 			default:
 				value = window.frames[0].$(descriptor.placeholder).attr(descriptor.propName);
 				if (isBool) {
-					return (value === "true") ? true : false;
+					return (value && value !== "false") ? true : false;
 				} else {
 					return value !== null && value !== undefined ? value : "";
 				}

@@ -159,15 +159,21 @@ define(function (require, exports, module) {
 		updateAttr: function (descriptor) {
 			var markers, markerPos;
 
+			descriptor.component = descriptor.comp;
 			// Update DOM
 			window.frames[0].$(descriptor.placeholder).attr(descriptor.propName, descriptor.propValue);
 			// Update Code Editor
 			markers = descriptor.comp.htmlMarker.extraMarkers;
 			markerPos = markers[descriptor.propName];
 			if (markerPos) { // attribute already exist
-				this.updateAttrCode(descriptor);
+				if (markerPos.start.row === markerPos.end.row && markerPos.start.column === markerPos.end.column) {
+					// If the marker is empty, it is deleted
+					delete markers[descriptor.propName];
+					this.addAttrValue(descriptor);
+				} else {
+					this.updateAttrCode(descriptor);
+				}
 			} else { // attribute needs to be added
-				descriptor.component = descriptor.comp;
 				this.addAttrValue(descriptor);
 			}
 		},

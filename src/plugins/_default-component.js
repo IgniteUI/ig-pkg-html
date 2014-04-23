@@ -168,6 +168,7 @@ define(function (require, exports, module) {
 			if (markerPos) { // attribute already exist
 				if (markerPos.start.row === markerPos.end.row && markerPos.start.column === markerPos.end.column) {
 					// If the marker is empty, it is deleted
+					this.settings.ide.session.removeMarker(markerPos.id);
 					delete markers[descriptor.propName];
 					this.addAttrValue(descriptor);
 				} else {

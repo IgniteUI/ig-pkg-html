@@ -28,19 +28,6 @@
 			],
 			"description": "Fires the moment when the value of the element is changed."
 		},
-		"contextmenu": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object"
-				}
-			],
-			"description": "Script to be run when a context menu is triggered.",
-			"html5": true
-		},
 		"focus": {
 			"cancellable": true,
 			"args": [
@@ -66,31 +53,6 @@
 			"description": "Script to be run when an element gets user input.",
 			"html5": true
 		},
-		"invalid": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when an element is invalid.",
-			"html5": true
-		},
-		"select": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires after some text has been selected in an element."
-		},
 		"submit": {
 			"cancellable": true,
 			"args": [
@@ -111,18 +73,6 @@
 					"type": "event",
 					"optional": true,
 					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when a user is pressing a key."
-		},
-		"keypress": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Fires when a user presses a key."
 				}
 			],
 			"description": "Fires when a user is pressing a key."
@@ -175,42 +125,6 @@
 			],
 			"description": "Fires when a mouse button is pressed down on an element."
 		},
-		"mousemove": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when the mouse pointer moves over an element."
-		},
-		"mouseout": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when the mouse pointer moves out of an element."
-		},
-		"mouseover": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when the mouse pointer moves over an element."
-		},
 		"mouseup": {
 			"cancellable": true,
 			"args": [
@@ -222,19 +136,6 @@
 				}
 			],
 			"description": "Fires when a mouse button is released over an element."
-		},
-		"mousewheel": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when the mouse wheel is being rotated.",
-			"html5": true
 		}
 	},
 	"properties": {
@@ -403,35 +304,6 @@
 			"defaultValue": null,
 			"description": "Specifies the types of files that the server accepts (only for type=\"file\")."
 		},
-		"alt": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies an alternate text for images (only for type=\"image\")."
-		},
-		"autocomplete": {
-			"type": "string",
-			"defaultValue": "on",
-			"description": "Specifies whether an <input> element should have autocomplete enabled.",
-			"valueOptions": [
-				{
-					"name": "on",
-					"type": "string",
-					"description": "Specifies that autocomplete is on (enabled)."
-				},
-				{
-					"name": "off",
-					"type": "string",
-					"description": "Specifies that autocomplete is off (disabled)."
-				}
-			],
-			"html5": true
-		},
-		"autofocus": {
-			"type": "bool",
-			"defaultValue": false,
-			"description": "Specifies that an <input> element should automatically get focus when the page loads.",
-			"html5": true
-		},
 		"checked": {
 			"type": "bool",
 			"defaultValue": false,
@@ -454,29 +326,6 @@
 			"description": "Specifies the URL of the file that will process the input control when the form is submitted (for type=\"submit\" and type=\"image\").",
 			"html5": true
 		},
-		"enctype": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies how the form-data should be encoded when submitting it to the server (for type=\"submit\" and type=\"image\").",
-			"html5": true,
-			"valueOptions": [
-				{
-					"name": "application/x-www-form-urlencoded",
-					"type": "string",
-					"description": "All characters will be encoded before sent."
-				},
-				{
-					"name": "multipart/form-data",
-					"type": "string",
-					"description": "No characters are encoded (use this when you are using forms that have a file upload control)."
-				},
-				{
-					"name": "text/plain",
-					"type": "string",
-					"description": "Spaces are converted to \"+\" symbols, but no characters are encoded."
-				}
-			]
-		},
 		"method": {
 			"type": "string",
 			"defaultValue": "get",
@@ -495,40 +344,6 @@
 				}
 			]
 		},
-		"novalidate": {
-			"type": "bool",
-			"defaultValue": false,
-			"description": "Specifies that the form-data should not be validated on submission. Only for type=\"submit\"",
-			"html5": true
-		},
-		"target": {
-			"type": "string",
-			"defaultValue": "_self",
-			"description": "Specifies where to display the response after submitting the form. Only for type=\"submit\"",
-			"html5": true,
-			"valueOptions": [
-				{
-					"name": "_blank",
-					"type": "string",
-					"description": "Loads the response in a new window/tab."
-				},
-				{
-					"name": "_self",
-					"type": "string",
-					"description": "Loads the response in the same frame."
-				},
-				{
-					"name": "_parent",
-					"type": "string",
-					"description": "Loads the response in the parent frame."
-				},
-				{
-					"name": "_top",
-					"type": "string",
-					"description": "Loads the response in the full body of the window."
-				}
-			]
-		},
 		"height": {
 			"type": "number",
 			"defaultValue": null,
@@ -539,12 +354,6 @@
 			"type": "number",
 			"defaultValue": null,
 			"description": "Specifies the width of an <input> element (only for type=\"image\")",
-			"html5": true
-		},
-		"list": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Refers to a <datalist> element that contains pre-defined options for an <input> element",
 			"html5": true
 		},
 		"max": {
@@ -564,22 +373,6 @@
 			"defaultValue": null,
 			"description": "Specifies the maximum number of characters allowed in an <input> element."
 		},
-		"multiple": {
-			"type": "bool",
-			"defaultValue": false,
-			"description": "Specifies a minimum value for an <input> element.",
-			"html5": true
-		},
-		"pattern": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies a regular expression that an <input> element's value is checked against."
-		},
-		"placeholder": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies a short hint that describes the expected value of an <input> element."
-		},
 		"required": {
 			"type": "bool",
 			"defaultValue": false,
@@ -589,39 +382,6 @@
 			"type": "number",
 			"defaultValue": null,
 			"description": "Specifies the legal number intervals for an input field."
-		},
-		"accesskey": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies a shortcut key to activate/focus an element"
-		},
-		"contenteditable": {
-			"type": "bool",
-			"defaultValue": false,
-			"description": "Specifies whether the content of an element is editable or not.",
-			"html5": true
-		},
-		"contextmenu": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies a context menu for an element. The context menu appears when a user right-clicks on the element.",
-			"html5": true
-		},
-		"dir": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies the text direction for the content in an element."
-		},
-		"lang": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies the language of the element's content."
-		},
-		"spellcheck": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies whether the element is to have its spelling and grammar checked or not.",
-			"html5": true
 		},
 		"style": {
 			"type": "string",
@@ -637,12 +397,6 @@
 			"type": "string",
 			"defaultValue": null,
 			"description": "Specifies extra information about an element."
-		},
-		"translate": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies whether the content of an element should be translated or not.",
-			"html5": true
 		}
 	}
 }

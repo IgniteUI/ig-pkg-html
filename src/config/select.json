@@ -16,31 +16,6 @@
 			],
 			"description": "Fires the moment when the value of the element is changed."
 		},
-		"contextmenu": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object"
-				}
-			],
-			"description": "Script to be run when a context menu is triggered.",
-			"html5": true
-		},
-		"select": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires after some text has been selected in an element."
-		},
 		"keydown": {
 			"cancellable": true,
 			"args": [
@@ -49,18 +24,6 @@
 					"type": "event",
 					"optional": true,
 					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when a user is pressing a key."
-		},
-		"keypress": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Fires when a user presses a key."
 				}
 			],
 			"description": "Fires when a user is pressing a key."
@@ -89,42 +52,6 @@
 			],
 			"description": "Fires on a mouse click on the element."
 		},
-		"dblclick": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires on a mouse double-click on the element."
-		},
-		"mousedown": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when a mouse button is pressed down on an element."
-		},
-		"mousemove": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when the mouse pointer moves over an element."
-		},
 		"mouseout": {
 			"cancellable": true,
 			"args": [
@@ -148,63 +75,13 @@
 				}
 			],
 			"description": "Fires when the mouse pointer moves over an element."
-		},
-		"mouseup": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when a mouse button is released over an element."
-		},
-		"mousewheel": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when the mouse wheel is being rotated.",
-			"html5": true
-		},
-		"scroll": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when an element's scrollbar is being scrolled.",
-			"html5": true
 		}
 	},
 	"properties": {
-		"autofocus": {
-			"type": "bool",
-			"defaultValue": false,
-			"description" : "Specifies that the drop-down list should automatically get focus when the page loads.",
-			"html5": true
-		},
 		"disabled": {
 			"type": "bool",
 			"defaultValue": false,
 			"description" : "Specifies that a drop-down list should be disabled."
-		},
-		"form": {
-			"type": "string",
-			"defaultValue": null,
-			"description" : "Defines one or more forms the select field belongs to.",
-			"html5": true
 		},
 		"multiple": {
 			"type": "bool",
@@ -227,27 +104,6 @@
 			"defaultValue": 1,
 			"description" : "Defines the number of visible options in a drop-down list."
 		},
-		"accesskey": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies a shortcut key to activate/focus an element"
-		},
-		"contextmenu": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies a context menu for an element. The context menu appears when a user right-clicks on the element.",
-			"html5": true
-		},
-		"dir": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies the text direction for the content in an element."
-		},
-		"lang": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies the language of the element's content."
-		},
 		"style": {
 			"type": "string",
 			"defaultValue": null,
@@ -262,12 +118,6 @@
 			"type": "string",
 			"defaultValue": null,
 			"description": "Specifies extra information about an element."
-		},
-		"translate": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies whether the content of an element should be translated or not.",
-			"html5": true
 		}
 	}
 }

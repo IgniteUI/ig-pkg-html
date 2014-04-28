@@ -28,19 +28,6 @@
 			],
 			"description": "Fires the moment when the value of the element is changed."
 		},
-		"contextmenu": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object"
-				}
-			],
-			"description": "Script to be run when a context menu is triggered.",
-			"html5": true
-		},
 		"focus": {
 			"cancellable": true,
 			"args": [
@@ -52,58 +39,6 @@
 				}
 			],
 			"description": "Fires the moment when the element gets focus."
-		},
-		"formchange": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when a form changes.",
-			"html5": true
-		},
-		"forminput": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when a form gets user input.",
-			"html5": true
-		},
-		"input": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when an element gets user input.",
-			"html5": true
-		},
-		"invalid": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when an element is invalid.",
-			"html5": true
 		},
 		"select": {
 			"cancellable": true,
@@ -189,30 +124,6 @@
 			],
 			"description": "Fires on a mouse double-click on the element."
 		},
-		"mousedown": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when a mouse button is pressed down on an element."
-		},
-		"mousemove": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when the mouse pointer moves over an element."
-		},
 		"mouseout": {
 			"cancellable": true,
 			"args": [
@@ -236,44 +147,6 @@
 				}
 			],
 			"description": "Fires when the mouse pointer moves over an element."
-		},
-		"mouseup": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when a mouse button is released over an element."
-		},
-		"mousewheel": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when the mouse wheel is being rotated.",
-			"html5": true
-		},
-		"scroll": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Script to be run when an element's scrollbar is being scrolled.",
-			"html5": true
 		}
 	},
 	"properties": {
@@ -319,18 +192,6 @@
 			"description" : "Specifies that a text area should automatically get focus when the page loads.",
 			"html5": true
 		},
-		"form": {
-			"type": "string",
-			"defaultValue": null,
-			"description" : "Specifies one or more forms the text area belongs to.",
-			"html5": true
-		},
-		"placeholder": {
-			"type": "string",
-			"defaultValue": null,
-			"description" : "Specifies a short hint that describes the expected value of a text area.",
-			"html5": true
-		},
 		"wrap": {
 			"type": "string",
 			"defaultValue": "soft",
@@ -348,22 +209,6 @@
 					"description": "The text in the textarea is wrapped (contains newlines) when submitted in a form. When \"hard\" is used, the cols attribute must be specified."
 				}
 			]
-		},
-		"accesskey": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies a shortcut key to activate/focus an element"
-		},
-		"contextmenu": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies a context menu for an element. The context menu appears when a user right-clicks on the element.",
-			"html5": true
-		},
-		"dir": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies the text direction for the content in an element."
 		},
 		"lang": {
 			"type": "string",

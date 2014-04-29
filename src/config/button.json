@@ -189,11 +189,6 @@
 			"defaultValue": null,
 			"description": "Specifies an inline CSS style for an element."
 		},
-		"tabindex": {
-			"type": "number",
-			"defaultValue": null,
-			"description": "Specifies the tabbing order of an element."
-		},
 		"title": {
 			"type": "string",
 			"defaultValue": null,

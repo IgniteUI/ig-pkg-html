@@ -142,7 +142,7 @@
 		"type": {
 			"type": "string",
 			"defaultValue": "text",
-			"description": "Specifies the value of an <input> element",
+			"description": "Specifies the value of an &ltinput&gt element",
 			"valueOptions": [
 				{
 					"name": "button",
@@ -277,12 +277,12 @@
 		"value": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies the value of an <input> element"
+			"description": "Specifies the value of an &ltinput&gt element"
 		},
 		"name": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies the name of an <input> element."
+			"description": "Specifies the name of an &ltinput&gt element."
 		},
 		"readonly": {
 			"type": "bool",
@@ -292,7 +292,7 @@
 		"size": {
 			"type": "number",
 			"defaultValue": 20,
-			"description": "Specifies the width, in characters, of an <input> element."
+			"description": "Specifies the width, in characters, of an &ltinput&gt element."
 		},
 		"src": {
 			"type": "string",
@@ -307,17 +307,17 @@
 		"checked": {
 			"type": "bool",
 			"defaultValue": false,
-			"description": "Specifies that an <input> element should be pre-selected when the page loads (for type=\"checkbox\" or type=\"radio\")."
+			"description": "Specifies that an &ltinput&gt element should be pre-selected when the page loads (for type=\"checkbox\" or type=\"radio\")."
 		},
 		"disabled": {
 			"type": "bool",
 			"defaultValue": false,
-			"description": "Specifies that an <input> element should be disabled."
+			"description": "Specifies that an &ltinput&gt element should be disabled."
 		},
 		"form": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies one or more forms the <input> element belongs to.",
+			"description": "Specifies one or more forms the &ltinput&gt element belongs to.",
 			"html5": true
 		},
 		"action": {
@@ -347,31 +347,31 @@
 		"height": {
 			"type": "number",
 			"defaultValue": null,
-			"description": "Specifies the height of an <input> element (only for type=\"image\")",
+			"description": "Specifies the height of an &ltinput&gt element (only for type=\"image\")",
 			"html5": true
 		},
 		"width": {
 			"type": "number",
 			"defaultValue": null,
-			"description": "Specifies the width of an <input> element (only for type=\"image\")",
+			"description": "Specifies the width of an &ltinput&gt element (only for type=\"image\")",
 			"html5": true
 		},
 		"max": {
 			"type": "number",
 			"defaultValue": null,
-			"description": "Specifies the maximum value for an <input> element.",
+			"description": "Specifies the maximum value for an &ltinput&gt element.",
 			"html5": true
 		},
 		"min": {
 			"type": "number",
 			"defaultValue": null,
-			"description": "Specifies a minimum value for an <input> element.",
+			"description": "Specifies a minimum value for an &ltinput&gt element.",
 			"html5": true
 		},
 		"maxlength": {
 			"type": "number",
 			"defaultValue": null,
-			"description": "Specifies the maximum number of characters allowed in an <input> element."
+			"description": "Specifies the maximum number of characters allowed in an &ltinput&gt element."
 		},
 		"required": {
 			"type": "bool",

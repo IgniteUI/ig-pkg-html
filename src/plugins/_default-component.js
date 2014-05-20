@@ -81,10 +81,10 @@ define(function (require, exports, module) {
 			case "container":
 			case "button":
 			case "link":
-			case "list":
 				return true;
 			case "input":
 			case "textarea":
+			case "list":
 				return false;
 			default:
 				console.log("Unknown HTML element added.");

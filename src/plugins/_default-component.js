@@ -331,8 +331,22 @@ define(function (require, exports, module) {
 		},
 		universalPropertyModified: function (descriptor) {
 			if (descriptor.propName === "id") {
-				var comp = descriptor.ide.componentById(descriptor.oldPropValue);
-				comp.id = descriptor.propValue;
+				//var comp = descriptor.ide.componentById(descriptor.oldPropValue);
+				var events = descriptor.comp.eventMarkers;
+				if (events) {
+					for (var item in events) {
+						if (events.hasOwnProperty(item)) {
+							var result = this.settings.ide.editor.find({
+								needle: /\$\("#(.*)?"\)/,
+								start: events[item].handlerMarker.start
+							});
+							if (result) {
+								this.settings.ide.session.replace(result, "$(\"#" + descriptor.propValue + "\")");
+							}
+						}
+					}
+				}
+				descriptor.comp.id = descriptor.propValue;
 				descriptor.placeholder.attr("id", descriptor.propValue);
 			} else if (descriptor.propName === "class") {
 				window.frames[0].$(descriptor.placeholder).removeClass(descriptor.oldPropValue).addClass(descriptor.propValue);

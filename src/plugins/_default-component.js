@@ -7,11 +7,8 @@ define(function (require, exports, module) {
 		},
 		_blockOfText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac blandit erat. Curabitur velit libero, lacinia sit amet dolor a, tincidunt varius nisi. Integer ac magna bibendum, dignissim quam sed, commodo mauris. Aenean consequat ullamcorper felis ut sagittis. Quisque at magna a purus egestas suscipit. In vulputate tincidunt arcu non pulvinar. Pellentesque vitae leo et justo fringilla adipiscing sit amet eget lacus.",
 		_lineOfText: "Lorem Ipsum Dolor Sit Amet",
-		_getTextElementMarkup: function (tagName, forCode, singleLine, id) {
-			return "<" + tagName + this._getContentEditable(forCode) + " id=\"" + id + "\">" + (singleLine ? this._lineOfText : this._blockOfText) + "</" + tagName + ">";
-		},
-		_getContentEditable: function (forCode) {
-			return (forCode ? "" : " contenteditable=\"true\" spellcheck=\"false\"");
+		_getTextElementMarkup: function (tagName, singleLine, id) {
+			return "<" + tagName + " id=\"" + id + "\">" + (singleLine ? this._lineOfText : this._blockOfText) + "</" + tagName + ">";
 		},
 		isContentEditable: function (type) {
 			if (type === "heading" || type === "text" || type === "textarea" || type === "link" || type === "list" || type === "container" || type === "button" || type === "input") {
@@ -23,25 +20,25 @@ define(function (require, exports, module) {
 		getMarkup: function (descriptor, forCode) {
 			switch (descriptor.type) {
 			case "heading":
-				return this._getTextElementMarkup("h1", forCode, true, descriptor.id);
+				return this._getTextElementMarkup("h1", true, descriptor.id);
 			case "text":
-				return this._getTextElementMarkup("p", forCode, false, descriptor.id);
+				return this._getTextElementMarkup("p", false, descriptor.id);
 			case "textarea":
-				return this._getTextElementMarkup("textarea", forCode, false, descriptor.id);
+				return this._getTextElementMarkup("textarea", false, descriptor.id);
 			case "link":
-				return this._getTextElementMarkup("a", forCode, true, descriptor.id);
+				return this._getTextElementMarkup("a", true, descriptor.id);
 			case "list":
-				return "<ul" + this._getContentEditable(forCode) + " id=\"" + descriptor.id + "\"><li>Item 1</li><li>Item 2</li></ul>";
+				return "<ul" + " id=\"" + descriptor.id + "\"><li>Item 1</li><li>Item 2</li></ul>";
 			case "container":
 				if (forCode) {
 					return "<div id=\"" + descriptor.id + "\"></div>";
 				} else {
-					return "<div " + this._getContentEditable(false) + " id=\"" + descriptor.id + "\"" + (forCode ? " style=\"min-width: 400px; min-height: 100px;\"" : "") + " data-droppablechild=\"true\"></div>";
+					return "<div " + " id=\"" + descriptor.id + "\"" + (forCode ? " style=\"min-width: 400px; min-height: 100px;\"" : "") + " data-droppablechild=\"true\"></div>";
 				}
 			case "button":
-				return "<button" + this._getContentEditable(forCode) + " id=\"" + descriptor.id + "\">Button</button>";
+				return "<button" + " id=\"" + descriptor.id + "\">Button</button>";
 			case "input":
-				return "<input" + this._getContentEditable(forCode) + " id=\"" + descriptor.id + "\"/>";
+				return "<input" + " id=\"" + descriptor.id + "\"/>";
 			default:
 				console.log("Unknown HTML element added: " + descriptor.type);
 				return "";
@@ -103,6 +100,8 @@ define(function (require, exports, module) {
 				return value;
 			case "tagName":
 				return descriptor.placeholder[0].tagName.toLowerCase();
+			case "contenteditable":
+				return false;
 			default:
 				value = window.frames[0].$(descriptor.placeholder).attr(descriptor.propName);
 				if (isBool) {

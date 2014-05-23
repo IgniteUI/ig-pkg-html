@@ -161,6 +161,10 @@ define(function (require, exports, module) {
 			descriptor.component = descriptor.comp;
 			// Update DOM
 			window.frames[0].$(descriptor.placeholder).attr(descriptor.propName, descriptor.propValue);
+			if (descriptor.propName === "reversed") {
+				// Bug in jQuery attr() with reverse option only
+				window.frames[0].$(descriptor.placeholder)[0].reversed = descriptor.propValue;
+			} 
 			// Update Code Editor
 			markers = descriptor.comp.htmlMarker.extraMarkers;
 			markerPos = markers[descriptor.propName];

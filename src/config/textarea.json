@@ -216,7 +216,7 @@
 			"description": "Specifies the language of the element's content."
 		},
 		"spellcheck": {
-			"type": "string",
+			"type": "bool",
 			"defaultValue": null,
 			"description": "Specifies whether the element is to have its spelling and grammar checked or not.",
 			"html5": true

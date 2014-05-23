@@ -380,13 +380,13 @@ define(function (require, exports, module) {
 				return pos;
 			}
 			attrStr = (isBool && propValue === true) ? " " + descriptor.propName : " " + descriptor.propName + "=\"" + propValue + "\"";
-			openTagEnd = ide.editor.find({
-				needle: ">",
+			openTagEnd = ide.editor.find({ // unary, such as <input />
+				needle: "/>",
 				start: htmlMarker.range.start
 			});
-			if (!openTagEnd) { // unary, such as <input />
+			if (!openTagEnd) { 
 				openTagEnd = closeTagEnd = ide.editor.find({
-					needle: "/>",
+					needle: ">",
 					start: htmlMarker.range.start
 				});
 			}

@@ -183,7 +183,7 @@ define(function (require, exports, module) {
 				markers = htmlMarker.extraMarkers,
 				propValue = descriptor.propValue,
 				innerMarker = markers[descriptor.propName],
-				startRow, startCol, endRow, endCol, startPos;
+				startRow, startCol, endMarker, endRow, endCol, startPos;
 
 			// Update DOM
 			descriptor.placeholder.html(propValue);
@@ -195,21 +195,37 @@ define(function (require, exports, module) {
 					needle: ">",
 					start: htmlMarker.range.start
 				});
-				startRow = endRow = startPos.start.row;
+				startRow = startPos.start.row;
 				startCol = startPos.start.column + 1;
-				endCol = ide.editor.find({
+				endMarker = ide.editor.find({
 					needle: "</",
 					start: htmlMarker.range.start
-				}).start.column;
-				innerMarker = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
+				});
+				endRow = endMarker.start.row;
+				endCol = startCol + propValue.length;
+				if (descriptor.type === "container") {
+					propValue = "\t" + propValue;
+					ide.session.insert({ row: startRow + 1, column: 2 }, propValue);
+					innerMarker = ide.createAndAddMarker(startRow + 1, 2, startRow + 1, 2 + propValue.length);
+				} else {
+					innerMarker = ide.createAndAddMarker(startRow, startCol, endRow, endMarker.start.column);
+					ide.session.replace(innerMarker, propValue);
+					ide.session.removeMarker(innerMarker.id);
+					innerMarker = ide.createAndAddMarker(startRow, startCol, endRow, startCol + propValue.length);
+				}
 			} else {
-				startRow = endRow = innerMarker.start.row;
+				startRow = innerMarker.start.row;
 				startCol = innerMarker.start.column;
+				endRow = innerMarker.end.row;
+				if (descriptor.type === "container") {
+					propValue = "\t" + propValue;
+				}
+				endCol = startCol + propValue.length;
+				ide.session.replace(innerMarker, propValue);
+				ide.session.removeMarker(innerMarker.id);
+				innerMarker = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
 			}
-			ide.session.replace(innerMarker, propValue);
-			ide.session.removeMarker(innerMarker.id);
-			endCol = startCol + propValue.length;
-			markers[descriptor.propName] = ide.createAndAddMarker(startRow, startCol, endRow, endCol);
+			markers[descriptor.propName] = innerMarker;
 		},
 		updateTag: function (descriptor) {
 			var ide = this.settings.ide,

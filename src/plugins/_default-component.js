@@ -239,6 +239,7 @@ define(function (require, exports, module) {
 				markers = htmlMarker.extraMarkers,
 				propValue = descriptor.propValue,
 				nodeName = descriptor.placeholder[0].nodeName.toLowerCase(),
+				tagMargin = propValue.length - nodeName.length,
 				startRow = htmlMarker.range.start.row,
 				endRow = htmlMarker.range.end.row,
 				endCol = htmlMarker.range.end.column + (propValue.length - nodeName.length) * 2,
@@ -255,7 +256,7 @@ define(function (require, exports, module) {
 				return newElem;
 			});
 			this.settings.ide._selectComponent(newElem[0]);
-			idMarker = { sr: markers.idMarker.start.row, sc: markers.idMarker.start.column, er: markers.idMarker.end.row, ec: markers.idMarker.end.column };
+			idMarker = { sr: markers.idMarker.start.row, sc: markers.idMarker.start.column + tagMargin, er: markers.idMarker.end.row, ec: markers.idMarker.end.column + tagMargin };
 			// Update Code Editor
 			newNodeHTML = ide.session.getTextRange(htmlMarker.range);
 			newNodeHTML = newNodeHTML.replace("<" + nodeName, "<" + propValue);

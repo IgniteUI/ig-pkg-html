@@ -354,15 +354,19 @@ define(function (require, exports, module) {
 			return { position: pos, selectionRange: selRange };
 		},
 		universalPropertyModified: function (descriptor) {
+			var ide = this.settings.ide,
+				event, result;
 			if (descriptor.propName === "id") {
 				//var comp = descriptor.ide.componentById(descriptor.oldPropValue);
 				var events = descriptor.comp.eventMarkers;
 				if (events) {
-					for (var item in events) {
-						if (events.hasOwnProperty(item)) {
-							var result = this.settings.ide.editor.find({
+					for (event in events) {
+						if (events.hasOwnProperty(event)) {
+							result = ide.editor.find({
 								needle: /\$\("#(.*)?"\)/,
-								start: events[item].handlerMarker.start
+								range: events[event].handlerMarker,
+								start: events[event].handlerMarker.start,
+								$isMultiLine: false
 							});
 							if (result) {
 								this.settings.ide.session.replace(result, "$(\"#" + descriptor.propValue + "\")");
@@ -371,7 +375,7 @@ define(function (require, exports, module) {
 					}
 				}
 				descriptor.comp.id = descriptor.propValue;
-				descriptor.placeholder.attr("id", descriptor.propValue);
+				window.frames[0].$(descriptor.placeholder).attr("id", descriptor.propValue);
 			} else if (descriptor.propName === "class") {
 				window.frames[0].$(descriptor.placeholder).removeClass(descriptor.oldPropValue).addClass(descriptor.propValue);
 			}

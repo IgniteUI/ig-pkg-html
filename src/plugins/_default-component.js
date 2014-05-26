@@ -162,7 +162,7 @@ define(function (require, exports, module) {
 			// Update DOM
 			window.frames[0].$(descriptor.placeholder).attr(descriptor.propName, descriptor.propValue);
 			if (descriptor.propName === "reversed") {
-				// Bug in jQuery attr() with reverse option only
+				// Bug in jQuery attr() with OL reversed option only
 				window.frames[0].$(descriptor.placeholder)[0].reversed = descriptor.propValue;
 			} 
 			// Update Code Editor
@@ -197,12 +197,14 @@ define(function (require, exports, module) {
 				// If the innerHTML marker doesn't exist, we create it
 				startPos = ide.editor.find({
 					needle: ">",
+					range: htmlMarker.range,
 					start: htmlMarker.range.start
 				});
 				startRow = startPos.start.row;
 				startCol = startPos.start.column + 1;
 				endMarker = ide.editor.find({
 					needle: "</",
+					range: htmlMarker.range,
 					start: htmlMarker.range.start
 				});
 				endRow = endMarker.start.row;
@@ -268,6 +270,7 @@ define(function (require, exports, module) {
 			descriptor.comp.htmlMarker.extraMarkers.idMarker.end.column = idMarker.ec;
 			start = ide.editor.find({
 				needle: "<",
+				range: htmlMarker.range,
 				start: htmlMarker.range.start
 			}).start;
 			end = ide.editor.find({
@@ -343,6 +346,7 @@ define(function (require, exports, module) {
 			} else {
 				selRange = ide.editor.find({
 					needle: isBool ? descriptor.propName + "" : descriptor.defaultValue + "",
+					range: markerPos,
 					start: markerPos.start
 				});
 			}
@@ -386,11 +390,13 @@ define(function (require, exports, module) {
 			attrStr = (isBool && propValue === true) ? " " + descriptor.propName : " " + descriptor.propName + "=\"" + propValue + "\"";
 			openTagEnd = ide.editor.find({ // unary, such as <input />
 				needle: "/>",
+				range: htmlMarker.range,
 				start: htmlMarker.range.start
 			});
 			if (!openTagEnd) { 
 				openTagEnd = closeTagEnd = ide.editor.find({
 					needle: ">",
+					range: htmlMarker.range,
 					start: htmlMarker.range.start
 				});
 			}
@@ -406,11 +412,13 @@ define(function (require, exports, module) {
 				);
 				openTagStart = ide.editor.find({
 					needle: "<",
+					range: htmlMarker.range,
 					start: htmlMarker.range.start
 				});
 				closeTagEnd = ide.editor.find({
 					needle: ">",
 					backwards: true,
+					range: htmlMarker.range,
 					start: htmlMarker.range.end
 				});
 				this._fixFind();

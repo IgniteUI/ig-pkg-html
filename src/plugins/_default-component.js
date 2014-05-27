@@ -245,7 +245,7 @@ define(function (require, exports, module) {
 				endCol = htmlMarker.range.end.column + (propValue.length - nodeName.length) * 2,
 				domElem = window.frames[0].$(descriptor.placeholder),
 				attrs = {},
-				newNodeHTML, newElem, start, end, idMarker;
+				newNodeHTML, newElem, start, end, extraMarkersRanges, newExtraMarkers;
 			
 			// Update DOM
 			$.each(domElem[0].attributes, function (index, currAttr) {
@@ -256,7 +256,7 @@ define(function (require, exports, module) {
 				return newElem;
 			});
 			this.settings.ide._selectComponent(newElem[0]);
-			idMarker = { sr: markers.idMarker.start.row, sc: markers.idMarker.start.column + tagMargin, er: markers.idMarker.end.row, ec: markers.idMarker.end.column + tagMargin };
+			extraMarkersRanges = this._saveHTMLExtraMarkersRanges(markers, tagMargin);
 			// Update Code Editor
 			newNodeHTML = ide.session.getTextRange(htmlMarker.range);
 			newNodeHTML = newNodeHTML.replace("<" + nodeName, "<" + propValue);
@@ -264,11 +264,7 @@ define(function (require, exports, module) {
 			ide.session.replace(htmlMarker.range, newNodeHTML);
 			ide.session.removeMarker(htmlMarker.id);
 			descriptor.comp.htmlMarker.range = ide.createAndAddMarker(startRow, 0, endRow, endCol);
-			descriptor.comp.htmlMarker.extraMarkers = markers;
-			descriptor.comp.htmlMarker.extraMarkers.idMarker.start.row = idMarker.sr;
-			descriptor.comp.htmlMarker.extraMarkers.idMarker.start.column = idMarker.sc;
-			descriptor.comp.htmlMarker.extraMarkers.idMarker.end.row = idMarker.er;
-			descriptor.comp.htmlMarker.extraMarkers.idMarker.end.column = idMarker.ec;
+			descriptor.comp.htmlMarker.extraMarkers = this._updateHTMLExtraMarkers(extraMarkersRanges);
 			start = ide.editor.find({
 				needle: "<",
 				range: htmlMarker.range,
@@ -282,6 +278,34 @@ define(function (require, exports, module) {
 			}).end;
 			this._fixFind();
 			ide.editor.selection.setSelectionRange({ start: start, end: end }, false);
+		},
+		_saveHTMLExtraMarkersRanges: function (markers, tagMargin) {
+			var ranges = {},
+				marker, markerName;
+			for (markerName in markers) {
+				marker = markers[markerName];
+				if (marker.start) {
+					ranges[markerName] = { id: marker.id, sr: marker.start.row, sc: marker.start.column + tagMargin, er: marker.end.row, ec: marker.end.column + tagMargin }
+				} else {
+					ranges[markerName] = markers[markerName];
+				}
+			}
+			return ranges;
+		},
+		_updateHTMLExtraMarkers: function (ranges) {
+			var ide = this.settings.ide,
+				newMarkers = {},
+				range, rangeName;
+			for (rangeName in ranges) {
+				range = ranges[rangeName];
+				if (range.sr) {
+					newMarkers[rangeName] = ide.createAndAddMarker(range.sr, range.sc, range.er, range.ec);
+					ide.session.removeMarker(range.id);
+				} else {
+					newMarkers[rangeName] = ranges[rangeName];
+				}
+			}
+			return newMarkers;
 		},
 		udpateEvent: function (descriptor) {
 			var ide = this.settings.ide,

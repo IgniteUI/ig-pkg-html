@@ -284,7 +284,7 @@ define(function (require, exports, module) {
 				marker, markerName;
 			for (markerName in markers) {
 				marker = markers[markerName];
-				if (marker.start) {
+				if (marker && marker.start) {
 					ranges[markerName] = { id: marker.id, sr: marker.start.row, sc: marker.start.column + tagMargin, er: marker.end.row, ec: marker.end.column + tagMargin }
 				} else {
 					ranges[markerName] = markers[markerName];
@@ -298,7 +298,7 @@ define(function (require, exports, module) {
 				range, rangeName;
 			for (rangeName in ranges) {
 				range = ranges[rangeName];
-				if (range.sr) {
+				if (range && range.sr) {
 					newMarkers[rangeName] = ide.createAndAddMarker(range.sr, range.sc, range.er, range.ec);
 					ide.session.removeMarker(range.id);
 				} else {

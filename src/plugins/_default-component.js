@@ -207,6 +207,7 @@ define(function (require, exports, module) {
 					range: htmlMarker.range,
 					start: htmlMarker.range.start
 				});
+				this._fixFind();
 				endRow = endMarker.start.row;
 				endCol = startCol + propValue.length;
 				if (descriptor.type === "container") {

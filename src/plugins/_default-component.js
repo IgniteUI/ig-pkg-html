@@ -372,7 +372,6 @@ define(function (require, exports, module) {
 			} else {
 				selRange = ide.editor.find({
 					needle: isBool ? descriptor.propName + "" : descriptor.defaultValue + "",
-					range: markerPos,
 					start: markerPos.start
 				});
 			}
@@ -389,7 +388,6 @@ define(function (require, exports, module) {
 						if (events.hasOwnProperty(event)) {
 							result = ide.editor.find({
 								needle: /\$\("#(.*)?"\)/,
-								range: events[event].handlerMarker,
 								start: events[event].handlerMarker.start,
 								$isMultiLine: false
 							});
@@ -451,9 +449,9 @@ define(function (require, exports, module) {
 					range: htmlMarker.range,
 					start: htmlMarker.range.end
 				});
-				this._fixFind();
 				ide.editor.selection.setSelectionRange({ start: openTagStart.start, end: closeTagEnd.end }, false);
 			}
+			this._fixFind();
 			return pos;
 		},
 		updateAttrCode: function (descriptor) {

@@ -108,12 +108,6 @@
 				}
 			]
 		},
-		"contenteditable": {
-			"type": "bool",
-			"defaultValue": false,
-			"description": "Specifies whether the content of an element is editable or not.",
-			"html5": true
-		},
 		"lang": {
 			"type": "string",
 			"defaultValue": null,

@@ -100,8 +100,6 @@ define(function (require, exports, module) {
 				return value;
 			case "tagName":
 				return descriptor.placeholder[0].tagName.toLowerCase();
-			case "contenteditable":
-				return false;
 			default:
 				value = window.frames[0].$(descriptor.placeholder).attr(descriptor.propName);
 				if (isBool) {

@@ -327,8 +327,8 @@ define(function (require, exports, module) {
 
 				eventString = "\t\t\t\t$(\"#" + descriptor.id + "\").on(\"" + evtName + "\", function (event, args) {\n\t\t\t\t\t\n\t\t\t\t});\n";
 				ide.session.insert({ row: offset, column: 0 }, eventString);
-				handlerMarker = new ide.RangeClass(offset, 0, offset + 2, 3);
-				funcMarker = new ide.RangeClass(offset, 0, offset + 2, 3);
+				handlerMarker = new ide.RangeClass(offset, 4, offset + 3, 0);
+				funcMarker = new ide.RangeClass(offset + 2, 5, offset + 2, 5);
 				ide.addMarker(handlerMarker);
 				ide.addMarker(funcMarker);
 				if (!component.eventMarkers) {

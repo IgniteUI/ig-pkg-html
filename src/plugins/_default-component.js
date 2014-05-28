@@ -485,7 +485,7 @@ define(function (require, exports, module) {
 			}
 		},
 		_getLastEventMarker: function (eventMarkers) {
-			var lastEventMarker = null;
+			var lastEventMarker = null, event;
 			for (event in eventMarkers) {
 				if (lastEventMarker === null) {
 					lastEventMarker = eventMarkers[event].handlerMarker;

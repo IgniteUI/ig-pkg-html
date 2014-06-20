@@ -105,7 +105,7 @@ define(function (require, exports, module) {
 				if (isBool) {
 					return (value && value !== "false") ? true : false;
 				} else {
-					return value !== null && value !== undefined ? value : "";
+					return value !== null && value !== undefined ? value : descriptor.defaultValue;
 				}
 			}
 		},

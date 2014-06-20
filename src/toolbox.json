@@ -7,7 +7,7 @@
   "scripts": [
   ],
   "stylesheets": [
-	"html-package.css"
+
   ],
   "requiresInitialization": false,
   "configPath": "config",

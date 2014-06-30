@@ -44,25 +44,16 @@ define(function (require, exports, module) {
 				return "";
 			}
 		},
-		_getIndentTabs: function (descriptor) {
-			var extraIndentStr = "", i = 0;
-			if (descriptor.extraIndent) {
-				for (i = 0; i < descriptor.extraIndent; i++) {
-					extraIndentStr += "\t";
-				}
-			}
-			return extraIndentStr;
-		},
 		getCodeEditorMarkupSnippet: function (descriptor) {
 			var snippet, lineCount, extraMarkers;
 			if (descriptor.type === "container") {
-				snippet = "\t" + this._getIndentTabs(descriptor) + "<div id=\"" + descriptor.id + "\">\n\t" + this._getIndentTabs(descriptor) + "</div>\n";
+				snippet = this.settings.ide._tabStr(descriptor.extraIndent + 1) + "<div id=\"" + descriptor.id + "\">\n\t" + this.settings.ide._tabStr(descriptor.extraIndent + 1) + "</div>\n";
 				lineCount = 2;
 				extraMarkers = [
-					{ rowOffset: 0, colOffset: 1, rowCount: 2, colCount: 0 }
+					{ rowOffset: 0, colOffset: 0, rowCount: 2, colCount: 0 }
 				];
 			} else {
-				snippet = "\t" + this._getIndentTabs(descriptor) + this.getMarkup(descriptor, true) + "\n";
+				snippet = this.settings.ide._tabStr(descriptor.extraIndent + 1) + this.getMarkup(descriptor, true) + "\n";
 				lineCount = 1;
 			}
 			

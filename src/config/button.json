@@ -28,18 +28,6 @@
 			],
 			"description": "Fires the moment when the element gets focus."
 		},
-		"select": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires after some text has been selected in an element."
-		},
 		"keydown": {
 			"cancellable": true,
 			"args": [
@@ -48,18 +36,6 @@
 					"type": "event",
 					"optional": true,
 					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when a user is pressing a key."
-		},
-		"keypress": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Fires when a user presses a key."
 				}
 			],
 			"description": "Fires when a user is pressing a key."
@@ -100,30 +76,6 @@
 			],
 			"description": "Fires on a mouse double-click on the element."
 		},
-		"mousedown": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when a mouse button is pressed down on an element."
-		},
-		"mousemove": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when the mouse pointer moves over an element."
-		},
 		"mouseout": {
 			"cancellable": true,
 			"args": [
@@ -147,18 +99,6 @@
 				}
 			],
 			"description": "Fires when the mouse pointer moves over an element."
-		},
-		"mouseup": {
-			"cancellable": true,
-			"args": [
-				{
-					"name": "e",
-					"type": "event",
-					"optional": true,
-					"description": "Reference to event object."
-				}
-			],
-			"description": "Fires when a mouse button is released over an element."
 		}
 	},
 	"properties": {
@@ -194,16 +134,15 @@
 				}
 			]
 		},
+		"innerHTML": {
+			"type": "string",
+			"defaultValue": "",
+			"description" : "The display text."
+		},
 		"disabled": {
 			"type": "bool",
 			"defaultValue": false,
 			"description": "Specifies that a button should be disabled"
-		},
-		"autofocus": {
-			"type": "bool",
-			"defaultValue": false,
-			"description": "Specifies that a button should automatically get focus when the page loads",
-			"html5": true
 		},
 		"form": {
 			"type": "string",
@@ -211,42 +150,13 @@
 			"description": "Specifies one or more forms the button belongs to",
 			"html5": true
 		},
-		"formaction": {
+		"action": {
 			"type": "string",
 			"defaultValue": null,
 			"description": "Specifies where to send the form-data when a form is submitted. Only for type=\"submit\"",
 			"html5": true
 		},
-		"formenctype": {
-			"type": "string",
-			"defaultValue": "application/x-www-form-urlencoded",
-			"description": "Specifies where to send the form-data when a form is submitted. Only for type=\"submit\"",
-			"html5": true,
-			"valueOptions": [
-				{
-					"name": "application/x-www-form-urlencoded",
-					"type": "string",
-					"description": "All characters will be encoded before sent."
-				},
-				{
-					"name": "multipart/form-data",
-					"type": "string",
-					"description": "No characters are encoded (use this when you are using forms that have a file upload control)."
-				},
-				{
-					"name": "text/plain",
-					"type": "string",
-					"description": "Spaces are converted to \"+\" symbols, but no characters are encoded."
-				}
-			]
-		},
-		"formnovalidate": {
-			"type": "bool",
-			"defaultValue": false,
-			"description": "Specifies that the form-data should not be validated on submission. Only for type=\"submit\"",
-			"html5": true
-		},
-		"formtarget": {
+		"target": {
 			"type": "string",
 			"defaultValue": "_self",
 			"description": "Specifies where to display the response after submitting the form. Only for type=\"submit\"",
@@ -274,42 +184,15 @@
 				}
 			]
 		},
-		"accesskey": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies a shortcut key to activate/focus an element"
-		},
-		"contenteditable": {
-			"type": "bool",
-			"defaultValue": false,
-			"description": "Specifies whether the content of an element is editable or not.",
-			"html5": true
-		},
-		"lang": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies the language of the element's content."
-		},
 		"style": {
 			"type": "string",
 			"defaultValue": null,
 			"description": "Specifies an inline CSS style for an element."
 		},
-		"tabindex": {
-			"type": "number",
-			"defaultValue": null,
-			"description": "Specifies the tabbing order of an element."
-		},
 		"title": {
 			"type": "string",
 			"defaultValue": null,
 			"description": "Specifies extra information about an element."
-		},
-		"translate": {
-			"type": "string",
-			"defaultValue": null,
-			"description": "Specifies whether the content of an element should be translated or not.",
-			"html5": true
 		}
 	}
 }

@@ -1,0 +1,72 @@
+{
+	"events": {
+		"click": {
+			"cancellable": true,
+			"args": [
+				{
+					"name": "e",
+					"type": "event",
+					"optional": true,
+					"description": "Reference to event object."
+				}
+			],
+			"description": "Fires on a mouse click on the element."
+		},
+		"mouseout": {
+			"cancellable": true,
+			"args": [
+				{
+					"name": "e",
+					"type": "event",
+					"optional": true,
+					"description": "Reference to event object."
+				}
+			],
+			"description": "Fires when the mouse pointer moves out of an element."
+		},
+		"mouseover": {
+			"cancellable": true,
+			"args": [
+				{
+					"name": "e",
+					"type": "event",
+					"optional": true,
+					"description": "Reference to event object."
+				}
+			],
+			"description": "Fires when the mouse pointer moves over an element."
+		}
+	},
+	"properties": {
+		"src": {
+			"type": "string",
+			"defaultValue": null,
+			"description" : "Specifies the image source."
+		},
+		"style": {
+			"type": "string",
+			"defaultValue": null,
+			"description": "Specifies an inline CSS style for an element."
+		},
+		"title": {
+			"type": "string",
+			"defaultValue": null,
+			"description": "Specifies a title tooltip for the image."
+		},
+		"alt": {
+			"type": "string",
+			"defaultValue": null,
+			"description": "Specifies alternative text when the image cannot be loaded."
+		},
+		"width": {
+			"type": "number",
+			"defaultValue": null,
+			"description": "Specifies the width of an image."
+		},
+		"height": {
+			"type": "number",
+			"defaultValue": null,
+			"description": "Specifies the height of an image."
+		}
+	}
+}

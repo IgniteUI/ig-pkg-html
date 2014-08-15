@@ -27,6 +27,8 @@ define(function (require, exports, module) {
 				return this._getTextElementMarkup("textarea", false, descriptor.id);
 			case "link":
 				return this._getTextElementMarkup("a", true, descriptor.id);
+			case "image":
+				return "<img id=\"" + descriptor.id + "\" />";
 			case "list":
 				return "<ul" + " id=\"" + descriptor.id + "\"><li>Item 1</li><li>Item 2</li></ul>";
 			case "container":
@@ -73,6 +75,7 @@ define(function (require, exports, module) {
 			case "input":
 			case "textarea":
 			case "list":
+			case "image":
 				return false;
 			default:
 				console.log("Unknown HTML element added.");

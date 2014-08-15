@@ -51,7 +51,7 @@
 			"icon": "paragraph.png",
 			"tags": ["textarea"],
 			"dragDropIcon": "paragraph-dragdrop.png",
-			"category": "common",
+			"category": "editors",
 			"visual": true,
 			"framework": false
 		},
@@ -92,6 +92,16 @@
 			"tags": ["input"],
 			"dragDropIcon": "input-dragdrop.png",
 			"category": "editors",
+			"visual": true,
+			"framework": false
+		},
+		"image": {
+			"id": "image",
+			"toolboxTitle": "Image",
+			"icon": "image.png",
+			"tags": ["img"],
+			"dragDropIcon": "image-dragdrop.png",
+			"category": "common",
 			"visual": true,
 			"framework": false
 		}

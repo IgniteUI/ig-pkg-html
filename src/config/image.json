@@ -7,10 +7,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires on a mouse click on the element."
+			"description": {
+		"en": "Fires on a mouse click on the element.",
+		"jp": "Fires on a mouse click on the element."
+	}
 		},
 		"mouseout": {
 			"cancellable": true,
@@ -19,10 +25,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when the mouse pointer moves out of an element."
+			"description": {
+		"en": "Fires when the mouse pointer moves out of an element.",
+		"jp": "Fires when the mouse pointer moves out of an element."
+	}
 		},
 		"mouseover": {
 			"cancellable": true,
@@ -31,10 +43,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when the mouse pointer moves over an element."
+			"description": {
+		"en": "Fires when the mouse pointer moves over an element.",
+		"jp": "Fires when the mouse pointer moves over an element."
+	}
 		}
 	},
 	"properties": {
@@ -46,27 +64,42 @@
 		"style": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies an inline CSS style for an element."
+			"description": {
+		"en": "Specifies an inline CSS style for an element.",
+		"jp": "Specifies an inline CSS style for an element."
+	}
 		},
 		"title": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies a title tooltip for the image."
+			"description": {
+		"en": "Specifies a title tooltip for the image.",
+		"jp": "Specifies a title tooltip for the image."
+	}
 		},
 		"alt": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies alternative text when the image cannot be loaded."
+			"description": {
+		"en": "Specifies alternative text when the image cannot be loaded.",
+		"jp": "Specifies alternative text when the image cannot be loaded."
+	}
 		},
 		"width": {
 			"type": "number",
 			"defaultValue": null,
-			"description": "Specifies the width of an image."
+			"description": {
+		"en": "Specifies the width of an image.",
+		"jp": "Specifies the width of an image."
+	}
 		},
 		"height": {
 			"type": "number",
 			"defaultValue": null,
-			"description": "Specifies the height of an image."
+			"description": {
+		"en": "Specifies the height of an image.",
+		"jp": "Specifies the height of an image."
+	}
 		}
 	}
 }

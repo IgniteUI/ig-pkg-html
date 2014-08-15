@@ -11,10 +11,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires the moment that the element loses focus."
+			"description": {
+		"en": "Fires the moment that the element loses focus.",
+		"jp": "Fires the moment that the element loses focus."
+	}
 		},
 		"change": {
 			"cancellable": true,
@@ -23,10 +29,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires the moment when the value of the element is changed."
+			"description": {
+		"en": "Fires the moment when the value of the element is changed.",
+		"jp": "Fires the moment when the value of the element is changed."
+	}
 		},
 		"focus": {
 			"cancellable": true,
@@ -35,10 +47,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires the moment when the element gets focus."
+			"description": {
+		"en": "Fires the moment when the element gets focus.",
+		"jp": "Fires the moment when the element gets focus."
+	}
 		},
 		"input": {
 			"cancellable": true,
@@ -47,10 +65,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Script to be run when an element gets user input.",
+			"description": {
+		"en": "Script to be run when an element gets user input.",
+		"jp": "Script to be run when an element gets user input."
+	},
 			"html5": true
 		},
 		"submit": {
@@ -60,10 +84,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when a form is submitted."
+			"description": {
+		"en": "Fires when a form is submitted.",
+		"jp": "Fires when a form is submitted."
+	}
 		},
 		"keydown": {
 			"cancellable": true,
@@ -72,10 +102,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when a user is pressing a key."
+			"description": {
+		"en": "Fires when a user is pressing a key.",
+		"jp": "Fires when a user is pressing a key."
+	}
 		},
 		"keyup": {
 			"cancellable": true,
@@ -84,10 +120,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when a user releases a key."
+			"description": {
+		"en": "Fires when a user releases a key.",
+		"jp": "Fires when a user releases a key."
+	}
 		},
 		"click": {
 			"cancellable": true,
@@ -96,10 +138,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires on a mouse click on the element."
+			"description": {
+		"en": "Fires on a mouse click on the element.",
+		"jp": "Fires on a mouse click on the element."
+	}
 		},
 		"dblclick": {
 			"cancellable": true,
@@ -108,10 +156,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires on a mouse double-click on the element."
+			"description": {
+		"en": "Fires on a mouse double-click on the element.",
+		"jp": "Fires on a mouse double-click on the element."
+	}
 		},
 		"mousedown": {
 			"cancellable": true,
@@ -120,10 +174,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when a mouse button is pressed down on an element."
+			"description": {
+		"en": "Fires when a mouse button is pressed down on an element.",
+		"jp": "Fires when a mouse button is pressed down on an element."
+	}
 		},
 		"mouseup": {
 			"cancellable": true,
@@ -132,144 +192,222 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when a mouse button is released over an element."
+			"description": {
+		"en": "Fires when a mouse button is released over an element.",
+		"jp": "Fires when a mouse button is released over an element."
+	}
 		}
 	},
 	"properties": {
 		"type": {
 			"type": "string",
 			"defaultValue": "text",
-			"description": "Specifies the value of an &ltinput&gt element",
+			"description": {
+		"en": "Specifies the value of an &ltinput&gt element",
+		"jp": "Specifies the value of an &ltinput&gt element"
+	},
 			"valueOptions": [
 				{
 					"name": "button",
 					"type": "string",
-					"description": "Defines a clickable button (mostly used with a JavaScript to activate a script)."
+					"description": {
+		"en": "Defines a clickable button (mostly used with a JavaScript to activate a script).",
+		"jp": "Defines a clickable button (mostly used with a JavaScript to activate a script)."
+	}
 				},
 				{
 					"name": "checkbox",
 					"type": "string",
-					"description": "Defines a checkbox."
+					"description": {
+		"en": "Defines a checkbox.",
+		"jp": "Defines a checkbox."
+	}
 				},
 				{
 					"name": "color",
 					"type": "string",
-					"description": "Defines a color picker.",
+					"description": {
+		"en": "Defines a color picker.",
+		"jp": "Defines a color picker."
+	},
 					"html5": true
 				},
 				{
 					"name": "date",
 					"type": "string",
-					"description": "Defines a date control (year, month and day (no time)).",
+					"description": {
+		"en": "Defines a date control (year, month and day (no time)).",
+		"jp": "Defines a date control (year, month and day (no time))."
+	},
 					"html5": true
 				},
 				{
 					"name": "datetime",
 					"type": "string",
-					"description": "Defines a date and time control (year, month, day, hour, minute, second, and fraction of a second, based on UTC time zone).",
+					"description": {
+		"en": "Defines a date and time control (year, month, day, hour, minute, second, and fraction of a second, based on UTC time zone).",
+		"jp": "Defines a date and time control (year, month, day, hour, minute, second, and fraction of a second, based on UTC time zone)."
+	},
 					"html5": true
 				},
 				{
 					"name": "datetime-local",
 					"type": "string",
-					"description": "Defines a date and time control (year, month, day, hour, minute, second, and fraction of a second (no time zone).",
+					"description": {
+		"en": "Defines a date and time control (year, month, day, hour, minute, second, and fraction of a second (no time zone).",
+		"jp": "Defines a date and time control (year, month, day, hour, minute, second, and fraction of a second (no time zone)."
+	},
 					"html5": true
 				},
 				{
 					"name": "email",
 					"type": "string",
-					"description": "Defines a field for an e-mail address.",
+					"description": {
+		"en": "Defines a field for an e-mail address.",
+		"jp": "Defines a field for an e-mail address."
+	},
 					"html5": true
 				},
 				{
 					"name": "file",
 					"type": "string",
-					"description": "Defines a file-select field and a \"Browse...\" button (for file uploads)."
+					"description": {
+		"en": "Defines a file-select field and a \"Browse...\" button (for file uploads).",
+		"jp": "Defines a file-select field and a \"Browse...\" button (for file uploads)."
+	}
 				},
 				{
 					"name": "hidden",
 					"type": "string",
-					"description": "Defines a hidden input field."
+					"description": {
+		"en": "Defines a hidden input field.",
+		"jp": "Defines a hidden input field."
+	}
 				},
 				{
 					"name": "image",
 					"type": "string",
-					"description": "Defines an image as the submit button."
+					"description": {
+		"en": "Defines an image as the submit button.",
+		"jp": "Defines an image as the submit button."
+	}
 				},
 				{
 					"name": "month",
 					"type": "string",
-					"description": "Defines a month and year control (no time zone).",
+					"description": {
+		"en": "Defines a month and year control (no time zone).",
+		"jp": "Defines a month and year control (no time zone)."
+	},
 					"html5": true
 				},
 				{
 					"name": "number",
 					"type": "string",
-					"description": "Defines a field for entering a number.",
+					"description": {
+		"en": "Defines a field for entering a number.",
+		"jp": "Defines a field for entering a number."
+	},
 					"html5": true
 				},
 				{
 					"name": "password",
 					"type": "string",
-					"description": "Defines a password field (characters are masked)."
+					"description": {
+		"en": "Defines a password field (characters are masked).",
+		"jp": "Defines a password field (characters are masked)."
+	}
 				},
 				{
 					"name": "radio",
 					"type": "string",
-					"description": "Defines a radio button."
+					"description": {
+		"en": "Defines a radio button.",
+		"jp": "Defines a radio button."
+	}
 				},
 				{
 					"name": "range",
 					"type": "string",
-					"description": "Defines a control for entering a number whose exact value is not important (like a slider control).",
+					"description": {
+		"en": "Defines a control for entering a number whose exact value is not important (like a slider control).",
+		"jp": "Defines a control for entering a number whose exact value is not important (like a slider control)."
+	},
 					"html5": true
 				},
 				{
 					"name": "reset",
 					"type": "string",
-					"description": "Defines a reset button (resets all form values to default values)."
+					"description": {
+		"en": "Defines a reset button (resets all form values to default values).",
+		"jp": "Defines a reset button (resets all form values to default values)."
+	}
 				},
 				{
 					"name": "search",
 					"type": "string",
-					"description": "Defines a text field for entering a search string.",
+					"description": {
+		"en": "Defines a text field for entering a search string.",
+		"jp": "Defines a text field for entering a search string."
+	},
 					"html5": true
 				},
 				{
 					"name": "submit",
 					"type": "string",
-					"description": "Defines a submit button."
+					"description": {
+		"en": "Defines a submit button.",
+		"jp": "Defines a submit button."
+	}
 				},
 				{
 					"name": "tel",
 					"type": "string",
-					"description": "Defines a field for entering a telephone number.",
+					"description": {
+		"en": "Defines a field for entering a telephone number.",
+		"jp": "Defines a field for entering a telephone number."
+	},
 					"html5": true
 				},
 				{
 					"name": "text",
 					"type": "string",
-					"description": "Default. Defines a single-line text field (default width is 20 characters)."
+					"description": {
+		"en": "Default. Defines a single-line text field (default width is 20 characters).",
+		"jp": "Default. Defines a single-line text field (default width is 20 characters)."
+	}
 				},
 				{
 					"name": "time",
 					"type": "string",
-					"description": "Defines a control for entering a time (no time zone).",
+					"description": {
+		"en": "Defines a control for entering a time (no time zone).",
+		"jp": "Defines a control for entering a time (no time zone)."
+	},
 					"html5": true
 				},
 				{
 					"name": "url",
 					"type": "string",
-					"description": "Defines a field for entering a URL.",
+					"description": {
+		"en": "Defines a field for entering a URL.",
+		"jp": "Defines a field for entering a URL."
+	},
 					"html5": true
 				},
 				{
 					"name": "week",
 					"type": "string",
-					"description": "Defines a week and year control (no time zone).",
+					"description": {
+		"en": "Defines a week and year control (no time zone).",
+		"jp": "Defines a week and year control (no time zone)."
+	},
 					"html5": true
 				}
 			]
@@ -277,121 +415,187 @@
 		"value": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies the value of an &ltinput&gt element"
+			"description": {
+		"en": "Specifies the value of an &ltinput&gt element",
+		"jp": "Specifies the value of an &ltinput&gt element"
+	}
 		},
 		"name": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies the name of an &ltinput&gt element."
+			"description": {
+		"en": "Specifies the name of an &ltinput&gt element.",
+		"jp": "Specifies the name of an &ltinput&gt element."
+	}
 		},
 		"readonly": {
 			"type": "bool",
 			"defaultValue": false,
-			"description": "Specifies that an input field is read-only."
+			"description": {
+		"en": "Specifies that an input field is read-only.",
+		"jp": "Specifies that an input field is read-only."
+	}
 		},
 		"size": {
 			"type": "number",
 			"defaultValue": 20,
-			"description": "Specifies the width, in characters, of an &ltinput&gt element."
+			"description": {
+		"en": "Specifies the width, in characters, of an &ltinput&gt element.",
+		"jp": "Specifies the width, in characters, of an &ltinput&gt element."
+	}
 		},
 		"src": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies the URL of the image to use as a submit button (only for type=\"image\")."
+			"description": {
+		"en": "Specifies the URL of the image to use as a submit button (only for type=\"image\").",
+		"jp": "Specifies the URL of the image to use as a submit button (only for type=\"image\")."
+	}
 		},
 		"accept": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies the types of files that the server accepts (only for type=\"file\")."
+			"description": {
+		"en": "Specifies the types of files that the server accepts (only for type=\"file\").",
+		"jp": "Specifies the types of files that the server accepts (only for type=\"file\")."
+	}
 		},
 		"checked": {
 			"type": "bool",
 			"defaultValue": false,
-			"description": "Specifies that an &ltinput&gt element should be pre-selected when the page loads (for type=\"checkbox\" or type=\"radio\")."
+			"description": {
+		"en": "Specifies that an &ltinput&gt element should be pre-selected when the page loads (for type=\"checkbox\" or type=\"radio\").",
+		"jp": "Specifies that an &ltinput&gt element should be pre-selected when the page loads (for type=\"checkbox\" or type=\"radio\")."
+	}
 		},
 		"disabled": {
 			"type": "bool",
 			"defaultValue": false,
-			"description": "Specifies that an &ltinput&gt element should be disabled."
+			"description": {
+		"en": "Specifies that an &ltinput&gt element should be disabled.",
+		"jp": "Specifies that an &ltinput&gt element should be disabled."
+	}
 		},
 		"form": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies one or more forms the &ltinput&gt element belongs to.",
+			"description": {
+		"en": "Specifies one or more forms the &ltinput&gt element belongs to.",
+		"jp": "Specifies one or more forms the &ltinput&gt element belongs to."
+	},
 			"html5": true
 		},
 		"action": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies the URL of the file that will process the input control when the form is submitted (for type=\"submit\" and type=\"image\").",
+			"description": {
+		"en": "Specifies the URL of the file that will process the input control when the form is submitted (for type=\"submit\" and type=\"image\").",
+		"jp": "Specifies the URL of the file that will process the input control when the form is submitted (for type=\"submit\" and type=\"image\")."
+	},
 			"html5": true
 		},
 		"method": {
 			"type": "string",
 			"defaultValue": "get",
-			"description": "Defines the HTTP method for sending data to the action URL (for type=\"submit\" and type=\"image\").",
+			"description": {
+		"en": "Defines the HTTP method for sending data to the action URL (for type=\"submit\" and type=\"image\").",
+		"jp": "Defines the HTTP method for sending data to the action URL (for type=\"submit\" and type=\"image\")."
+	},
 			"html5": true,
 			"valueOptions": [
 				{
 					"name": "get",
 					"type": "string",
-					"description": "Appends the form-data to the URL in name/value pairs: URL?name=value&name=value."
+					"description": {
+		"en": "Appends the form-data to the URL in name/value pairs: URL?name=value&name=value.",
+		"jp": "Appends the form-data to the URL in name/value pairs: URL?name=value&name=value."
+	}
 				},
 				{
 					"name": "post",
 					"type": "string",
-					"description": "Sends the form-data as an HTTP post transaction."
+					"description": {
+		"en": "Sends the form-data as an HTTP post transaction.",
+		"jp": "Sends the form-data as an HTTP post transaction."
+	}
 				}
 			]
 		},
 		"height": {
 			"type": "number",
 			"defaultValue": null,
-			"description": "Specifies the height of an &ltinput&gt element (only for type=\"image\")",
+			"description": {
+		"en": "Specifies the height of an &ltinput&gt element (only for type=\"image\")",
+		"jp": "Specifies the height of an &ltinput&gt element (only for type=\"image\")"
+	},
 			"html5": true
 		},
 		"width": {
 			"type": "number",
 			"defaultValue": null,
-			"description": "Specifies the width of an &ltinput&gt element (only for type=\"image\")",
+			"description": {
+		"en": "Specifies the width of an &ltinput&gt element (only for type=\"image\")",
+		"jp": "Specifies the width of an &ltinput&gt element (only for type=\"image\")"
+	},
 			"html5": true
 		},
 		"max": {
 			"type": "number",
 			"defaultValue": null,
-			"description": "Specifies the maximum value for an &ltinput&gt element.",
+			"description": {
+		"en": "Specifies the maximum value for an &ltinput&gt element.",
+		"jp": "Specifies the maximum value for an &ltinput&gt element."
+	},
 			"html5": true
 		},
 		"min": {
 			"type": "number",
 			"defaultValue": null,
-			"description": "Specifies a minimum value for an &ltinput&gt element.",
+			"description": {
+		"en": "Specifies a minimum value for an &ltinput&gt element.",
+		"jp": "Specifies a minimum value for an &ltinput&gt element."
+	},
 			"html5": true
 		},
 		"maxlength": {
 			"type": "number",
 			"defaultValue": null,
-			"description": "Specifies the maximum number of characters allowed in an &ltinput&gt element."
+			"description": {
+		"en": "Specifies the maximum number of characters allowed in an &ltinput&gt element.",
+		"jp": "Specifies the maximum number of characters allowed in an &ltinput&gt element."
+	}
 		},
 		"required": {
 			"type": "bool",
 			"defaultValue": false,
-			"description": "Specifies that an input field must be filled out before submitting the form."
+			"description": {
+		"en": "Specifies that an input field must be filled out before submitting the form.",
+		"jp": "Specifies that an input field must be filled out before submitting the form."
+	}
 		},
 		"step": {
 			"type": "number",
 			"defaultValue": null,
-			"description": "Specifies the legal number intervals for an input field."
+			"description": {
+		"en": "Specifies the legal number intervals for an input field.",
+		"jp": "Specifies the legal number intervals for an input field."
+	}
 		},
 		"style": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies an inline CSS style for an element."
+			"description": {
+		"en": "Specifies an inline CSS style for an element.",
+		"jp": "Specifies an inline CSS style for an element."
+	}
 		},
 		"title": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies extra information about an element."
+			"description": {
+		"en": "Specifies extra information about an element.",
+		"jp": "Specifies extra information about an element."
+	}
 		}
 	}
 }

@@ -11,10 +11,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires after some text has been selected in an element."
+			"description": {
+		"en": "Fires after some text has been selected in an element.",
+		"jp": "Fires after some text has been selected in an element."
+	}
 		},
 		"click": {
 			"cancellable": true,
@@ -23,10 +29,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires on a mouse click on the element."
+			"description": {
+		"en": "Fires on a mouse click on the element.",
+		"jp": "Fires on a mouse click on the element."
+	}
 		},
 		"dblclick": {
 			"cancellable": true,
@@ -35,10 +47,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires on a mouse double-click on the element."
+			"description": {
+		"en": "Fires on a mouse double-click on the element.",
+		"jp": "Fires on a mouse double-click on the element."
+	}
 		},
 		"mouseout": {
 			"cancellable": true,
@@ -47,10 +65,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when the mouse pointer moves out of an element."
+			"description": {
+		"en": "Fires when the mouse pointer moves out of an element.",
+		"jp": "Fires when the mouse pointer moves out of an element."
+	}
 		},
 		"mouseover": {
 			"cancellable": true,
@@ -59,10 +83,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when the mouse pointer moves over an element."
+			"description": {
+		"en": "Fires when the mouse pointer moves over an element.",
+		"jp": "Fires when the mouse pointer moves over an element."
+	}
 		}
 	},
 	"properties": {
@@ -79,60 +109,93 @@
 				{
 					"name": "p",
 					"type": "string",
-					"description": "Initialize HTML Paragraph."
+					"description": {
+		"en": "Initialize HTML Paragraph.",
+		"jp": "Initialize HTML Paragraph."
+	}
 				},
 				{
 					"name": "span",
 					"type": "string",
-					"description": "Initialize HTML SPAN."
+					"description": {
+		"en": "Initialize HTML SPAN.",
+		"jp": "Initialize HTML SPAN."
+	}
 				},
 				{
 					"name": "label",
 					"type": "string",
-					"description": "Initialize HTML Label."
+					"description": {
+		"en": "Initialize HTML Label.",
+		"jp": "Initialize HTML Label."
+	}
 				},
 				{
 					"name": "blockquote",
 					"type": "string",
-					"description": "Initialize HTML Blockquote."
+					"description": {
+		"en": "Initialize HTML Blockquote.",
+		"jp": "Initialize HTML Blockquote."
+	}
 				},
 				{
 					"name": "pre",
 					"type": "string",
-					"description": "Initialize HTML Pre."
+					"description": {
+		"en": "Initialize HTML Pre.",
+		"jp": "Initialize HTML Pre."
+	}
 				},
 				{
 					"name": "legend",
 					"type": "string",
-					"description": "Initialize HTML Legend."
+					"description": {
+		"en": "Initialize HTML Legend.",
+		"jp": "Initialize HTML Legend."
+	}
 				}
 			]
 		},
 		"lang": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies the language of the element's content."
+			"description": {
+		"en": "Specifies the language of the element's content.",
+		"jp": "Specifies the language of the element's content."
+	}
 		},
 		"spellcheck": {
 			"type": "bool",
 			"defaultValue": null,
-			"description": "Specifies whether the element is to have its spelling and grammar checked or not.",
+			"description": {
+		"en": "Specifies whether the element is to have its spelling and grammar checked or not.",
+		"jp": "Specifies whether the element is to have its spelling and grammar checked or not."
+	},
 			"html5": true
 		},
 		"style": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies an inline CSS style for an element."
+			"description": {
+		"en": "Specifies an inline CSS style for an element.",
+		"jp": "Specifies an inline CSS style for an element."
+	}
 		},
 		"title": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies extra information about an element."
+			"description": {
+		"en": "Specifies extra information about an element.",
+		"jp": "Specifies extra information about an element."
+	}
 		},
 		"translate": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies whether the content of an element should be translated or not.",
+			"description": {
+		"en": "Specifies whether the content of an element should be translated or not.",
+		"jp": "Specifies whether the content of an element should be translated or not."
+	},
 			"html5": true
 		}
 	}

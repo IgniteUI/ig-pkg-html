@@ -11,10 +11,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires the moment that the element loses focus."
+			"description": {
+		"en": "Fires the moment that the element loses focus.",
+		"jp": "Fires the moment that the element loses focus."
+	}
 		},
 		"focus": {
 			"cancellable": true,
@@ -23,10 +29,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires the moment when the element gets focus."
+			"description": {
+		"en": "Fires the moment when the element gets focus.",
+		"jp": "Fires the moment when the element gets focus."
+	}
 		},
 		"keydown": {
 			"cancellable": true,
@@ -35,10 +47,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when a user is pressing a key."
+			"description": {
+		"en": "Fires when a user is pressing a key.",
+		"jp": "Fires when a user is pressing a key."
+	}
 		},
 		"keyup": {
 			"cancellable": true,
@@ -47,10 +65,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when a user releases a key."
+			"description": {
+		"en": "Fires when a user releases a key.",
+		"jp": "Fires when a user releases a key."
+	}
 		},
 		"click": {
 			"cancellable": true,
@@ -59,10 +83,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires on a mouse click on the element."
+			"description": {
+		"en": "Fires on a mouse click on the element.",
+		"jp": "Fires on a mouse click on the element."
+	}
 		},
 		"dblclick": {
 			"cancellable": true,
@@ -71,10 +101,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires on a mouse double-click on the element."
+			"description": {
+		"en": "Fires on a mouse double-click on the element.",
+		"jp": "Fires on a mouse double-click on the element."
+	}
 		},
 		"mouseout": {
 			"cancellable": true,
@@ -83,10 +119,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when the mouse pointer moves out of an element."
+			"description": {
+		"en": "Fires when the mouse pointer moves out of an element.",
+		"jp": "Fires when the mouse pointer moves out of an element."
+	}
 		},
 		"mouseover": {
 			"cancellable": true,
@@ -95,42 +137,66 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when the mouse pointer moves over an element."
+			"description": {
+		"en": "Fires when the mouse pointer moves over an element.",
+		"jp": "Fires when the mouse pointer moves over an element."
+	}
 		}
 	},
 	"properties": {
 		"name": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies a name for the button"
+			"description": {
+		"en": "Specifies a name for the button",
+		"jp": "Specifies a name for the button"
+	}
 		},
 		"value": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies an initial value for the button"
+			"description": {
+		"en": "Specifies an initial value for the button",
+		"jp": "Specifies an initial value for the button"
+	}
 		},
 		"type": {
 			"type": "string",
 			"defaultValue": "button",
-			"description": "Specifies the type of button",
+			"description": {
+		"en": "Specifies the type of button",
+		"jp": "Specifies the type of button"
+	},
 			"valueOptions": [
 				{
 					"name": "button",
 					"type": "string",
-					"description": "The type is button."
+					"description": {
+		"en": "The type is button.",
+		"jp": "The type is button."
+	}
 				},
 				{
 					"name": "reset",
 					"type": "string",
-					"description": "The type is button."
+					"description": {
+		"en": "The type is button.",
+		"jp": "The type is button."
+	}
 				},
 				{
 					"name": "submit",
 					"type": "string",
-					"description": "The type is button."
+					"description": {
+		"en": "The type is button.",
+		"jp": "The type is button."
+	}
 				}
 			]
 		},
@@ -142,57 +208,87 @@
 		"disabled": {
 			"type": "bool",
 			"defaultValue": false,
-			"description": "Specifies that a button should be disabled"
+			"description": {
+		"en": "Specifies that a button should be disabled",
+		"jp": "Specifies that a button should be disabled"
+	}
 		},
 		"form": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies one or more forms the button belongs to",
+			"description": {
+		"en": "Specifies one or more forms the button belongs to",
+		"jp": "Specifies one or more forms the button belongs to"
+	},
 			"html5": true
 		},
 		"action": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies where to send the form-data when a form is submitted. Only for type=\"submit\"",
+			"description": {
+		"en": "Specifies where to send the form-data when a form is submitted. Only for type=\"submit\"",
+		"jp": "Specifies where to send the form-data when a form is submitted. Only for type=\"submit\""
+	},
 			"html5": true
 		},
 		"target": {
 			"type": "string",
 			"defaultValue": "_self",
-			"description": "Specifies where to display the response after submitting the form. Only for type=\"submit\"",
+			"description": {
+		"en": "Specifies where to display the response after submitting the form. Only for type=\"submit\"",
+		"jp": "Specifies where to display the response after submitting the form. Only for type=\"submit\""
+	},
 			"html5": true,
 			"valueOptions": [
 				{
 					"name": "_blank",
 					"type": "string",
-					"description": "Loads the response in a new window/tab."
+					"description": {
+		"en": "Loads the response in a new window/tab.",
+		"jp": "Loads the response in a new window/tab."
+	}
 				},
 				{
 					"name": "_self",
 					"type": "string",
-					"description": "Loads the response in the same frame."
+					"description": {
+		"en": "Loads the response in the same frame.",
+		"jp": "Loads the response in the same frame."
+	}
 				},
 				{
 					"name": "_parent",
 					"type": "string",
-					"description": "Loads the response in the parent frame."
+					"description": {
+		"en": "Loads the response in the parent frame.",
+		"jp": "Loads the response in the parent frame."
+	}
 				},
 				{
 					"name": "_top",
 					"type": "string",
-					"description": "Loads the response in the full body of the window."
+					"description": {
+		"en": "Loads the response in the full body of the window.",
+		"jp": "Loads the response in the full body of the window."
+	}
 				}
 			]
 		},
 		"style": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies an inline CSS style for an element."
+			"description": {
+		"en": "Specifies an inline CSS style for an element.",
+		"jp": "Specifies an inline CSS style for an element."
+	}
 		},
 		"title": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies extra information about an element."
+			"description": {
+		"en": "Specifies extra information about an element.",
+		"jp": "Specifies extra information about an element."
+	}
 		}
 	}
 }

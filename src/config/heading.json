@@ -11,10 +11,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires on a mouse click on the element."
+			"description": {
+		"en": "Fires on a mouse click on the element.",
+		"jp": "Fires on a mouse click on the element."
+	}
 		},
 		"dblclick": {
 			"cancellable": true,
@@ -23,10 +29,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires on a mouse double-click on the element."
+			"description": {
+		"en": "Fires on a mouse double-click on the element.",
+		"jp": "Fires on a mouse double-click on the element."
+	}
 		},
 		"mousedown": {
 			"cancellable": true,
@@ -35,10 +47,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when a mouse button is pressed down on an element."
+			"description": {
+		"en": "Fires when a mouse button is pressed down on an element.",
+		"jp": "Fires when a mouse button is pressed down on an element."
+	}
 		},
 		"mouseout": {
 			"cancellable": true,
@@ -47,10 +65,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when the mouse pointer moves out of an element."
+			"description": {
+		"en": "Fires when the mouse pointer moves out of an element.",
+		"jp": "Fires when the mouse pointer moves out of an element."
+	}
 		},
 		"mouseover": {
 			"cancellable": true,
@@ -59,10 +83,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when the mouse pointer moves over an element."
+			"description": {
+		"en": "Fires when the mouse pointer moves over an element.",
+		"jp": "Fires when the mouse pointer moves over an element."
+	}
 		},
 		"mouseup": {
 			"cancellable": true,
@@ -71,10 +101,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when a mouse button is released over an element."
+			"description": {
+		"en": "Fires when a mouse button is released over an element.",
+		"jp": "Fires when a mouse button is released over an element."
+	}
 		}
 	},
 	"properties": {
@@ -86,32 +122,50 @@
 				{
 					"name": "h1",
 					"type": "string",
-					"description": "Initialize HTML H1."
+					"description": {
+		"en": "Initialize HTML H1.",
+		"jp": "Initialize HTML H1."
+	}
 				},
 				{
 					"name": "h2",
 					"type": "string",
-					"description": "Initialize HTML H2."
+					"description": {
+		"en": "Initialize HTML H2.",
+		"jp": "Initialize HTML H2."
+	}
 				},
 				{
 					"name": "h3",
 					"type": "string",
-					"description": "Initialize HTML H3."
+					"description": {
+		"en": "Initialize HTML H3.",
+		"jp": "Initialize HTML H3."
+	}
 				},
 				{
 					"name": "h4",
 					"type": "string",
-					"description": "Initialize HTML H4."
+					"description": {
+		"en": "Initialize HTML H4.",
+		"jp": "Initialize HTML H4."
+	}
 				},
 				{
 					"name": "h5",
 					"type": "string",
-					"description": "Initialize HTML H5."
+					"description": {
+		"en": "Initialize HTML H5.",
+		"jp": "Initialize HTML H5."
+	}
 				},
 				{
 					"name": "h6",
 					"type": "string",
-					"description": "Initialize HTML H6."
+					"description": {
+		"en": "Initialize HTML H6.",
+		"jp": "Initialize HTML H6."
+	}
 				}
 			]
 		},
@@ -123,12 +177,18 @@
 		"style": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies an inline CSS style for an element."
+			"description": {
+		"en": "Specifies an inline CSS style for an element.",
+		"jp": "Specifies an inline CSS style for an element."
+	}
 		},
 		"title": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies extra information about an element."
+			"description": {
+		"en": "Specifies extra information about an element.",
+		"jp": "Specifies extra information about an element."
+	}
 		}
 	}
 }

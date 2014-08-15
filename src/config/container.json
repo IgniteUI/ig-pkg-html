@@ -11,10 +11,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires on a mouse click on the element."
+			"description": {
+		"en": "Fires on a mouse click on the element.",
+		"jp": "Fires on a mouse click on the element."
+	}
 		},
 		"dblclick": {
 			"cancellable": true,
@@ -23,10 +29,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires on a mouse double-click on the element."
+			"description": {
+		"en": "Fires on a mouse double-click on the element.",
+		"jp": "Fires on a mouse double-click on the element."
+	}
 		},
 		"mousedown": {
 			"cancellable": true,
@@ -35,10 +47,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when a mouse button is pressed down on an element."
+			"description": {
+		"en": "Fires when a mouse button is pressed down on an element.",
+		"jp": "Fires when a mouse button is pressed down on an element."
+	}
 		},
 		"mouseout": {
 			"cancellable": true,
@@ -47,10 +65,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when the mouse pointer moves out of an element."
+			"description": {
+		"en": "Fires when the mouse pointer moves out of an element.",
+		"jp": "Fires when the mouse pointer moves out of an element."
+	}
 		},
 		"mouseover": {
 			"cancellable": true,
@@ -59,10 +83,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when the mouse pointer moves over an element."
+			"description": {
+		"en": "Fires when the mouse pointer moves over an element.",
+		"jp": "Fires when the mouse pointer moves over an element."
+	}
 		},
 		"mouseup": {
 			"cancellable": true,
@@ -71,10 +101,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when a mouse button is released over an element."
+			"description": {
+		"en": "Fires when a mouse button is released over an element.",
+		"jp": "Fires when a mouse button is released over an element."
+	}
 		}
 	},
 	"properties": {
@@ -86,47 +122,74 @@
 				{
 					"name": "div",
 					"type": "string",
-					"description": "Initialize HTML DIV."
+					"description": {
+		"en": "Initialize HTML DIV.",
+		"jp": "Initialize HTML DIV."
+	}
 				},
 				{
 					"name": "section",
 					"type": "string",
-					"description": "Initialize HTML Section."
+					"description": {
+		"en": "Initialize HTML Section.",
+		"jp": "Initialize HTML Section."
+	}
 				},
 				{
 					"name": "nav",
 					"type": "string",
-					"description": "Initialize HTML NAV."
+					"description": {
+		"en": "Initialize HTML NAV.",
+		"jp": "Initialize HTML NAV."
+	}
 				},
 				{
 					"name": "article",
 					"type": "string",
-					"description": "Initialize HTML Article."
+					"description": {
+		"en": "Initialize HTML Article.",
+		"jp": "Initialize HTML Article."
+	}
 				},
 				{
 					"name": "aside",
 					"type": "string",
-					"description": "Initialize HTML Aside."
+					"description": {
+		"en": "Initialize HTML Aside.",
+		"jp": "Initialize HTML Aside."
+	}
 				},
 				{
 					"name": "header",
 					"type": "string",
-					"description": "Initialize HTML Header."
+					"description": {
+		"en": "Initialize HTML Header.",
+		"jp": "Initialize HTML Header."
+	}
 				},
 				{
 					"name": "footer",
 					"type": "string",
-					"description": "Initialize HTML Footer."
+					"description": {
+		"en": "Initialize HTML Footer.",
+		"jp": "Initialize HTML Footer."
+	}
 				},
 				{
 					"name": "address",
 					"type": "string",
-					"description": "Initialize HTML Address."
+					"description": {
+		"en": "Initialize HTML Address.",
+		"jp": "Initialize HTML Address."
+	}
 				},
 				{
 					"name": "main",
 					"type": "string",
-					"description": "Initialize HTML H6."
+					"description": {
+		"en": "Initialize HTML H6.",
+		"jp": "Initialize HTML H6."
+	}
 				}
 			]
 		},
@@ -138,12 +201,18 @@
 		"style": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies an inline CSS style for an element."
+			"description": {
+		"en": "Specifies an inline CSS style for an element.",
+		"jp": "Specifies an inline CSS style for an element."
+	}
 		},
 		"title": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies extra information about an element."
+			"description": {
+		"en": "Specifies extra information about an element.",
+		"jp": "Specifies extra information about an element."
+	}
 		}
 	}
 }

@@ -7,10 +7,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires on a mouse click on the element."
+			"description": {
+		"en": "Fires on a mouse click on the element.",
+		"jp": "Fires on a mouse click on the element."
+	}
 		},
 		"mouseout": {
 			"cancellable": true,
@@ -19,10 +25,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when the mouse pointer moves out of an element."
+			"description": {
+		"en": "Fires when the mouse pointer moves out of an element.",
+		"jp": "Fires when the mouse pointer moves out of an element."
+	}
 		},
 		"mouseover": {
 			"cancellable": true,
@@ -31,10 +43,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when the mouse pointer moves over an element."
+			"description": {
+		"en": "Fires when the mouse pointer moves over an element.",
+		"jp": "Fires when the mouse pointer moves over an element."
+	}
 		}
 	},
 	"properties": {
@@ -62,62 +80,98 @@
 				{
 					"name": "alternate",
 					"type": "string",
-					"description": "Links to an alternate version of the document (i.e. print page, translated or mirror). Example: <link rel=\"alternate\" type=\"application/atom+xml\" title=\"W3Schools News\" href=\"/blog/news/atom\">."
+					"description": {
+		"en": "Links to an alternate version of the document (i.e. print page, translated or mirror). Example: <link rel=\"alternate\" type=\"application/atom+xml\" title=\"W3Schools News\" href=\"/blog/news/atom\">.",
+		"jp": "Links to an alternate version of the document (i.e. print page, translated or mirror). Example: <link rel=\"alternate\" type=\"application/atom+xml\" title=\"W3Schools News\" href=\"/blog/news/atom\">."
+	}
 				},
 				{
 					"name": "author",
 					"type": "string",
-					"description": "Links to the author of the document."
+					"description": {
+		"en": "Links to the author of the document.",
+		"jp": "Links to the author of the document."
+	}
 				},
 				{
 					"name": "bookmark",
 					"type": "string",
-					"description": "Permanent URL used for bookmarking."
+					"description": {
+		"en": "Permanent URL used for bookmarking.",
+		"jp": "Permanent URL used for bookmarking."
+	}
 				},
 				{
 					"name": "help",
 					"type": "string",
-					"description": "Links to a help document."
+					"description": {
+		"en": "Links to a help document.",
+		"jp": "Links to a help document."
+	}
 				},
 				{
 					"name": "license",
 					"type": "string",
-					"description": "Links to copyright information for the document."
+					"description": {
+		"en": "Links to copyright information for the document.",
+		"jp": "Links to copyright information for the document."
+	}
 				},
 				{
 					"name": "nofollow",
 					"type": "string",
-					"description": "Links to an unendorsed document, like a paid link. (\"nofollow\" is used by Google, to specify that the Google search spider should not follow that link)."
+					"description": {
+		"en": "Links to an unendorsed document, like a paid link. (\"nofollow\" is used by Google, to specify that the Google search spider should not follow that link).",
+		"jp": "Links to an unendorsed document, like a paid link. (\"nofollow\" is used by Google, to specify that the Google search spider should not follow that link)."
+	}
 				},
 				{
 					"name": "noreferrer",
 					"type": "string",
-					"description": "Specifies that the browser should not send a HTTP referer header if the user follows the hyperlink."
+					"description": {
+		"en": "Specifies that the browser should not send a HTTP referer header if the user follows the hyperlink.",
+		"jp": "Specifies that the browser should not send a HTTP referer header if the user follows the hyperlink."
+	}
 				},
 				{
 					"name": "next",
 					"type": "string",
-					"description": "Indicates that the document is a part of a series, and that the next document in the series is the referenced document."
+					"description": {
+		"en": "Indicates that the document is a part of a series, and that the next document in the series is the referenced document.",
+		"jp": "Indicates that the document is a part of a series, and that the next document in the series is the referenced document."
+	}
 				},
 				{
 					"name": "prefetch",
 					"type": "string",
-					"description": "Specifies that the target resource should be cached."
+					"description": {
+		"en": "Specifies that the target resource should be cached.",
+		"jp": "Specifies that the target resource should be cached."
+	}
 				},
 				{
 					"name": "prev",
 					"type": "string",
-					"description": "Indicates that the document is a part of a series, and that the previous document in the series is the referenced document."
+					"description": {
+		"en": "Indicates that the document is a part of a series, and that the previous document in the series is the referenced document.",
+		"jp": "Indicates that the document is a part of a series, and that the previous document in the series is the referenced document."
+	}
 				},
 				{
 					"name": "search",
 					"type": "string",
-					"description": "Links to a search tool for the document."
+					"description": {
+		"en": "Links to a search tool for the document.",
+		"jp": "Links to a search tool for the document."
+	}
 				},
 				{
 					"name": "tag",
 					"type": "string",
-					"description": "A tag (keyword) for the current document."
+					"description": {
+		"en": "A tag (keyword) for the current document.",
+		"jp": "A tag (keyword) for the current document."
+	}
 				}
 			]
 		},
@@ -129,39 +183,60 @@
 		"target": {
 			"type": "string",
 			"defaultValue": "_self",
-			"description": "Specifies where to open the linked document",
+			"description": {
+		"en": "Specifies where to open the linked document",
+		"jp": "Specifies where to open the linked document"
+	},
 			"valueOptions": [
 				{
 					"name": "_blank",
 					"type": "string",
-					"description": "Loads the response in a new window/tab."
+					"description": {
+		"en": "Loads the response in a new window/tab.",
+		"jp": "Loads the response in a new window/tab."
+	}
 				},
 				{
 					"name": "_self",
 					"type": "string",
-					"description": "Loads the response in the same frame."
+					"description": {
+		"en": "Loads the response in the same frame.",
+		"jp": "Loads the response in the same frame."
+	}
 				},
 				{
 					"name": "_parent",
 					"type": "string",
-					"description": "Loads the response in the parent frame."
+					"description": {
+		"en": "Loads the response in the parent frame.",
+		"jp": "Loads the response in the parent frame."
+	}
 				},
 				{
 					"name": "_top",
 					"type": "string",
-					"description": "Loads the response in the full body of the window."
+					"description": {
+		"en": "Loads the response in the full body of the window.",
+		"jp": "Loads the response in the full body of the window."
+	}
 				}
 			]
 		},
 		"style": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies an inline CSS style for an element."
+			"description": {
+		"en": "Specifies an inline CSS style for an element.",
+		"jp": "Specifies an inline CSS style for an element."
+	}
 		},
 		"title": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies extra information about an element."
+			"description": {
+		"en": "Specifies extra information about an element.",
+		"jp": "Specifies extra information about an element."
+	}
 		}
 	}
 }

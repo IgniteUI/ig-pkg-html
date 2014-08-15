@@ -7,10 +7,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires on a mouse click on the element."
+			"description": {
+		"en": "Fires on a mouse click on the element.",
+		"jp": "Fires on a mouse click on the element."
+	}
 		},
 		"dblclick": {
 			"cancellable": true,
@@ -19,10 +25,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires on a mouse double-click on the element."
+			"description": {
+		"en": "Fires on a mouse double-click on the element.",
+		"jp": "Fires on a mouse double-click on the element."
+	}
 		},
 		"mouseout": {
 			"cancellable": true,
@@ -31,10 +43,16 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when the mouse pointer moves out of an element."
+			"description": {
+		"en": "Fires when the mouse pointer moves out of an element.",
+		"jp": "Fires when the mouse pointer moves out of an element."
+	}
 		},
 		"mouseover": {
 			"cancellable": true,
@@ -43,27 +61,42 @@
 					"name": "e",
 					"type": "event",
 					"optional": true,
-					"description": "Reference to event object."
+					"description": {
+		"en": "Reference to event object.",
+		"jp": "Reference to event object."
+	}
 				}
 			],
-			"description": "Fires when the mouse pointer moves over an element."
+			"description": {
+		"en": "Fires when the mouse pointer moves over an element.",
+		"jp": "Fires when the mouse pointer moves over an element."
+	}
 		}
 	},
 	"properties": {
 		"tagName": {
 			"type": "string",
-			"description": "Defines the type of the list",
+			"description": {
+		"en": "Defines the type of the list",
+		"jp": "Defines the type of the list"
+	},
 			"defaultValue": "ul",
 			"valueOptions": [
 				{
 					"name": "ul",
 					"type": "string",
-					"description": "Type of the list is unodrered list."
+					"description": {
+		"en": "Type of the list is unodrered list.",
+		"jp": "Type of the list is unodrered list."
+	}
 				},
 				{
 					"name": "ol",
 					"type": "string",
-					"description": "Type of the list is ordered list."
+					"description": {
+		"en": "Type of the list is ordered list.",
+		"jp": "Type of the list is ordered list."
+	}
 				}
 			]
 		},
@@ -86,39 +119,60 @@
 				{
 					"name": "1",
 					"type": "string",
-					"description": "Decimal numbers (1, 2, 3, 4)."
+					"description": {
+		"en": "Decimal numbers (1, 2, 3, 4).",
+		"jp": "Decimal numbers (1, 2, 3, 4)."
+	}
 				},
 				{
 					"name": "a",
 					"type": "string",
-					"description": "Alphabetically ordered list, lowercase (a, b, c, d)."
+					"description": {
+		"en": "Alphabetically ordered list, lowercase (a, b, c, d).",
+		"jp": "Alphabetically ordered list, lowercase (a, b, c, d)."
+	}
 				},
 				{
 					"name": "A",
 					"type": "string",
-					"description": "Alphabetically ordered list, uppercase (A, B, C, D)."
+					"description": {
+		"en": "Alphabetically ordered list, uppercase (A, B, C, D).",
+		"jp": "Alphabetically ordered list, uppercase (A, B, C, D)."
+	}
 				},
 				{
 					"name": "i",
 					"type": "string",
-					"description": "Roman numbers, lowercase (i, ii, iii, iv)."
+					"description": {
+		"en": "Roman numbers, lowercase (i, ii, iii, iv).",
+		"jp": "Roman numbers, lowercase (i, ii, iii, iv)."
+	}
 				},
 				{
 					"name": "I",
 					"type": "string",
-					"description": "Roman numbers, uppercase (I, II, III, IV)."
+					"description": {
+		"en": "Roman numbers, uppercase (I, II, III, IV).",
+		"jp": "Roman numbers, uppercase (I, II, III, IV)."
+	}
 				}
 			]
 		},
 		"style": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies an inline CSS style for an element."
+			"description": {
+		"en": "Specifies an inline CSS style for an element.",
+		"jp": "Specifies an inline CSS style for an element."
+	}
 		},
 		"title": {
 			"type": "string",
 			"defaultValue": null,
-			"description": "Specifies extra information about an element."
+			"description": {
+		"en": "Specifies extra information about an element.",
+		"jp": "Specifies extra information about an element."
+	}
 		}
 	}
 }

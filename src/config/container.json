@@ -196,7 +196,10 @@
 		"innerHTML": {
 			"type": "string",
 			"defaultValue": "",
-			"description" : "The display text."
+			"description" : {
+		"en": "The display text.",
+		"jp": "The display text."
+	}
 		},
 		"style": {
 			"type": "string",

@@ -59,7 +59,10 @@
 		"src": {
 			"type": "string",
 			"defaultValue": null,
-			"description" : "Specifies the image source."
+			"description" : {
+		"en": "Specifies the image source.",
+		"jp": "Specifies the image source."
+	}
 		},
 		"style": {
 			"type": "string",

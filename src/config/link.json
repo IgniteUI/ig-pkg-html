@@ -59,22 +59,34 @@
 		"innerHTML": {
 			"type": "string",
 			"defaultValue": "",
-			"description" : "The display text of the link."
+			"description" : {
+		"en": "The display text of the link.",
+		"jp": "The display text of the link."
+	}
 		},
 		"href": {
 			"type": "string",
 			"defaultValue": null,
-			"description" : "Specifies the location of the linked document."
+			"description" : {
+		"en": "Specifies the location of the linked document.",
+		"jp": "Specifies the location of the linked document."
+	}
 		},
 		"media": {
 			"type": "string",
 			"defaultValue": null,
-			"description" : "Specifies on what device the linked document will be displayed."
+			"description" : {
+		"en": "Specifies on what device the linked document will be displayed.",
+		"jp": "Specifies on what device the linked document will be displayed."
+	}
 		},
 		"rel": {
 			"type": "string",
 			"defaultValue": null,
-			"description" : "Specifies the relationship between the current document and the linked document.",
+			"description" : {
+		"en": "Specifies the relationship between the current document and the linked document.",
+		"jp": "Specifies the relationship between the current document and the linked document."
+	},
 			"required": true,
 			"valueOptions": [
 				{
@@ -178,7 +190,10 @@
 		"type": {
 			"type": "string",
 			"defaultValue": null,
-			"description" : "Specifies the MIME type of the linked document."
+			"description" : {
+		"en": "Specifies the MIME type of the linked document.",
+		"jp": "Specifies the MIME type of the linked document."
+	}
 		},
 		"target": {
 			"type": "string",

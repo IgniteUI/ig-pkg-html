@@ -117,28 +117,43 @@
 		"disabled": {
 			"type": "bool",
 			"defaultValue": false,
-			"description" : "Specifies that a drop-down list should be disabled."
+			"description" : {
+		"en": "Specifies that a drop-down list should be disabled.",
+		"jp": "Specifies that a drop-down list should be disabled."
+	}
 		},
 		"multiple": {
 			"type": "bool",
 			"defaultValue": false,
-			"description" : "Specifies that multiple options can be selected at once."
+			"description" : {
+		"en": "Specifies that multiple options can be selected at once.",
+		"jp": "Specifies that multiple options can be selected at once."
+	}
 		},
 		"name": {
 			"type": "string",
 			"defaultValue": null,
-			"description" : "Defines a name for the drop-down list."
+			"description" : {
+		"en": "Defines a name for the drop-down list.",
+		"jp": "Defines a name for the drop-down list."
+	}
 		},
 		"required": {
 			"type": "bool",
 			"defaultValue": false,
-			"description" : "Specifies that the user is required to select a value before submitting the form.",
+			"description" : {
+		"en": "Specifies that the user is required to select a value before submitting the form.",
+		"jp": "Specifies that the user is required to select a value before submitting the form."
+	},
 			"html5": true
 		},
 		"size": {
 			"type": "number",
 			"defaultValue": 1,
-			"description" : "Defines the number of visible options in a drop-down list."
+			"description" : {
+		"en": "Defines the number of visible options in a drop-down list.",
+		"jp": "Defines the number of visible options in a drop-down list."
+	}
 		},
 		"style": {
 			"type": "string",

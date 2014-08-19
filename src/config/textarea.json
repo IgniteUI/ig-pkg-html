@@ -225,49 +225,76 @@
 		"innerHTML": {
 			"type": "string",
 			"defaultValue": "",
-			"description" : "The display text of the area."
+			"description" : {
+		"en": "The display text of the area.",
+		"jp": "The display text of the area."
+	}
 		},
 		"cols": {
 			"type": "number",
 			"defaultValue": 20,
-			"description" : "Specifies the visible width of a text area."
+			"description" : {
+		"en": "Specifies the visible width of a text area.",
+		"jp": "Specifies the visible width of a text area."
+	}
 		},
 		"rows": {
 			"type": "number",
 			"defaultValue": 2,
-			"description" : "Specifies the visible number of lines in a text area."
+			"description" : {
+		"en": "Specifies the visible number of lines in a text area.",
+		"jp": "Specifies the visible number of lines in a text area."
+	}
 		},
 		"disabled": {
 			"type": "bool",
 			"defaultValue": false,
-			"description" : "Specifies that a text area should be disabled."
+			"description" : {
+		"en": "Specifies that a text area should be disabled.",
+		"jp": "Specifies that a text area should be disabled."
+	}
 		},
 		"readonly": {
 			"type": "bool",
 			"defaultValue": false,
-			"description" : "Specifies that a text area should be read-only."
+			"description" : {
+		"en": "Specifies that a text area should be read-only.",
+		"jp": "Specifies that a text area should be read-only."
+	}
 		},
 		"name": {
 			"type": "string",
 			"defaultValue": null,
-			"description" : "Specifies a name for a text area."
+			"description" : {
+		"en": "Specifies a name for a text area.",
+		"jp": "Specifies a name for a text area."
+	}
 		},
 		"required": {
 			"type": "bool",
 			"defaultValue": false,
-			"description" : "Specifies that a text area is required/must be filled out.",
+			"description" : {
+		"en": "Specifies that a text area is required/must be filled out.",
+		"jp": "Specifies that a text area is required/must be filled out."
+	},
 			"html5": true
 		},
 		"autofocus": {
 			"type": "bool",
 			"defaultValue": false,
-			"description" : "Specifies that a text area should automatically get focus when the page loads.",
+			"description" : {
+		"en": "Specifies that a text area should automatically get focus when the page loads.",
+		"jp": "Specifies that a text area should automatically get focus when the page loads."
+	},
 			"html5": true
 		},
 		"wrap": {
 			"type": "string",
 			"defaultValue": "soft",
-			"description" : "Specifies how the text in a text area is to be wrapped when submitted in a form.",
+			"description" : {
+		"en": "Specifies how the text in a text area is to be wrapped when submitted in a form.",
+		"jp": "Specifies how the text in a text area is to be wrapped when submitted in a form."
+	},
 			"html5": true,
 			"valueOptions": [
 				{

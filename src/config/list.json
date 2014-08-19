@@ -103,18 +103,27 @@
 		"reversed": {
 			"type": "bool",
 			"defaultValue": false,
-			"description" : "Specifies that the list order should be descending (9,8,7...).",
+			"description" : {
+		"en": "Specifies that the list order should be descending (9,8,7...).",
+		"jp": "Specifies that the list order should be descending (9,8,7...)."
+	},
 			"html5": true
 		},
 		"start": {
 			"type": "number",
 			"defaultValue": 1,
-			"description" : "Specifies the start value of the first list item in the ordered list."
+			"description" : {
+		"en": "Specifies the start value of the first list item in the ordered list.",
+		"jp": "Specifies the start value of the first list item in the ordered list."
+	}
 		},
 		"type": {
 			"type": "string",
 			"defaultValue": "1",
-			"description" : "Specifies the start value of the first list item in the ordered list.",
+			"description" : {
+		"en": "Specifies the type of list items in the ordered list.",
+		"jp": "Specifies the type of list items in the ordered list."
+	},
 			"valueOptions": [
 				{
 					"name": "1",

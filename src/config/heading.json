@@ -1,4 +1,4 @@
-{
+﻿{
 	"overview": null,
 	"name": "Heading",
 	"category": null,
@@ -13,13 +13,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires on a mouse click on the element.",
-		"jp": "Fires on a mouse click on the element."
+		"jp": "要素でマウスがクリックされたときに発生します。"
 	}
 		},
 		"dblclick": {
@@ -31,13 +31,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires on a mouse double-click on the element.",
-		"jp": "Fires on a mouse double-click on the element."
+		"jp": "要素でマウスがダブルクリックされたときに発生します。"
 	}
 		},
 		"mousedown": {
@@ -49,13 +49,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when a mouse button is pressed down on an element.",
-		"jp": "Fires when a mouse button is pressed down on an element."
+		"jp": "マウス ボタンが要素で押された時に発生します。"
 	}
 		},
 		"mouseout": {
@@ -67,13 +67,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when the mouse pointer moves out of an element.",
-		"jp": "Fires when the mouse pointer moves out of an element."
+		"jp": "マウス ポインターが要素から出るときに発生します。"
 	}
 		},
 		"mouseover": {
@@ -85,13 +85,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when the mouse pointer moves over an element.",
-		"jp": "Fires when the mouse pointer moves over an element."
+		"jp": "マウス ポインターが要素の上に移動するときに発生します。"
 	}
 		},
 		"mouseup": {
@@ -103,13 +103,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when a mouse button is released over an element.",
-		"jp": "Fires when a mouse button is released over an element."
+		"jp": "マウス ボタンが要素の上から離れた時に発生します。"
 	}
 		}
 	},
@@ -124,7 +124,7 @@
 					"type": "string",
 					"description": {
 		"en": "Initialize HTML H1.",
-		"jp": "Initialize HTML H1."
+		"jp": "HTML H1 を初期化します。"
 	}
 				},
 				{
@@ -132,7 +132,7 @@
 					"type": "string",
 					"description": {
 		"en": "Initialize HTML H2.",
-		"jp": "Initialize HTML H2."
+		"jp": "HTML H2 を初期化します。"
 	}
 				},
 				{
@@ -140,7 +140,7 @@
 					"type": "string",
 					"description": {
 		"en": "Initialize HTML H3.",
-		"jp": "Initialize HTML H3."
+		"jp": "HTML H3 を初期化します。"
 	}
 				},
 				{
@@ -148,7 +148,7 @@
 					"type": "string",
 					"description": {
 		"en": "Initialize HTML H4.",
-		"jp": "Initialize HTML H4."
+		"jp": "HTML H4 を初期化します。"
 	}
 				},
 				{
@@ -156,7 +156,7 @@
 					"type": "string",
 					"description": {
 		"en": "Initialize HTML H5.",
-		"jp": "Initialize HTML H5."
+		"jp": "HTML H5 を初期化します。"
 	}
 				},
 				{
@@ -164,7 +164,7 @@
 					"type": "string",
 					"description": {
 		"en": "Initialize HTML H6.",
-		"jp": "Initialize HTML H6."
+		"jp": "HTML H6 を初期化します。"
 	}
 				}
 			]
@@ -174,7 +174,7 @@
 			"defaultValue": "",
 			"description" : {
 		"en": "The display text.",
-		"jp": "The display text."
+		"jp": "表示テキスト。"
 	}
 		},
 		"style": {
@@ -182,7 +182,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies an inline CSS style for an element.",
-		"jp": "Specifies an inline CSS style for an element."
+		"jp": "要素のインライン CSS スタイルを指定します。"
 	}
 		},
 		"title": {
@@ -190,7 +190,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies extra information about an element.",
-		"jp": "Specifies extra information about an element."
+		"jp": "要素についての追加情報を指定します。"
 	}
 		}
 	}

@@ -1,4 +1,4 @@
-{
+﻿{
 	"overview": null,
 	"name": "Text Area",
 	"category": null,
@@ -13,13 +13,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires the moment that the element loses focus.",
-		"jp": "Fires the moment that the element loses focus."
+		"jp": "要素がフォーカスを失ったときに発生します。"
 	}
 		},
 		"change": {
@@ -31,13 +31,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires the moment when the value of the element is changed.",
-		"jp": "Fires the moment when the value of the element is changed."
+		"jp": "要素の値が変更されたときに発生します。"
 	}
 		},
 		"focus": {
@@ -49,13 +49,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires the moment when the element gets focus.",
-		"jp": "Fires the moment when the element gets focus."
+		"jp": "要素がフォーカスを受けるときに発生します。"
 	}
 		},
 		"select": {
@@ -67,13 +67,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires after some text has been selected in an element.",
-		"jp": "Fires after some text has been selected in an element."
+		"jp": "要素でテキストが選択された後に発生します。"
 	}
 		},
 		"submit": {
@@ -85,13 +85,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when a form is submitted.",
-		"jp": "Fires when a form is submitted."
+		"jp": "フォームが送信されたときに発生します。"
 	}
 		},
 		"keydown": {
@@ -103,13 +103,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when a user is pressing a key.",
-		"jp": "Fires when a user is pressing a key."
+		"jp": "ユーザーがキーを押すときに発生します。"
 	}
 		},
 		"keypress": {
@@ -121,13 +121,13 @@
 					"optional": true,
 					"description": {
 		"en": "Fires when a user presses a key.",
-		"jp": "Fires when a user presses a key."
+		"jp": "ユーザーがキーを押したときに発生します。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when a user is pressing a key.",
-		"jp": "Fires when a user is pressing a key."
+		"jp": "ユーザーがキーを押すときに発生します。"
 	}
 		},
 		"keyup": {
@@ -139,13 +139,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when a user releases a key.",
-		"jp": "Fires when a user releases a key."
+		"jp": "ユーザーがキーを放すときに発生します。"
 	}
 		},
 		"click": {
@@ -157,13 +157,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires on a mouse click on the element.",
-		"jp": "Fires on a mouse click on the element."
+		"jp": "要素でマウスがクリックされたときに発生します。"
 	}
 		},
 		"dblclick": {
@@ -175,13 +175,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires on a mouse double-click on the element.",
-		"jp": "Fires on a mouse double-click on the element."
+		"jp": "要素でマウスがダブルクリックされたときに発生します。"
 	}
 		},
 		"mouseout": {
@@ -193,13 +193,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when the mouse pointer moves out of an element.",
-		"jp": "Fires when the mouse pointer moves out of an element."
+		"jp": "マウス ポインターが要素から出るときに発生します。"
 	}
 		},
 		"mouseover": {
@@ -211,13 +211,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when the mouse pointer moves over an element.",
-		"jp": "Fires when the mouse pointer moves over an element."
+		"jp": "マウス ポインターが要素の上に移動するときに発生します。"
 	}
 		}
 	},
@@ -227,7 +227,7 @@
 			"defaultValue": "",
 			"description" : {
 		"en": "The display text of the area.",
-		"jp": "The display text of the area."
+		"jp": "領域の表示テキスト。"
 	}
 		},
 		"cols": {
@@ -235,7 +235,7 @@
 			"defaultValue": 20,
 			"description" : {
 		"en": "Specifies the visible width of a text area.",
-		"jp": "Specifies the visible width of a text area."
+		"jp": "テキスト領域の表示幅を指定します。"
 	}
 		},
 		"rows": {
@@ -243,7 +243,7 @@
 			"defaultValue": 2,
 			"description" : {
 		"en": "Specifies the visible number of lines in a text area.",
-		"jp": "Specifies the visible number of lines in a text area."
+		"jp": "テキスト領域の表示行数を指定します。"
 	}
 		},
 		"disabled": {
@@ -251,7 +251,7 @@
 			"defaultValue": false,
 			"description" : {
 		"en": "Specifies that a text area should be disabled.",
-		"jp": "Specifies that a text area should be disabled."
+		"jp": "テキスト領域を無効にすることを指定します。"
 	}
 		},
 		"readonly": {
@@ -259,7 +259,7 @@
 			"defaultValue": false,
 			"description" : {
 		"en": "Specifies that a text area should be read-only.",
-		"jp": "Specifies that a text area should be read-only."
+		"jp": "テキスト領域を読み取り専用にすることを指定します。"
 	}
 		},
 		"name": {
@@ -267,7 +267,7 @@
 			"defaultValue": null,
 			"description" : {
 		"en": "Specifies a name for a text area.",
-		"jp": "Specifies a name for a text area."
+		"jp": "テキスト領域の名前を指定します。"
 	}
 		},
 		"required": {
@@ -275,7 +275,7 @@
 			"defaultValue": false,
 			"description" : {
 		"en": "Specifies that a text area is required/must be filled out.",
-		"jp": "Specifies that a text area is required/must be filled out."
+		"jp": "テキスト領域が必要、つまり入力する必要があることを指定します。"
 	},
 			"html5": true
 		},
@@ -284,7 +284,7 @@
 			"defaultValue": false,
 			"description" : {
 		"en": "Specifies that a text area should automatically get focus when the page loads.",
-		"jp": "Specifies that a text area should automatically get focus when the page loads."
+		"jp": "テキスト領域がページ ロードで自動的にフォーカスを受けることを指定します。"
 	},
 			"html5": true
 		},
@@ -293,7 +293,7 @@
 			"defaultValue": "soft",
 			"description" : {
 		"en": "Specifies how the text in a text area is to be wrapped when submitted in a form.",
-		"jp": "Specifies how the text in a text area is to be wrapped when submitted in a form."
+		"jp": "テキスト領域のテキストがフォームで送信するときにラップする方法を指定します。"
 	},
 			"html5": true,
 			"valueOptions": [
@@ -302,7 +302,7 @@
 					"type": "string",
 					"description": {
 		"en": "The text in the textarea is not wrapped when submitted in a form.",
-		"jp": "The text in the textarea is not wrapped when submitted in a form."
+		"jp": "テキスト領域のテキストがフォームで送信するときにラップしません。"
 	}
 				},
 				{
@@ -310,7 +310,7 @@
 					"type": "string",
 					"description": {
 		"en": "The text in the textarea is wrapped (contains newlines) when submitted in a form. When \"hard\" is used, the cols attribute must be specified.",
-		"jp": "The text in the textarea is wrapped (contains newlines) when submitted in a form. When \"hard\" is used, the cols attribute must be specified."
+		"jp": "テキスト領域のテキストがフォームで送信するときにラップします (改行を含む)。\"hard\" の場合、cols 属性を指定する必要があります。"
 	}
 				}
 			]
@@ -320,7 +320,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies the language of the element's content.",
-		"jp": "Specifies the language of the element's content."
+		"jp": "要素のコンテンツの言語を指定します。"
 	}
 		},
 		"spellcheck": {
@@ -328,7 +328,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies whether the element is to have its spelling and grammar checked or not.",
-		"jp": "Specifies whether the element is to have its spelling and grammar checked or not."
+		"jp": "要素のコンテンツをスペルチェックし、文章校正チェックするかどうかを指定します。"
 	},
 			"html5": true
 		},
@@ -337,7 +337,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies an inline CSS style for an element.",
-		"jp": "Specifies an inline CSS style for an element."
+		"jp": "要素のインライン CSS スタイルを指定します。"
 	}
 		},
 		"title": {
@@ -345,7 +345,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies extra information about an element.",
-		"jp": "Specifies extra information about an element."
+		"jp": "要素についての追加情報を指定します。"
 	}
 		},
 		"translate": {
@@ -353,7 +353,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies whether the content of an element should be translated or not.",
-		"jp": "Specifies whether the content of an element should be translated or not."
+		"jp": "要素のコンテンツを翻訳するかどうかを指定します。"
 	},
 			"html5": true
 		}

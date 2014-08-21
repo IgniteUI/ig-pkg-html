@@ -1,4 +1,4 @@
-{
+﻿{
 	"events": {
 		"click": {
 			"cancellable": true,
@@ -9,13 +9,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires on a mouse click on the element.",
-		"jp": "Fires on a mouse click on the element."
+		"jp": "要素でマウスがクリックされたときに発生します。"
 	}
 		},
 		"dblclick": {
@@ -27,13 +27,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires on a mouse double-click on the element.",
-		"jp": "Fires on a mouse double-click on the element."
+		"jp": "要素でマウスがダブルクリックされたときに発生します。"
 	}
 		},
 		"mouseout": {
@@ -45,13 +45,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when the mouse pointer moves out of an element.",
-		"jp": "Fires when the mouse pointer moves out of an element."
+		"jp": "マウス ポインターが要素から出るときに発生します。"
 	}
 		},
 		"mouseover": {
@@ -63,13 +63,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when the mouse pointer moves over an element.",
-		"jp": "Fires when the mouse pointer moves over an element."
+		"jp": "マウス ポインターが要素の上に移動するときに発生します。"
 	}
 		}
 	},
@@ -78,7 +78,7 @@
 			"type": "string",
 			"description": {
 		"en": "Defines the type of the list",
-		"jp": "Defines the type of the list"
+		"jp": "リストのタイプを定義します。"
 	},
 			"defaultValue": "ul",
 			"valueOptions": [
@@ -87,7 +87,7 @@
 					"type": "string",
 					"description": {
 		"en": "Type of the list is unodrered list.",
-		"jp": "Type of the list is unodrered list."
+		"jp": "リストのタイプは順序なしリストです。"
 	}
 				},
 				{
@@ -95,7 +95,7 @@
 					"type": "string",
 					"description": {
 		"en": "Type of the list is ordered list.",
-		"jp": "Type of the list is ordered list."
+		"jp": "リストのタイプは順序付きリストです。"
 	}
 				}
 			]
@@ -105,7 +105,7 @@
 			"defaultValue": false,
 			"description" : {
 		"en": "Specifies that the list order should be descending (9,8,7...).",
-		"jp": "Specifies that the list order should be descending (9,8,7...)."
+		"jp": "リスト順序は降順 (9,8,7...) を指定します。"
 	},
 			"html5": true
 		},
@@ -114,7 +114,7 @@
 			"defaultValue": 1,
 			"description" : {
 		"en": "Specifies the start value of the first list item in the ordered list.",
-		"jp": "Specifies the start value of the first list item in the ordered list."
+		"jp": "順序付きリストの最初のリスト項目の開始値を指定します。"
 	}
 		},
 		"type": {
@@ -122,7 +122,7 @@
 			"defaultValue": "1",
 			"description" : {
 		"en": "Specifies the type of list items in the ordered list.",
-		"jp": "Specifies the type of list items in the ordered list."
+		"jp": "順序付きリストに含まれるリスト項目のタイプを指定します。"
 	},
 			"valueOptions": [
 				{
@@ -130,7 +130,7 @@
 					"type": "string",
 					"description": {
 		"en": "Decimal numbers (1, 2, 3, 4).",
-		"jp": "Decimal numbers (1, 2, 3, 4)."
+		"jp": "10 進数 (1, 2, 3, 4)。"
 	}
 				},
 				{
@@ -138,7 +138,7 @@
 					"type": "string",
 					"description": {
 		"en": "Alphabetically ordered list, lowercase (a, b, c, d).",
-		"jp": "Alphabetically ordered list, lowercase (a, b, c, d)."
+		"jp": "小文字のアルファベット順のリスト (a, b, c, d)。"
 	}
 				},
 				{
@@ -146,7 +146,7 @@
 					"type": "string",
 					"description": {
 		"en": "Alphabetically ordered list, uppercase (A, B, C, D).",
-		"jp": "Alphabetically ordered list, uppercase (A, B, C, D)."
+		"jp": "大文字のアルファベット順のリスト (A, B, C, D)。"
 	}
 				},
 				{
@@ -154,7 +154,7 @@
 					"type": "string",
 					"description": {
 		"en": "Roman numbers, lowercase (i, ii, iii, iv).",
-		"jp": "Roman numbers, lowercase (i, ii, iii, iv)."
+		"jp": "小文字のローマ数字 (i, ii, iii, iv)。"
 	}
 				},
 				{
@@ -162,7 +162,7 @@
 					"type": "string",
 					"description": {
 		"en": "Roman numbers, uppercase (I, II, III, IV).",
-		"jp": "Roman numbers, uppercase (I, II, III, IV)."
+		"jp": "大文字のローマ数字 (I, II, III, IV)。"
 	}
 				}
 			]
@@ -172,7 +172,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies an inline CSS style for an element.",
-		"jp": "Specifies an inline CSS style for an element."
+		"jp": "要素のインライン CSS スタイルを指定します。"
 	}
 		},
 		"title": {
@@ -180,7 +180,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies extra information about an element.",
-		"jp": "Specifies extra information about an element."
+		"jp": "要素についての追加情報を指定します。"
 	}
 		}
 	}

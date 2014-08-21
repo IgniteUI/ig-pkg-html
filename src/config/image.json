@@ -1,4 +1,4 @@
-{
+﻿{
 	"events": {
 		"click": {
 			"cancellable": true,
@@ -9,13 +9,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires on a mouse click on the element.",
-		"jp": "Fires on a mouse click on the element."
+		"jp": "要素でマウスがクリックされたときに発生します。"
 	}
 		},
 		"mouseout": {
@@ -27,13 +27,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when the mouse pointer moves out of an element.",
-		"jp": "Fires when the mouse pointer moves out of an element."
+		"jp": "マウス ポインターが要素から出るときに発生します。"
 	}
 		},
 		"mouseover": {
@@ -45,13 +45,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when the mouse pointer moves over an element.",
-		"jp": "Fires when the mouse pointer moves over an element."
+		"jp": "マウス ポインターが要素の上に移動するときに発生します。"
 	}
 		}
 	},
@@ -61,7 +61,7 @@
 			"defaultValue": null,
 			"description" : {
 		"en": "Specifies the image source.",
-		"jp": "Specifies the image source."
+		"jp": "画像ソースを指定します。"
 	}
 		},
 		"style": {
@@ -69,7 +69,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies an inline CSS style for an element.",
-		"jp": "Specifies an inline CSS style for an element."
+		"jp": "要素のインライン CSS スタイルを指定します。"
 	}
 		},
 		"title": {
@@ -77,7 +77,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies a title tooltip for the image.",
-		"jp": "Specifies a title tooltip for the image."
+		"jp": "画像のタイトル ツールチップを指定します。"
 	}
 		},
 		"alt": {
@@ -85,7 +85,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies alternative text when the image cannot be loaded.",
-		"jp": "Specifies alternative text when the image cannot be loaded."
+		"jp": "画像が読み込まれない場合に表示される代替テキストを指定します。"
 	}
 		},
 		"width": {
@@ -93,7 +93,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies the width of an image.",
-		"jp": "Specifies the width of an image."
+		"jp": "画像の幅を指定します。"
 	}
 		},
 		"height": {
@@ -101,7 +101,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies the height of an image.",
-		"jp": "Specifies the height of an image."
+		"jp": "画像の高さを指定します。"
 	}
 		}
 	}

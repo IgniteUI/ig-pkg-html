@@ -1,4 +1,4 @@
-{
+﻿{
 	"events": {
 		"click": {
 			"cancellable": true,
@@ -9,13 +9,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires on a mouse click on the element.",
-		"jp": "Fires on a mouse click on the element."
+		"jp": "要素でマウスがクリックされたときに発生します。"
 	}
 		},
 		"mouseout": {
@@ -27,13 +27,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when the mouse pointer moves out of an element.",
-		"jp": "Fires when the mouse pointer moves out of an element."
+		"jp": "マウス ポインターが要素から出るときに発生します。"
 	}
 		},
 		"mouseover": {
@@ -45,13 +45,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when the mouse pointer moves over an element.",
-		"jp": "Fires when the mouse pointer moves over an element."
+		"jp": "マウス ポインターが要素の上に移動するときに発生します。"
 	}
 		}
 	},
@@ -61,7 +61,7 @@
 			"defaultValue": "",
 			"description" : {
 		"en": "The display text of the link.",
-		"jp": "The display text of the link."
+		"jp": "リンクの表示テキスト。"
 	}
 		},
 		"href": {
@@ -69,7 +69,7 @@
 			"defaultValue": null,
 			"description" : {
 		"en": "Specifies the location of the linked document.",
-		"jp": "Specifies the location of the linked document."
+		"jp": "リンクされた文書の位置を指定します。"
 	}
 		},
 		"media": {
@@ -77,7 +77,7 @@
 			"defaultValue": null,
 			"description" : {
 		"en": "Specifies on what device the linked document will be displayed.",
-		"jp": "Specifies on what device the linked document will be displayed."
+		"jp": "リンクされた文書が表示されるデバイスを指定します。"
 	}
 		},
 		"rel": {
@@ -85,7 +85,7 @@
 			"defaultValue": null,
 			"description" : {
 		"en": "Specifies the relationship between the current document and the linked document.",
-		"jp": "Specifies the relationship between the current document and the linked document."
+		"jp": "現在の文書とリンクされた文書の関係を指定します。"
 	},
 			"required": true,
 			"valueOptions": [
@@ -94,7 +94,7 @@
 					"type": "string",
 					"description": {
 		"en": "Links to an alternate version of the document (i.e. print page, translated or mirror). Example: <link rel=\"alternate\" type=\"application/atom+xml\" title=\"W3Schools News\" href=\"/blog/news/atom\">.",
-		"jp": "Links to an alternate version of the document (i.e. print page, translated or mirror). Example: <link rel=\"alternate\" type=\"application/atom+xml\" title=\"W3Schools News\" href=\"/blog/news/atom\">."
+		"jp": "文書の代替えバージョン (印刷ページ、翻訳、またはミラー) へリンクします。例: <link rel=\"alternate\" type=\"application/atom+xml\" title=\"W3Schools News\" href=\"/blog/news/atom\">。"
 	}
 				},
 				{
@@ -102,7 +102,7 @@
 					"type": "string",
 					"description": {
 		"en": "Links to the author of the document.",
-		"jp": "Links to the author of the document."
+		"jp": "文書の作者にリンクします。"
 	}
 				},
 				{
@@ -110,7 +110,7 @@
 					"type": "string",
 					"description": {
 		"en": "Permanent URL used for bookmarking.",
-		"jp": "Permanent URL used for bookmarking."
+		"jp": "ブックマークのために使用される永続的な URL。"
 	}
 				},
 				{
@@ -118,7 +118,7 @@
 					"type": "string",
 					"description": {
 		"en": "Links to a help document.",
-		"jp": "Links to a help document."
+		"jp": "ヘルプ ドキュメントにリンクします。"
 	}
 				},
 				{
@@ -126,7 +126,7 @@
 					"type": "string",
 					"description": {
 		"en": "Links to copyright information for the document.",
-		"jp": "Links to copyright information for the document."
+		"jp": "文書の著作権情報にリンクします。"
 	}
 				},
 				{
@@ -134,7 +134,7 @@
 					"type": "string",
 					"description": {
 		"en": "Links to an unendorsed document, like a paid link. (\"nofollow\" is used by Google, to specify that the Google search spider should not follow that link).",
-		"jp": "Links to an unendorsed document, like a paid link. (\"nofollow\" is used by Google, to specify that the Google search spider should not follow that link)."
+		"jp": "アド リンクなどの文書にリンクします。(\"nofollow\" は Google によって使用されます。Google 検索スパイダーがそのリンクをフォローしないよう指定します。)"
 	}
 				},
 				{
@@ -142,7 +142,7 @@
 					"type": "string",
 					"description": {
 		"en": "Specifies that the browser should not send a HTTP referer header if the user follows the hyperlink.",
-		"jp": "Specifies that the browser should not send a HTTP referer header if the user follows the hyperlink."
+		"jp": "ユーザーがハイパーリンクに移動する場合、ブラウザーは HTTP 参照者ヘッダーを送信しないことを指定します。"
 	}
 				},
 				{
@@ -150,7 +150,7 @@
 					"type": "string",
 					"description": {
 		"en": "Indicates that the document is a part of a series, and that the next document in the series is the referenced document.",
-		"jp": "Indicates that the document is a part of a series, and that the next document in the series is the referenced document."
+		"jp": "文書はシリーズの部分で、シリーズの次の文書は参照された文書であることを指定します。"
 	}
 				},
 				{
@@ -158,7 +158,7 @@
 					"type": "string",
 					"description": {
 		"en": "Specifies that the target resource should be cached.",
-		"jp": "Specifies that the target resource should be cached."
+		"jp": "ターゲット リソースをキャッシュすることを指定します。"
 	}
 				},
 				{
@@ -166,7 +166,7 @@
 					"type": "string",
 					"description": {
 		"en": "Indicates that the document is a part of a series, and that the previous document in the series is the referenced document.",
-		"jp": "Indicates that the document is a part of a series, and that the previous document in the series is the referenced document."
+		"jp": "文書はシリーズの部分で、シリーズの以前の文書は参照された文書であることを指定します。"
 	}
 				},
 				{
@@ -174,7 +174,7 @@
 					"type": "string",
 					"description": {
 		"en": "Links to a search tool for the document.",
-		"jp": "Links to a search tool for the document."
+		"jp": "文書の検索ツールにリンクします。"
 	}
 				},
 				{
@@ -182,7 +182,7 @@
 					"type": "string",
 					"description": {
 		"en": "A tag (keyword) for the current document.",
-		"jp": "A tag (keyword) for the current document."
+		"jp": "現在の文書のタグ (キーワード)。"
 	}
 				}
 			]
@@ -192,7 +192,7 @@
 			"defaultValue": null,
 			"description" : {
 		"en": "Specifies the MIME type of the linked document.",
-		"jp": "Specifies the MIME type of the linked document."
+		"jp": "リンクされた文書の MIME の種類を指定します。"
 	}
 		},
 		"target": {
@@ -200,7 +200,7 @@
 			"defaultValue": "_self",
 			"description": {
 		"en": "Specifies where to open the linked document",
-		"jp": "Specifies where to open the linked document"
+		"jp": "リンクされた文書の開く先を指定します。"
 	},
 			"valueOptions": [
 				{
@@ -208,7 +208,7 @@
 					"type": "string",
 					"description": {
 		"en": "Loads the response in a new window/tab.",
-		"jp": "Loads the response in a new window/tab."
+		"jp": "応答を新しいウィンドウ/タブに読み込みます。"
 	}
 				},
 				{
@@ -216,7 +216,7 @@
 					"type": "string",
 					"description": {
 		"en": "Loads the response in the same frame.",
-		"jp": "Loads the response in the same frame."
+		"jp": "応答を同じフレームに読み込みます。"
 	}
 				},
 				{
@@ -224,7 +224,7 @@
 					"type": "string",
 					"description": {
 		"en": "Loads the response in the parent frame.",
-		"jp": "Loads the response in the parent frame."
+		"jp": "応答を親フレームに読み込みます。"
 	}
 				},
 				{
@@ -232,7 +232,7 @@
 					"type": "string",
 					"description": {
 		"en": "Loads the response in the full body of the window.",
-		"jp": "Loads the response in the full body of the window."
+		"jp": "応答をウィンドウの全本文に読み込みます。"
 	}
 				}
 			]
@@ -242,7 +242,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies an inline CSS style for an element.",
-		"jp": "Specifies an inline CSS style for an element."
+		"jp": "要素のインライン CSS スタイルを指定します。"
 	}
 		},
 		"title": {
@@ -250,7 +250,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies extra information about an element.",
-		"jp": "Specifies extra information about an element."
+		"jp": "要素についての追加情報を指定します。"
 	}
 		}
 	}

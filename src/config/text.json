@@ -1,4 +1,4 @@
-{
+﻿{
 	"overview": null,
 	"name": "Text Container",
 	"category": null,
@@ -13,13 +13,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires after some text has been selected in an element.",
-		"jp": "Fires after some text has been selected in an element."
+		"jp": "要素でテキストが選択された後に発生します。"
 	}
 		},
 		"click": {
@@ -31,13 +31,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires on a mouse click on the element.",
-		"jp": "Fires on a mouse click on the element."
+		"jp": "要素でマウスがクリックされたときに発生します。"
 	}
 		},
 		"dblclick": {
@@ -49,13 +49,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires on a mouse double-click on the element.",
-		"jp": "Fires on a mouse double-click on the element."
+		"jp": "要素でマウスがダブルクリックされたときに発生します。"
 	}
 		},
 		"mouseout": {
@@ -67,13 +67,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when the mouse pointer moves out of an element.",
-		"jp": "Fires when the mouse pointer moves out of an element."
+		"jp": "マウス ポインターが要素から出るときに発生します。"
 	}
 		},
 		"mouseover": {
@@ -85,13 +85,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when the mouse pointer moves over an element.",
-		"jp": "Fires when the mouse pointer moves over an element."
+		"jp": "マウス ポインターが要素の上に移動するときに発生します。"
 	}
 		}
 	},
@@ -101,7 +101,7 @@
 			"defaultValue": "",
 			"description" : {
 		"en": "The display text.",
-		"jp": "The display text."
+		"jp": "表示テキスト。"
 	}
 		},
 		"tagName": {
@@ -114,7 +114,7 @@
 					"type": "string",
 					"description": {
 		"en": "Initialize HTML Paragraph.",
-		"jp": "Initialize HTML Paragraph."
+		"jp": "HTML Paragraph を初期化します。"
 	}
 				},
 				{
@@ -122,7 +122,7 @@
 					"type": "string",
 					"description": {
 		"en": "Initialize HTML SPAN.",
-		"jp": "Initialize HTML SPAN."
+		"jp": "HTML SPAN を初期化します。"
 	}
 				},
 				{
@@ -130,7 +130,7 @@
 					"type": "string",
 					"description": {
 		"en": "Initialize HTML Label.",
-		"jp": "Initialize HTML Label."
+		"jp": "HTML Label を初期化します。"
 	}
 				},
 				{
@@ -138,7 +138,7 @@
 					"type": "string",
 					"description": {
 		"en": "Initialize HTML Blockquote.",
-		"jp": "Initialize HTML Blockquote."
+		"jp": "HTML Blockquote を初期化します。"
 	}
 				},
 				{
@@ -146,7 +146,7 @@
 					"type": "string",
 					"description": {
 		"en": "Initialize HTML Pre.",
-		"jp": "Initialize HTML Pre."
+		"jp": "HTML Pre を初期化します。"
 	}
 				},
 				{
@@ -154,7 +154,7 @@
 					"type": "string",
 					"description": {
 		"en": "Initialize HTML Legend.",
-		"jp": "Initialize HTML Legend."
+		"jp": "HTML Legend を初期化します。"
 	}
 				}
 			]
@@ -164,7 +164,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies the language of the element's content.",
-		"jp": "Specifies the language of the element's content."
+		"jp": "要素のコンテンツの言語を指定します。"
 	}
 		},
 		"spellcheck": {
@@ -172,7 +172,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies whether the element is to have its spelling and grammar checked or not.",
-		"jp": "Specifies whether the element is to have its spelling and grammar checked or not."
+		"jp": "要素のコンテンツをスペルチェックし、文章校正チェックするかどうかを指定します。"
 	},
 			"html5": true
 		},
@@ -181,7 +181,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies an inline CSS style for an element.",
-		"jp": "Specifies an inline CSS style for an element."
+		"jp": "要素のインライン CSS スタイルを指定します。"
 	}
 		},
 		"title": {
@@ -189,7 +189,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies extra information about an element.",
-		"jp": "Specifies extra information about an element."
+		"jp": "要素についての追加情報を指定します。"
 	}
 		},
 		"translate": {
@@ -197,7 +197,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies whether the content of an element should be translated or not.",
-		"jp": "Specifies whether the content of an element should be translated or not."
+		"jp": "要素のコンテンツを翻訳するかどうかを指定します。"
 	},
 			"html5": true
 		}

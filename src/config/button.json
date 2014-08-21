@@ -1,4 +1,4 @@
-{
+﻿{
 	"overview": null,
 	"name": "Button",
 	"category": null,
@@ -13,13 +13,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires the moment that the element loses focus.",
-		"jp": "Fires the moment that the element loses focus."
+		"jp": "要素がフォーカスを失ったときに発生します。"
 	}
 		},
 		"focus": {
@@ -31,13 +31,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires the moment when the element gets focus.",
-		"jp": "Fires the moment when the element gets focus."
+		"jp": "要素がフォーカスを受けるときに発生します。"
 	}
 		},
 		"keydown": {
@@ -49,13 +49,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when a user is pressing a key.",
-		"jp": "Fires when a user is pressing a key."
+		"jp": "ユーザーがキーを押すときに発生します。"
 	}
 		},
 		"keyup": {
@@ -67,13 +67,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when a user releases a key.",
-		"jp": "Fires when a user releases a key."
+		"jp": "ユーザーがキーを放すときに発生します。"
 	}
 		},
 		"click": {
@@ -85,13 +85,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires on a mouse click on the element.",
-		"jp": "Fires on a mouse click on the element."
+		"jp": "要素でマウスがクリックされたときに発生します。"
 	}
 		},
 		"dblclick": {
@@ -103,13 +103,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires on a mouse double-click on the element.",
-		"jp": "Fires on a mouse double-click on the element."
+		"jp": "要素でマウスがダブルクリックされたときに発生します。"
 	}
 		},
 		"mouseout": {
@@ -121,13 +121,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when the mouse pointer moves out of an element.",
-		"jp": "Fires when the mouse pointer moves out of an element."
+		"jp": "マウス ポインターが要素から出るときに発生します。"
 	}
 		},
 		"mouseover": {
@@ -139,13 +139,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when the mouse pointer moves over an element.",
-		"jp": "Fires when the mouse pointer moves over an element."
+		"jp": "マウス ポインターが要素の上に移動するときに発生します。"
 	}
 		}
 	},
@@ -155,7 +155,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies a name for the button",
-		"jp": "Specifies a name for the button"
+		"jp": "ボタンの名前を指定します。"
 	}
 		},
 		"value": {
@@ -163,7 +163,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies an initial value for the button",
-		"jp": "Specifies an initial value for the button"
+		"jp": "ボタンの初期値を指定します。"
 	}
 		},
 		"type": {
@@ -171,7 +171,7 @@
 			"defaultValue": "button",
 			"description": {
 		"en": "Specifies the type of button",
-		"jp": "Specifies the type of button"
+		"jp": "ボタンのタイプを指定します。"
 	},
 			"valueOptions": [
 				{
@@ -179,7 +179,7 @@
 					"type": "string",
 					"description": {
 		"en": "The type is button.",
-		"jp": "The type is button."
+		"jp": "タイプはボタンです。"
 	}
 				},
 				{
@@ -187,7 +187,7 @@
 					"type": "string",
 					"description": {
 		"en": "The type is button.",
-		"jp": "The type is button."
+		"jp": "タイプはボタンです。"
 	}
 				},
 				{
@@ -195,7 +195,7 @@
 					"type": "string",
 					"description": {
 		"en": "The type is button.",
-		"jp": "The type is button."
+		"jp": "タイプはボタンです。"
 	}
 				}
 			]
@@ -205,7 +205,7 @@
 			"defaultValue": "",
 			"description" : {
 		"en": "The display text.",
-		"jp": "The display text."
+		"jp": "表示テキスト。"
 	}
 		},
 		"disabled": {
@@ -213,7 +213,7 @@
 			"defaultValue": false,
 			"description": {
 		"en": "Specifies that a button should be disabled",
-		"jp": "Specifies that a button should be disabled"
+		"jp": "ボタンを無効にすることを指定します。"
 	}
 		},
 		"form": {
@@ -221,7 +221,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies one or more forms the button belongs to",
-		"jp": "Specifies one or more forms the button belongs to"
+		"jp": "ボタンに関連するフォームを 1 つ以上指定します。"
 	},
 			"html5": true
 		},
@@ -230,7 +230,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies where to send the form-data when a form is submitted. Only for type=\"submit\"",
-		"jp": "Specifies where to send the form-data when a form is submitted. Only for type=\"submit\""
+		"jp": "フォームが送信されたとき、form-data に送信する場所を指定します。type=\"submit\" のみに適用します。"
 	},
 			"html5": true
 		},
@@ -239,7 +239,7 @@
 			"defaultValue": "_self",
 			"description": {
 		"en": "Specifies where to display the response after submitting the form. Only for type=\"submit\"",
-		"jp": "Specifies where to display the response after submitting the form. Only for type=\"submit\""
+		"jp": "フォームを送信した後、応答に表示する場所を指定します。type=\"submit\" のみに適用します。"
 	},
 			"html5": true,
 			"valueOptions": [
@@ -248,7 +248,7 @@
 					"type": "string",
 					"description": {
 		"en": "Loads the response in a new window/tab.",
-		"jp": "Loads the response in a new window/tab."
+		"jp": "応答を新しいウィンドウ/タブに読み込みます。"
 	}
 				},
 				{
@@ -256,7 +256,7 @@
 					"type": "string",
 					"description": {
 		"en": "Loads the response in the same frame.",
-		"jp": "Loads the response in the same frame."
+		"jp": "応答を同じフレームに読み込みます。"
 	}
 				},
 				{
@@ -264,7 +264,7 @@
 					"type": "string",
 					"description": {
 		"en": "Loads the response in the parent frame.",
-		"jp": "Loads the response in the parent frame."
+		"jp": "応答を親フレームに読み込みます。"
 	}
 				},
 				{
@@ -272,7 +272,7 @@
 					"type": "string",
 					"description": {
 		"en": "Loads the response in the full body of the window.",
-		"jp": "Loads the response in the full body of the window."
+		"jp": "応答をウィンドウの全本文に読み込みます。"
 	}
 				}
 			]
@@ -282,7 +282,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies an inline CSS style for an element.",
-		"jp": "Specifies an inline CSS style for an element."
+		"jp": "要素のインライン CSS スタイルを指定します。"
 	}
 		},
 		"title": {
@@ -290,7 +290,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies extra information about an element.",
-		"jp": "Specifies extra information about an element."
+		"jp": "要素についての追加情報を指定します。"
 	}
 		}
 	}

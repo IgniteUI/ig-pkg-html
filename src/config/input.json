@@ -1,4 +1,4 @@
-{
+﻿{
 	"overview": null,
 	"name": "Input",
 	"category": null,
@@ -13,13 +13,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires the moment that the element loses focus.",
-		"jp": "Fires the moment that the element loses focus."
+		"jp": "要素がフォーカスを失ったときに発生します。"
 	}
 		},
 		"change": {
@@ -31,13 +31,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires the moment when the value of the element is changed.",
-		"jp": "Fires the moment when the value of the element is changed."
+		"jp": "要素の値が変更されたときに発生します。"
 	}
 		},
 		"focus": {
@@ -49,13 +49,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires the moment when the element gets focus.",
-		"jp": "Fires the moment when the element gets focus."
+		"jp": "要素がフォーカスを受けるときに発生します。"
 	}
 		},
 		"input": {
@@ -67,13 +67,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Script to be run when an element gets user input.",
-		"jp": "Script to be run when an element gets user input."
+		"jp": "要素がユーザー入力を受けるときに実行するスクリプト。"
 	},
 			"html5": true
 		},
@@ -86,13 +86,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when a form is submitted.",
-		"jp": "Fires when a form is submitted."
+		"jp": "フォームが送信されたときに発生します。"
 	}
 		},
 		"keydown": {
@@ -104,13 +104,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when a user is pressing a key.",
-		"jp": "Fires when a user is pressing a key."
+		"jp": "ユーザーがキーを押すときに発生します。"
 	}
 		},
 		"keyup": {
@@ -122,13 +122,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when a user releases a key.",
-		"jp": "Fires when a user releases a key."
+		"jp": "ユーザーがキーを放すときに発生します。"
 	}
 		},
 		"click": {
@@ -140,13 +140,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires on a mouse click on the element.",
-		"jp": "Fires on a mouse click on the element."
+		"jp": "要素でマウスがクリックされたときに発生します。"
 	}
 		},
 		"dblclick": {
@@ -158,13 +158,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires on a mouse double-click on the element.",
-		"jp": "Fires on a mouse double-click on the element."
+		"jp": "要素でマウスがダブルクリックされたときに発生します。"
 	}
 		},
 		"mousedown": {
@@ -176,13 +176,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when a mouse button is pressed down on an element.",
-		"jp": "Fires when a mouse button is pressed down on an element."
+		"jp": "マウス ボタンが要素で押された時に発生します。"
 	}
 		},
 		"mouseup": {
@@ -194,13 +194,13 @@
 					"optional": true,
 					"description": {
 		"en": "Reference to event object.",
-		"jp": "Reference to event object."
+		"jp": "イベント オブジェクトへの参照。"
 	}
 				}
 			],
 			"description": {
 		"en": "Fires when a mouse button is released over an element.",
-		"jp": "Fires when a mouse button is released over an element."
+		"jp": "マウス ボタンが要素の上から離れた時に発生します。"
 	}
 		}
 	},
@@ -210,7 +210,7 @@
 			"defaultValue": "text",
 			"description": {
 		"en": "Specifies the value of an &ltinput&gt element",
-		"jp": "Specifies the value of an &ltinput&gt element"
+		"jp": "&ltinput&gt 要素の値を指定します。"
 	},
 			"valueOptions": [
 				{
@@ -218,7 +218,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a clickable button (mostly used with a JavaScript to activate a script).",
-		"jp": "Defines a clickable button (mostly used with a JavaScript to activate a script)."
+		"jp": "クリック可能なボタンを定義します。JavaScript のスクリプトを起動できます。 "
 	}
 				},
 				{
@@ -226,7 +226,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a checkbox.",
-		"jp": "Defines a checkbox."
+		"jp": "チェックボックスを定義します。"
 	}
 				},
 				{
@@ -234,7 +234,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a color picker.",
-		"jp": "Defines a color picker."
+		"jp": "カラー ピッカーを定義します。"
 	},
 					"html5": true
 				},
@@ -243,7 +243,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a date control (year, month and day (no time)).",
-		"jp": "Defines a date control (year, month and day (no time))."
+		"jp": "日付コントロールを定義します。年、月、日を含み、時間を含みません。"
 	},
 					"html5": true
 				},
@@ -252,7 +252,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a date and time control (year, month, day, hour, minute, second, and fraction of a second, based on UTC time zone).",
-		"jp": "Defines a date and time control (year, month, day, hour, minute, second, and fraction of a second, based on UTC time zone)."
+		"jp": "日時コントロール (UTC タイム ゾーンに基づく年、月、日、時、分、秒、分数秒) を定義します。"
 	},
 					"html5": true
 				},
@@ -261,7 +261,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a date and time control (year, month, day, hour, minute, second, and fraction of a second (no time zone).",
-		"jp": "Defines a date and time control (year, month, day, hour, minute, second, and fraction of a second (no time zone)."
+		"jp": "日時コントロール (タイム ゾーンなしの年、月、日、時、分、秒、1秒の何分の 1) を定義します。"
 	},
 					"html5": true
 				},
@@ -270,7 +270,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a field for an e-mail address.",
-		"jp": "Defines a field for an e-mail address."
+		"jp": "メール アドレスのフィールドを定義します。"
 	},
 					"html5": true
 				},
@@ -279,7 +279,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a file-select field and a \"Browse...\" button (for file uploads).",
-		"jp": "Defines a file-select field and a \"Browse...\" button (for file uploads)."
+		"jp": "ファイル選択フィールドおよび「参照」ボタンを定義します。ファイル アップロードのためです。 "
 	}
 				},
 				{
@@ -287,7 +287,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a hidden input field.",
-		"jp": "Defines a hidden input field."
+		"jp": "非表示の入力フィールドを定義します。"
 	}
 				},
 				{
@@ -295,7 +295,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines an image as the submit button.",
-		"jp": "Defines an image as the submit button."
+		"jp": "[送信] ボタンとして画像を定義します。"
 	}
 				},
 				{
@@ -303,7 +303,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a month and year control (no time zone).",
-		"jp": "Defines a month and year control (no time zone)."
+		"jp": "月および年コントロールを定義します。 タイム ゾーンを含みません。"
 	},
 					"html5": true
 				},
@@ -312,7 +312,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a field for entering a number.",
-		"jp": "Defines a field for entering a number."
+		"jp": "数値の入力のフィールドを定義します。"
 	},
 					"html5": true
 				},
@@ -321,7 +321,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a password field (characters are masked).",
-		"jp": "Defines a password field (characters are masked)."
+		"jp": "パスワード フィールドを定義します。 文字はマスクされます。"
 	}
 				},
 				{
@@ -329,7 +329,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a radio button.",
-		"jp": "Defines a radio button."
+		"jp": "ラジオ ボタンを定義します。"
 	}
 				},
 				{
@@ -337,7 +337,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a control for entering a number whose exact value is not important (like a slider control).",
-		"jp": "Defines a control for entering a number whose exact value is not important (like a slider control)."
+		"jp": "詳細値は大切ではない数値を入力するためのコントロール (スライダー コントロールなど) を定義します。"
 	},
 					"html5": true
 				},
@@ -346,7 +346,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a reset button (resets all form values to default values).",
-		"jp": "Defines a reset button (resets all form values to default values)."
+		"jp": "リセット ボタンを定義します。 フォーム値をすべてデフォルト値にリセットします。"
 	}
 				},
 				{
@@ -354,7 +354,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a text field for entering a search string.",
-		"jp": "Defines a text field for entering a search string."
+		"jp": "検索文字列の入力のテキスト フィールドを定義します。"
 	},
 					"html5": true
 				},
@@ -363,7 +363,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a submit button.",
-		"jp": "Defines a submit button."
+		"jp": "[送信] ボタンを定義します。"
 	}
 				},
 				{
@@ -371,7 +371,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a field for entering a telephone number.",
-		"jp": "Defines a field for entering a telephone number."
+		"jp": "電話番号の入力のフィールドを定義します。"
 	},
 					"html5": true
 				},
@@ -380,7 +380,7 @@
 					"type": "string",
 					"description": {
 		"en": "Default. Defines a single-line text field (default width is 20 characters).",
-		"jp": "Default. Defines a single-line text field (default width is 20 characters)."
+		"jp": "デフォルト単一行のテキスト フィールドを定義します。デフォルト幅は 20 文字です。"
 	}
 				},
 				{
@@ -388,7 +388,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a control for entering a time (no time zone).",
-		"jp": "Defines a control for entering a time (no time zone)."
+		"jp": "タイム ゾーンなしの時間の入力のためのコントロールを定義します。"
 	},
 					"html5": true
 				},
@@ -397,7 +397,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a field for entering a URL.",
-		"jp": "Defines a field for entering a URL."
+		"jp": "URL の入力のフィールドを定義します。"
 	},
 					"html5": true
 				},
@@ -406,7 +406,7 @@
 					"type": "string",
 					"description": {
 		"en": "Defines a week and year control (no time zone).",
-		"jp": "Defines a week and year control (no time zone)."
+		"jp": "週および年コントロールを定義します。 タイム ゾーンを含みません。"
 	},
 					"html5": true
 				}
@@ -417,7 +417,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies the value of an &ltinput&gt element",
-		"jp": "Specifies the value of an &ltinput&gt element"
+		"jp": "&ltinput&gt 要素の値を指定します。"
 	}
 		},
 		"name": {
@@ -425,7 +425,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies the name of an &ltinput&gt element.",
-		"jp": "Specifies the name of an &ltinput&gt element."
+		"jp": "&ltinput&gt 要素の名前を指定します。"
 	}
 		},
 		"readonly": {
@@ -433,7 +433,7 @@
 			"defaultValue": false,
 			"description": {
 		"en": "Specifies that an input field is read-only.",
-		"jp": "Specifies that an input field is read-only."
+		"jp": "入力フィールドが読み取り専用を指定します。"
 	}
 		},
 		"size": {
@@ -441,7 +441,7 @@
 			"defaultValue": 20,
 			"description": {
 		"en": "Specifies the width, in characters, of an &ltinput&gt element.",
-		"jp": "Specifies the width, in characters, of an &ltinput&gt element."
+		"jp": "&ltinput&gt 要素の幅 (文字単位) を指定します。"
 	}
 		},
 		"src": {
@@ -449,7 +449,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies the URL of the image to use as a submit button (only for type=\"image\").",
-		"jp": "Specifies the URL of the image to use as a submit button (only for type=\"image\")."
+		"jp": "[送信] ボタンのために使用する画像の URL を指定します。type=\"image\" のみに適用します。"
 	}
 		},
 		"accept": {
@@ -457,7 +457,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies the types of files that the server accepts (only for type=\"file\").",
-		"jp": "Specifies the types of files that the server accepts (only for type=\"file\")."
+		"jp": "サーバーが受けるファイルのタイプを指定します。type=\"file\" のみに適用します。"
 	}
 		},
 		"checked": {
@@ -465,7 +465,7 @@
 			"defaultValue": false,
 			"description": {
 		"en": "Specifies that an &ltinput&gt element should be pre-selected when the page loads (for type=\"checkbox\" or type=\"radio\").",
-		"jp": "Specifies that an &ltinput&gt element should be pre-selected when the page loads (for type=\"checkbox\" or type=\"radio\")."
+		"jp": "ページを読み込んだとき、&ltinput&gt 要素が選択済みを指定します。type=\"checkbox\" または type=\"radio\" のみに適用します。"
 	}
 		},
 		"disabled": {
@@ -473,7 +473,7 @@
 			"defaultValue": false,
 			"description": {
 		"en": "Specifies that an &ltinput&gt element should be disabled.",
-		"jp": "Specifies that an &ltinput&gt element should be disabled."
+		"jp": "&ltinput&gt 要素を無効にすることを指定します。"
 	}
 		},
 		"form": {
@@ -481,7 +481,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies one or more forms the &ltinput&gt element belongs to.",
-		"jp": "Specifies one or more forms the &ltinput&gt element belongs to."
+		"jp": "&ltinput&gt 要素に関連するフォームを 1 つ以上指定します。"
 	},
 			"html5": true
 		},
@@ -490,7 +490,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies the URL of the file that will process the input control when the form is submitted (for type=\"submit\" and type=\"image\").",
-		"jp": "Specifies the URL of the file that will process the input control when the form is submitted (for type=\"submit\" and type=\"image\")."
+		"jp": "フォームが送信したときに入力コントロールを処理するファイルの URL を指定します。type=\"submit\" および type=\"image\" のみに適用します。"
 	},
 			"html5": true
 		},
@@ -499,7 +499,7 @@
 			"defaultValue": "get",
 			"description": {
 		"en": "Defines the HTTP method for sending data to the action URL (for type=\"submit\" and type=\"image\").",
-		"jp": "Defines the HTTP method for sending data to the action URL (for type=\"submit\" and type=\"image\")."
+		"jp": "データをアクション URL に送信する HTTP メソッドを定義します。type=\"submit\" および type=\"image\" のみに適用します。"
 	},
 			"html5": true,
 			"valueOptions": [
@@ -508,7 +508,7 @@
 					"type": "string",
 					"description": {
 		"en": "Appends the form-data to the URL in name/value pairs: URL?name=value&name=value.",
-		"jp": "Appends the form-data to the URL in name/value pairs: URL?name=value&name=value."
+		"jp": "form-data を名前/値ペアで URL に追加します: URL?name=value&name=value。"
 	}
 				},
 				{
@@ -516,7 +516,7 @@
 					"type": "string",
 					"description": {
 		"en": "Sends the form-data as an HTTP post transaction.",
-		"jp": "Sends the form-data as an HTTP post transaction."
+		"jp": "form-data を HTTP post トランザクションとして送信します。"
 	}
 				}
 			]
@@ -526,7 +526,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies the height of an &ltinput&gt element (only for type=\"image\")",
-		"jp": "Specifies the height of an &ltinput&gt element (only for type=\"image\")"
+		"jp": "&ltinput&gt 要素の高さを指定します。type=\"image\" のみに適用します。"
 	},
 			"html5": true
 		},
@@ -535,7 +535,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies the width of an &ltinput&gt element (only for type=\"image\")",
-		"jp": "Specifies the width of an &ltinput&gt element (only for type=\"image\")"
+		"jp": "&ltinput&gt 要素の幅を指定します。type=\"image\" のみに適用します。"
 	},
 			"html5": true
 		},
@@ -544,7 +544,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies the maximum value for an &ltinput&gt element.",
-		"jp": "Specifies the maximum value for an &ltinput&gt element."
+		"jp": "&ltinput&gt 要素の最大値を指定します。"
 	},
 			"html5": true
 		},
@@ -553,7 +553,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies a minimum value for an &ltinput&gt element.",
-		"jp": "Specifies a minimum value for an &ltinput&gt element."
+		"jp": "&ltinput&gt 要素の最小値を指定します。"
 	},
 			"html5": true
 		},
@@ -562,7 +562,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies the maximum number of characters allowed in an &ltinput&gt element.",
-		"jp": "Specifies the maximum number of characters allowed in an &ltinput&gt element."
+		"jp": "&ltinput&gt 要素の文字の最大数を指定します。"
 	}
 		},
 		"required": {
@@ -570,7 +570,7 @@
 			"defaultValue": false,
 			"description": {
 		"en": "Specifies that an input field must be filled out before submitting the form.",
-		"jp": "Specifies that an input field must be filled out before submitting the form."
+		"jp": "フォームを送信する前に入力フィールドに入力する必要があることを指定します。"
 	}
 		},
 		"step": {
@@ -578,7 +578,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies the legal number intervals for an input field.",
-		"jp": "Specifies the legal number intervals for an input field."
+		"jp": "入力フィールドの有効な数値範囲を指定します。"
 	}
 		},
 		"style": {
@@ -586,7 +586,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies an inline CSS style for an element.",
-		"jp": "Specifies an inline CSS style for an element."
+		"jp": "要素のインライン CSS スタイルを指定します。"
 	}
 		},
 		"title": {
@@ -594,7 +594,7 @@
 			"defaultValue": null,
 			"description": {
 		"en": "Specifies extra information about an element.",
-		"jp": "Specifies extra information about an element."
+		"jp": "要素についての追加情報を指定します。"
 	}
 		}
 	}

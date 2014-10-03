@@ -8,7 +8,8 @@ define(function (require, exports, module) {
 		_blockOfText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac blandit erat. Curabitur velit libero, lacinia sit amet dolor a, tincidunt varius nisi. Integer ac magna bibendum, dignissim quam sed, commodo mauris. Aenean consequat ullamcorper felis ut sagittis. Quisque at magna a purus egestas suscipit. In vulputate tincidunt arcu non pulvinar. Pellentesque vitae leo et justo fringilla adipiscing sit amet eget lacus.",
 		_lineOfText: "Lorem Ipsum Dolor Sit Amet",
 		_getTextElementMarkup: function (tagName, singleLine, id) {
-			return "<" + tagName + " id=\"" + id + "\">" + (singleLine ? this._lineOfText : this._blockOfText) + "</" + tagName + ">";
+		    var isContentEdit = this.isContentEditable ? " contenteditable=\"true\"" : "";
+		    return "<" + tagName + " id=\"" + id + "\"" + isContentEdit + ">" + (singleLine ? this._lineOfText : this._blockOfText) + "</" + tagName + ">";
 		},
 		isContentEditable: function (type) {
 			if (type === "heading" || type === "text" || type === "textarea" || type === "link" || type === "list" || type === "container" || type === "button" || type === "input") {

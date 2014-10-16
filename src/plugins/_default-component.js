@@ -36,10 +36,10 @@ define(function (require, exports, module) {
 				if (forCode) {
 					return "<div id=\"" + descriptor.id + "\"></div>";
 				} else {
-					return "<div " + " id=\"" + descriptor.id + "\"" + (forCode ? " style=\"min-width: 400px; min-height: 100px;\"" : "") + " data-droppablechild=\"true\"></div>";
+					return "<div " + " id=\"" + descriptor.id + "\"" + (forCode ? " style=\"min-width: 400px; min-height: 100px;\"" : "") + " data-droppablechild=\"true\" contenteditable=\"true\"></div>";
 				}
 			case "button":
-				return "<button" + " id=\"" + descriptor.id + "\">Button</button>";
+				return "<button" + " id=\"" + descriptor.id + "\" contenteditable=\"true\">Button</button>";
 			case "input":
 				return "<input" + " id=\"" + descriptor.id + "\"/>";
 			default:

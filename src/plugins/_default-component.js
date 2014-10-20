@@ -29,7 +29,7 @@ define(function (require, exports, module) {
 			case "link":
 				return this._getTextElementMarkup("a", true, descriptor.id);
 			case "image":
-				return "<img id=\"" + descriptor.id + "\" />";
+				return "<img id=\"" + descriptor.id + "\" src=\"packages/html/icons/image-placeholder.png\"/>";
 			case "list":
 				return "<ul" + " id=\"" + descriptor.id + "\"><li>Item 1</li><li>Item 2</li></ul>";
 			case "container":
@@ -58,6 +58,7 @@ define(function (require, exports, module) {
 			} else {
 				snippet = this.settings.ide._tabStr(descriptor.extraIndent + 1) + this.getMarkup(descriptor, true) + "\n";
 				lineCount = 1;
+
 			}
 			
 			return { codeString: snippet, lineCount: lineCount, extraMarkers: extraMarkers };

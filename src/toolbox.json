@@ -103,7 +103,8 @@
 			"dragDropIcon": "image-dragdrop.png",
 			"category": "common",
 			"visual": true,
-			"framework": false
+			"framework": false,
+			"defaultOptions": {"src": "packages/html/icons/image-placeholder.png"}
 		}
 	}
 }

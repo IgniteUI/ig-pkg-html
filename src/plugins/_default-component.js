@@ -56,6 +56,11 @@ define(function (require, exports, module) {
 					{ rowOffset: 0, colOffset: 0, rowCount: 2, colCount: 0 }
 				];
 			} else {
+				if (descriptor.type === "image") {
+					extraMarkers = [
+						{ rowOffset: 0, colOffset: 18, rowCount: 0, colCount: 47 }
+					];
+				}
 				snippet = this.settings.ide._tabStr(descriptor.extraIndent + 1) + this.getMarkup(descriptor, true) + "\n";
 				lineCount = 1;
 

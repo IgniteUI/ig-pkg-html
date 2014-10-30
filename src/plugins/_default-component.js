@@ -7,46 +7,6 @@ define(function (require, exports, module) {
 		},
 		_blockOfText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac blandit erat. Curabitur velit libero, lacinia sit amet dolor a, tincidunt varius nisi. Integer ac magna bibendum, dignissim quam sed, commodo mauris. Aenean consequat ullamcorper felis ut sagittis. Quisque at magna a purus egestas suscipit. In vulputate tincidunt arcu non pulvinar. Pellentesque vitae leo et justo fringilla adipiscing sit amet eget lacus.",
 		_lineOfText: "Lorem Ipsum Dolor Sit Amet",
-		_getTextElementMarkup: function (tagName, singleLine, id) {
-		    var isContentEdit = this.isContentEditable ? " contenteditable=\"true\"" : "";
-		    return "<" + tagName + " id=\"" + id + "\"" + isContentEdit + ">" + (singleLine ? this._lineOfText : this._blockOfText) + "</" + tagName + ">";
-		},
-		isContentEditable: function (type) {
-			if (type === "heading" || type === "text" || type === "textarea" || type === "link" || type === "list" || type === "container" || type === "button" || type === "input") {
-				return true;
-			} else {
-				return false;
-			}
-		},
-		getMarkup: function (descriptor, forCode) {
-			switch (descriptor.type) {
-			case "heading":
-				return this._getTextElementMarkup("h1", true, descriptor.id);
-			case "text":
-				return this._getTextElementMarkup("p", false, descriptor.id);
-			case "textarea":
-				return this._getTextElementMarkup("textarea", false, descriptor.id);
-			case "link":
-				return this._getTextElementMarkup("a", true, descriptor.id);
-			case "image":
-				return "<img id=\"" + descriptor.id + "\" src=\"packages/html/icons/image-placeholder.png\"/>";
-			case "list":
-				return "<ul" + " id=\"" + descriptor.id + "\"><li>Item 1</li><li>Item 2</li></ul>";
-			case "container":
-				if (forCode) {
-					return "<div id=\"" + descriptor.id + "\"></div>";
-				} else {
-					return "<div " + " id=\"" + descriptor.id + "\"" + (forCode ? " style=\"min-width: 400px; min-height: 100px;\"" : "") + " data-droppablechild=\"true\" contenteditable=\"true\"></div>";
-				}
-			case "button":
-				return "<button" + " id=\"" + descriptor.id + "\" contenteditable=\"true\">Button</button>";
-			case "input":
-				return "<input" + " id=\"" + descriptor.id + "\"/>";
-			default:
-				console.log("Unknown HTML element added: " + descriptor.type);
-				return "";
-			}
-		},
 		getCodeEditorMarkupSnippet: function (descriptor) {
 			var snippet, lineCount, extraMarkers;
 			if (descriptor.type === "container") {
@@ -56,17 +16,55 @@ define(function (require, exports, module) {
 					{ rowOffset: 0, colOffset: 0, rowCount: 2, colCount: 0 }
 				];
 			} else {
-				if (descriptor.type === "image") {
-					extraMarkers = [
-						{ rowOffset: 0, colOffset: 18, rowCount: 0, colCount: 47 }
-					];
-				}
 				snippet = this.settings.ide._tabStr(descriptor.extraIndent + 1) + this.getMarkup(descriptor, true) + "\n";
 				lineCount = 1;
-
 			}
-			
 			return { codeString: snippet, lineCount: lineCount, extraMarkers: extraMarkers };
+		},
+		getMarkup: function (descriptor, forCodeEditor) {
+			var type = descriptor.type;
+			switch (type) {
+			case "heading":
+				return this._getTextElementMarkup(type, "h1", descriptor.id, this._lineOfText, false, forCodeEditor);
+			case "text":
+				return this._getTextElementMarkup(type, "p", descriptor.id, this._blockOfText, false, forCodeEditor);
+			case "textarea":
+				return this._getTextElementMarkup(type, "textarea", descriptor.id, this._blockOfText, false, forCodeEditor);
+			case "link":
+				return this._getTextElementMarkup(type, "a", descriptor.id, this._lineOfText, false, forCodeEditor);
+			case "image":
+				return this._getTextElementMarkup(type, "img", descriptor.id, "", true, true, " src=\"packages/html/icons/image-placeholder.png\"");
+			case "list":
+				return this._getTextElementMarkup(type, "ul", descriptor.id, "<li>Item 1</li><li>Item 2</li>", false, forCodeEditor);
+			case "container":
+				return this._getTextElementMarkup(type, "div", descriptor.id, "", false, forCodeEditor, " data-droppablechild=\"true\"");
+			case "button":
+				return this._getTextElementMarkup(type, "button", descriptor.id, "Button", false, forCodeEditor);
+			case "input":
+				return this._getTextElementMarkup(type, "input", descriptor.id, "", true, false);
+			default:
+				console.log("Unknown HTML element added: " + descriptor.type);
+				return "";
+			}
+		},
+		_getTextElementMarkup: function (tagType, tagName, id, content, selfClosing, forCodeEditor, codeEditorAttr) {
+			var openingFormat = "<" + tagName,
+				closingFormat = selfClosing ? "/>" : "</" + tagName + ">",
+				contentEditableAttr = this.isContentEditable(tagType) && !forCodeEditor ? " contenteditable=\"true\"" : "",
+				codeEditorAttr = codeEditorAttr || "",
+				attr = !forCodeEditor ? codeEditorAttr : "";
+
+			if (!selfClosing) {
+				content = ">" + content;
+			}
+			return openingFormat + " id=\"" + id + "\"" + attr + contentEditableAttr + content + closingFormat;
+		},
+		isContentEditable: function (type) {
+			if (type === "heading" || type === "text" || type === "textarea" || type === "link" || type === "list" || type === "container" || type === "button" || type === "input") {
+				return true;
+			} else {
+				return false;
+			}
 		},
 		isContainer: function (descriptor) {
 			if (typeof (descriptor) === "undefined" || descriptor === null) {
